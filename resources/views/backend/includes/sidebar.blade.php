@@ -30,6 +30,18 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('menus.backend.sidebar.general') }}</li>
 
+            <li class="{{ Active::pattern('admin/categories/*') }}">
+                <a href="{!!url('admin/categories')!!}"><span>{{ trans('custom.backend.categories.title') }}</span></a>
+            </li>
+
+            <li class="{{ Active::pattern('admin/answer_types/*') }}">
+                <a href="{!!url('admin/answer_types')!!}"><span>{{ trans('custom.backend.answer_types.title') }}</span></a>
+            </li>
+
+            <li class="{{ Active::pattern('admin/questions/*') }}">
+                <a href="{!!url('admin/questions')!!}"><span>{{ trans('custom.backend.questions.title') }}</span></a>
+            </li>
+
             <!-- Optionally, you can add icons to the links -->
             <li class="{{ Active::pattern('admin/dashboard') }}">
                 <a href="{!! route('admin.dashboard') !!}"><span>{{ trans('menus.backend.sidebar.dashboard') }}</span></a>

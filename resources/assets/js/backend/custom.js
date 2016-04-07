@@ -1,3 +1,12 @@
+//Backend
+
+var Backend = {};
+
+Backend.init = function(){
+    $(".chosen-select").chosen();
+};
+
+
 $(function() {
     toastr.options = {
         "closeButton": true,
@@ -14,4 +23,5 @@ $(function() {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     }
+    Backend.init();
 });

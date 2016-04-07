@@ -22,7 +22,18 @@ elixir(function(mix) {
        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
        'public/js/vendor/bootstrap'
      )
-
+     .copy(
+       'public/bower_components/chosen/chosen.jquery.js',
+       'resources/assets/js/plugin/chosen'
+     )
+     .copy(
+       'public/bower_components/chosen/chosen.css',
+       'resources/assets/sass/plugin/chosen'
+     )
+     .copy(
+       'public/bower_components/chosen/*.png',
+       'public/build/css'
+     )
      /**
       * Process frontend SCSS stylesheets
       */
@@ -53,14 +64,15 @@ elixir(function(mix) {
      .sass([
          'backend/app.scss',
          'backend/plugin/toastr/toastr.scss',
-         'plugin/sweetalert/sweetalert.scss'
+         'plugin/sweetalert/sweetalert.scss',
+         'plugin/chosen/chosen.css'
      ], 'resources/assets/css/backend/app.css')
 
      /**
       * Combine pre-processed backend CSS files
       */
      .styles([
-         'backend/app.css'
+         'backend/app.css',
      ], 'public/css/backend.css')
 
      /**
@@ -71,6 +83,7 @@ elixir(function(mix) {
          'plugins.js',
          'backend/app.js',
          'backend/plugin/toastr/toastr.min.js',
+         'plugin/chosen/chosen.jquery.js',
          'backend/custom.js'
      ], 'public/js/backend.js')
 

@@ -98,6 +98,27 @@ class AccessServiceProvider extends ServiceProvider
             \App\Repositories\Backend\Access\Permission\Dependency\PermissionDependencyRepositoryContract::class,
             \App\Repositories\Backend\Access\Permission\Dependency\EloquentPermissionDependencyRepository::class
         );
+
+        $this->app->bind(
+        \App\Repositories\Backend\Category\CategoryRepositoryContract::class,
+        \App\Repositories\Backend\Category\EloquentCategoryRepository::class
+        );
+
+        $this->app->bind(
+        \App\Repositories\Backend\AnswerType\AnswerTypeRepositoryContract::class,
+        \App\Repositories\Backend\AnswerType\EloquentAnswerTypeRepository::class
+        );
+
+        $this->app->bind(
+        \App\Repositories\Backend\Question\QuestionRepositoryContract::class,
+        \App\Repositories\Backend\Question\EloquentQuestionRepository::class
+        );
+
+        $this->app->bind(
+        \App\Repositories\Backend\Option\OptionRepositoryContract::class,
+        \App\Repositories\Backend\Option\EloquentOptionRepository::class
+        );
+
     }
 
     /**

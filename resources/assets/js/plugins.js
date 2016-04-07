@@ -56,6 +56,7 @@ $(function(){
 
         swal({
             title: title,
+            text: text,
             type: "warning",
             showCancelButton: true,
             cancelButtonText: cancel,
