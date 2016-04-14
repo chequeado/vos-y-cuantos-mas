@@ -1,6 +1,8 @@
 var elixir = require('laravel-elixir');
 //require('./elixir-extensions');
 
+require('laravel-elixir-ngtemplatecache');
+
 elixir(function(mix) {
  mix
      .phpUnit()
@@ -23,6 +25,14 @@ elixir(function(mix) {
        'public/js/vendor/bootstrap'
      )
      .copy(
+       'public/bower_components/angular/angular.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+     .copy(
+       'public/bower_components/angular-chosen-js/angular-chosen.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+     .copy(
        'public/bower_components/chosen/chosen.jquery.js',
        'resources/assets/js/plugin/chosen'
      )
@@ -34,6 +44,17 @@ elixir(function(mix) {
        'public/bower_components/chosen/*.png',
        'public/build/css'
      )
+     .ngTemplateCache('/**/backend.html', 'public/js', 'resources/assets/js/modules', {
+        templateCache: {
+            standalone: true,
+            filename: "templates-backend.js",
+            module:"templates-backend"
+        },
+        htmlmin: {
+            collapseWhitespace: true,
+            removeComments: true
+        }
+      })
      /**
       * Process frontend SCSS stylesheets
       */
@@ -65,7 +86,8 @@ elixir(function(mix) {
          'backend/app.scss',
          'backend/plugin/toastr/toastr.scss',
          'plugin/sweetalert/sweetalert.scss',
-         'plugin/chosen/chosen.css'
+         'plugin/chosen/chosen.css',
+         'backend/main.scss'
      ], 'resources/assets/css/backend/app.css')
 
      /**
@@ -84,11 +106,20 @@ elixir(function(mix) {
          'backend/app.js',
          'backend/plugin/toastr/toastr.min.js',
          'plugin/chosen/chosen.jquery.js',
-         'backend/custom.js'
+         'plugin/angular/angular.min.js',
+         'plugin/angular/angular-chosen.min.js',
+         'backend/custom.js',
+         'modules/**/backend.js'
      ], 'public/js/backend.js')
 
     /**
       * Apply version control
       */
-     .version(["public/css/frontend.css", "public/js/frontend.js", "public/css/backend.css", "public/js/backend.js"]);
+     .version([
+        "public/css/frontend.css", 
+        "public/js/frontend.js", 
+        "public/css/backend.css", 
+        "public/js/backend.js",
+        "public/js/templates-backend.js"
+      ]);
 });

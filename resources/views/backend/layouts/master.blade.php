@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="BackendApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,6 +57,7 @@
 
     @yield('before-scripts-end')
     {!! HTML::script(elixir('js/backend.js')) !!}
+    {!! HTML::script(elixir('js/templates-backend.js')) !!}
     @yield('after-scripts-end')
     </body>
 </html>

@@ -6,6 +6,12 @@ Backend.init = function(){
     $(".chosen-select").chosen();
 };
 
+Backend.initEditQuestion = function(){
+
+    console.log('pala');
+    
+};
+
 
 $(function() {
     toastr.options = {
@@ -24,4 +30,24 @@ $(function() {
         "hideMethod": "fadeOut"
     }
     Backend.init();
+});
+
+//angular
+
+var BackendApp = angular.module('BackendApp', ['angular.chosen','templates-backend']);
+
+BackendApp.controller('QuestionCtrl', function ($scope,$templateCache) {
+  
+    $scope.changeType = function(){
+        $scope.include_options = $scope.answer_type+'/backend.html';
+    };
+
+
+    $scope.init = function(data){
+        console.log('init');
+        if(data.answer_type_id){
+            $scope.answer_type = data.answer_type_id;
+        }
+    };
+
 });

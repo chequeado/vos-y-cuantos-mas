@@ -33,14 +33,18 @@
         <h3 class="box-title">{{ trans('custom.backend.questions.options') }}</h3>
     </div>
 
-    <div class="box-body">
+    <div class="box-body" ng-controller="QuestionCtrl">
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_type_id') }}</label>
             <div class="col-lg-10">
-                {!! Form::select('answer_type_id', $answer_types, null, array('class'=>'form-control chosen-select')) !!}
+                {!! Form::select('answer_type_id', $answer_types, null, array('class'=>'form-control', 'ng-model'=>'answer_type', 'chosen'=>'', 'ng-change' => 'changeType()')) !!}
             </div>
         </div><!--form control-->
+
+         <div ng-if="answer_type" ng-include="include_options">
+            <!-- template de options -->
+         </div>
 
     </div>
 
