@@ -26,6 +26,15 @@ class EloquentAnswerTypeRepository implements AnswerTypeRepositoryContract
         throw new GeneralException(trans('exceptions.backend.access.roles.not_found'));
     }
 
+    public function findBySlugOrThrowException($slug)
+    {
+        if (! is_null(AnswerType::first('slug',$slug))) {
+            return AnswerType::first('slug',$slug);
+        }
+
+        throw new GeneralException(trans('exceptions.backend.access.roles.not_found'));
+    }
+
     /**
      * @param  $per_page
      * @param  string      $order_by

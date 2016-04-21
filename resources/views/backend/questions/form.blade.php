@@ -35,7 +35,7 @@
 
     <div class="box-body" ng-controller="QuestionCtrl">
 
-        <div class="form-group">
+        <div class="form-group" ng-init="init({{ (isset($obj))?$obj->toJson():'{}' }},{{ (isset($obj))?$obj->optionsByKey()->toJson():'{}' }})">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_type_id') }}</label>
             <div class="col-lg-10">
                 {!! Form::select('answer_type_id', $answer_types, null, array('class'=>'form-control', 'ng-model'=>'answer_type', 'chosen'=>'', 'ng-change' => 'changeType()')) !!}

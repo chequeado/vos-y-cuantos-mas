@@ -97,12 +97,18 @@ class EloquentOptionRepository implements OptionRepositoryContract
         throw new GeneralException(trans('exceptions.backend.access.roles.delete_error'));
     }
 
-    public function insertOrUpdateAll($items) {
+    public function insertAll($question_id,$items) {
+
+        foreach (Option::where('question_id',$question_id)->get() as $key => $opt) {
+            $opt->delete();
+        }
 
         foreach ($items as $key => $value) {
-            $item = Option::firstOrNew(['fecha' => $value['fecha'],'municipio_id' => $value['municipio_id']]);
-            $item->fill($value);
-            $item->save();
+            $op = new Option();
+            $op->key = $key;
+            $op->question_id = $question_id;
+            $op->fill($value);
+            $op->save();
         }
 
     }

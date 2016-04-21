@@ -34,8 +34,8 @@
                         <td>{!! $l->id !!}</td>
                         <td>{!! $l->title !!}</td>
                         <td>{!! $l->description !!}</td>
-                        <td>{!! $l->answer_type_id !!}</td>
-                        <td>{!! $l->category_id !!}</td>
+                        <td>{!! $l->answer_type->name !!}</td>
+                        <td>{!! $l->category->name !!}</td>
                         <td>
                             <a href="{!! route('admin.questions.edit', $l->id) !!}" class="btn btn-xs btn-primary"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="{{ trans('custom.backend.questions.edit') }}"></i></a>
                             <a href="{!! route('admin.questions.destroy', $l->id) !!}'" data-method="delete" class="btn btn-xs btn-danger" 

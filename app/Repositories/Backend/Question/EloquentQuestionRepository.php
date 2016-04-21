@@ -3,6 +3,7 @@
 namespace App\Repositories\Backend\Question;
 
 use App\Models\Question;
+use App\Models\AnswerType;
 use App\Exceptions\GeneralException;
 
 /**
@@ -62,10 +63,12 @@ class EloquentQuestionRepository implements QuestionRepositoryContract
      */
     public function create($input)
     {
+        $input['answer_type_id'] = AnswerType::select(array('id'))->where(array('slug'=>$input['answer_type_id']))->first()->id;
+        unset($input['option']);
         $new = new Question;
         $new->fill($input);
         if ($new->save()) {
-            return true;
+            return $new->id;
         }
 
         throw new GeneralException(trans('exceptions.backend.access.roles.create_error'));
@@ -79,10 +82,12 @@ class EloquentQuestionRepository implements QuestionRepositoryContract
      */
     public function update($id, $input)
     {
+        $input['answer_type_id'] = AnswerType::select(array('id'))->where(array('slug'=>$input['answer_type_id']))->first()->id;
+        unset($input['option']);
         $obj = $this->findOrThrowException($id);
         $obj->fill($input);
         if ($obj->save()) {
-            return true;
+            return $obj->id;
         }
 
         throw new GeneralException(trans('exceptions.backend.access.roles.update_error'));

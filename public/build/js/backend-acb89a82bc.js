@@ -2483,11 +2483,11 @@ BackendApp.controller('QuestionCtrl', function ($scope,$templateCache) {
         $scope.include_options = $scope.answer_type+'/backend.html';
     };
 
-
-    $scope.init = function(data){
-        console.log('init');
+    $scope.init = function(data,options){
+        $scope.options = options;
         if(data.answer_type_id){
             $scope.answer_type = data.answer_type_id;
+            $scope.changeType();
         }
     };
 

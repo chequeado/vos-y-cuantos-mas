@@ -50,6 +50,6 @@ interface OptionRepositoryContract
      */
     public function destroy($id);
 
-    public function insertOrUpdateAll($items);
+    public function insertAll($question_id,$items);
 
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Backend\Question\QuestionRepositoryContract;
 use App\Repositories\Backend\Category\CategoryRepositoryContract;
+use App\Repositories\Backend\Option\OptionRepositoryContract;
 use App\Repositories\Backend\AnswerType\AnswerTypeRepositoryContract;
 
 /**
@@ -26,12 +27,14 @@ class QuestionController extends Controller
     public function __construct(
         QuestionRepositoryContract $questions,
         AnswerTypeRepositoryContract $answer_type,
+        OptionRepositoryContract $options,
         CategoryRepositoryContract $categories
     )
     {
-        $this->questions       = $questions;
+        $this->questions        = $questions;
+        $this->options          = $options;
         $this->categories       = $categories;
-        $this->answer_type       = $answer_type;
+        $this->answer_type      = $answer_type;
     }
 
     /**
@@ -60,7 +63,10 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $this->questions->create($request->all());
+        $id = $this->questions->create($request->all());
+
+        $this->options->insertAll($id,$request['option']);
+
         return redirect()->route('admin.questions.index')->withFlashSuccess(trans('custom.backend.messages.created'));
     }
 
@@ -72,6 +78,7 @@ class QuestionController extends Controller
     public function edit($id, Request $request)
     {
         $obj = $this->questions->findOrThrowException($id, true);
+        $obj->answer_type_id = $obj->answer_type->slug;
         return view('backend.questions.edit')
             ->withObj($obj)
             ->withCategories($this->categories->getListCategories())
@@ -86,6 +93,9 @@ class QuestionController extends Controller
     public function update($id, Request $request)
     {
         $this->questions->update($id, $request->all());
+
+        $this->options->insertAll($id,$request['option']);
+        
         return redirect()->route('admin.questions.index')->withFlashSuccess(trans('custom.backend.messages.updated'));
     }
 
