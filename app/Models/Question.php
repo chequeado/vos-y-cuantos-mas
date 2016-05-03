@@ -8,6 +8,8 @@ class Question extends Model {
 
 	use \Sortable;
 
+    protected $hidden = ['created_at','updated_at'];
+
     protected $table = 'question';
 
     protected $guarded = ['id'];

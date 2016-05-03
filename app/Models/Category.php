@@ -10,5 +10,13 @@ class Category extends Model {
 
     protected $table = 'category';
 
+    protected $hidden = ['created_at','updated_at'];
+
     protected $guarded = ['id'];
+
+    public function questions()
+    {
+        return $this->hasMany('App\Models\Question');
+    }
+
 }

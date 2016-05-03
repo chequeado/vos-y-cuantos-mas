@@ -26,6 +26,15 @@ class EloquentCategoryRepository implements CategoryRepositoryContract
         throw new GeneralException(trans('exceptions.backend.access.roles.not_found'));
     }
 
+    public function findFullOrThrowException($id)
+    {
+        if (! is_null(Category::find($id))) {
+            return Category::where('id',$id)->with(['questions','questions.options','questions.answer_type'])->first();
+        }
+
+        throw new GeneralException(trans('exceptions.backend.access.roles.not_found'));
+    }
+
     /**
      * @param  $per_page
      * @param  string      $order_by

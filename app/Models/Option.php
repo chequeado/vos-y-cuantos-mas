@@ -11,4 +11,6 @@ class Option extends Model {
     protected $table = 'option';
 
     protected $guarded = ['id'];
+
+    protected $hidden = ['created_at','updated_at'];
 }
