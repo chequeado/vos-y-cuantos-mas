@@ -4,4 +4,4 @@
  * Frontend Controllers
  */
 Route::get('/', 'ApiController@index');
-Route::get('/questions/{idCategoria}', 'ApiController@questionsByCategory');
+Route::get('/questions', 'ApiController@questionsByCategory');

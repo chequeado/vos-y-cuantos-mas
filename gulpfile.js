@@ -55,6 +55,17 @@ elixir(function(mix) {
             removeComments: true
         }
       })
+      .ngTemplateCache('/**/frontend.html', 'public/js', 'resources/assets/js/modules', {
+        templateCache: {
+            standalone: true,
+            filename: "templates-frontend.js",
+            module:"templates-frontend"
+        },
+        htmlmin: {
+            collapseWhitespace: true,
+            removeComments: true
+        }
+      })
      /**
       * Process frontend SCSS stylesheets
       */
@@ -76,7 +87,9 @@ elixir(function(mix) {
      .scripts([
         'plugin/sweetalert/sweetalert.min.js',
         'plugins.js',
-        'frontend/app.js'
+        'plugin/angular/angular.min.js',
+        'frontend/app.js',
+        'modules/**/frontend.js'
      ], 'public/js/frontend.js')
 
      /**
@@ -120,6 +133,7 @@ elixir(function(mix) {
         "public/js/frontend.js", 
         "public/css/backend.css", 
         "public/js/backend.js",
-        "public/js/templates-backend.js"
+        "public/js/templates-backend.js",
+        "public/js/templates-frontend.js",
       ]);
 });

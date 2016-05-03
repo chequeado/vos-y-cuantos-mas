@@ -1,0 +1,1 @@
+{"version":3,"sources":["templates-frontend.js","options/frontend.html","slider/frontend.html"],"names":[],"mappings":"AAAA,0FCAA;ACAA","file":"templates-frontend.js","sourcesContent":[null,"<div ng-controller=\"OptionsCtrl\">\n\t\n</div>\n","<div ng-controller=\"SliderCtrl\">\n\n</div>\n"],"sourceRoot":"/source/"}

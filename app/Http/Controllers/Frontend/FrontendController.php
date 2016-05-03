@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 /**
  * Class FrontendController
@@ -20,6 +21,13 @@ class FrontendController extends Controller
         ]);
 
         return view('frontend.index');
+    }
+
+    public function app(Request $request)
+    {
+        $cat = ($request->has('cat'))?$request->input('cat'):1;
+
+        return view('frontend.app.index')->withCat($cat);
     }
 
     /**
