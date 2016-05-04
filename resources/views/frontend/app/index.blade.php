@@ -17,6 +17,7 @@
         	</div>
         	<div ng-hide="questionMode || thanks">
         		<h1>Usted seleccionó "@{{answer.text}}" al igual que el @{{answer.value}}% de la población.</h1>
+                <h2>@{{answer.text_answer}}</h2>
 	        	<h2>@{{question.answer_title}}</h2>
 	        	<h2>@{{question.answer_description}}</h2>
 	        	<button class="btn btn-default btn-lg" ng-hide="index+1 == questions.length" ng-click="next()">Siguiente pregunta</button>

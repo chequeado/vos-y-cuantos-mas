@@ -4,7 +4,7 @@
  * Frontend Controllers
  */
 Route::get('/', 'FrontendController@index')->name('frontend.index');
-Route::get('/app', 'FrontendController@app')->name('frontend.index');
+Route::get('/app', 'FrontendController@app')->name('frontend.app');
 /*Route::get('macros', 'FrontendController@macros')->name('frontend.macros');*/
 
 /**

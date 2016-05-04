@@ -19,7 +19,7 @@ class CreateOptionTable extends Migration {
 			$table->string('key', 100);
 			$table->string('text', 100)->nullable();
 			$table->integer('value')->nullable();
-			$table->boolean('correct');
+			$table->string('text_answer', 100)->nullable();
 			$table->string('image_file', 100)->nullable();
 			$table->string('icon', 100)->nullable();
 			$table->timestamps();
