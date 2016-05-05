@@ -18,13 +18,14 @@
         	<div ng-hide="questionMode || thanks">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1>Usted seleccionó "@{{answer.text}}" al igual que el @{{answer.value}}% de la población.</h1>
                         <h2>@{{answer.text_answer}}</h2>
+                        <p>Estás dentro de "@{{answer.text}}" al igual que el @{{answer.value}}% de la población.</p>
                         <p>@{{question.answer_description}}</p>
-                        <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                        <p>Fuente: <a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                        <p ng-show="question.answer_link"><a target="_blank" href="@{{question.answer_link}}" class="btn btn-primary">Ver Nota</a></p>
                     </div>
                     <div class="col-md-6">
-                        <h2>@{{question.answer_title}}</h2>
+                        <h2><i class="@{{question.icon}}"></i>@{{question.answer_title}}</h2>
                         <canvas id="doughnut" class="chart chart-doughnut"
                           chart-data="chart.data" chart-labels="chart.labels" chart-legend="true">
                         </canvas> 
