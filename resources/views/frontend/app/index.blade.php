@@ -9,19 +9,33 @@
 
         <div ng-hide="loading" ng-cloak class="col-xs-12">
         	<div ng-show="questionMode && !thanks">
-	        	<h1>@{{question.title}}</h1>
+	        	<h1><i class="@{{question.icon}}"></i>@{{question.title}}</h1>
 	        	<h2>@{{question.description}}</h2>
 	        	<div ng-include="include_options">
 	            	<!-- template de options -->
 	         	</div>
         	</div>
         	<div ng-hide="questionMode || thanks">
-        		<h1>Usted seleccionó "@{{answer.text}}" al igual que el @{{answer.value}}% de la población.</h1>
-                <h2>@{{answer.text_answer}}</h2>
-	        	<h2>@{{question.answer_title}}</h2>
-	        	<h2>@{{question.answer_description}}</h2>
-	        	<button class="btn btn-default btn-lg" ng-hide="index+1 == questions.length" ng-click="next()">Siguiente pregunta</button>
-	        	<button class="btn btn-default btn-lg" ng-show="index+1 == questions.length" ng-click="finish()">Finalizar</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Usted seleccionó "@{{answer.text}}" al igual que el @{{answer.value}}% de la población.</h1>
+                        <h2>@{{answer.text_answer}}</h2>
+                        <p>@{{question.answer_description}}</p>
+                        <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>@{{question.answer_title}}</h2>
+                        <canvas id="doughnut" class="chart chart-doughnut"
+                          chart-data="chart.data" chart-labels="chart.labels" chart-legend="true">
+                        </canvas> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+        	        	<button class="btn btn-default btn-lg btn-block" ng-hide="index+1 == questions.length" ng-click="next()">Siguiente pregunta</button>
+        	        	<button class="btn btn-default btn-lg btn-block" ng-show="index+1 == questions.length" ng-click="finish()">Finalizar</button>
+                    </div>
+                </div>
         	</div>
 
         	<div ng-show="thanks">

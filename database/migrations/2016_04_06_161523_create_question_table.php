@@ -19,10 +19,12 @@ class CreateQuestionTable extends Migration {
 			$table->string('description', 200)->nullable();
 			$table->integer('answer_type_id')->unsigned()->index('question_answer_type_idx');
 			$table->integer('category_id')->unsigned()->index('question_category_idx');
-			$table->string('answer_link', 100)->nullable();
+			$table->string('icon', 100)->nullable();
+			$table->string('answer_link', 200)->nullable();
 			$table->string('answer_title', 100);
 			$table->string('answer_description', 200)->nullable();
-			$table->string('answer_icon', 100)->nullable();
+			$table->string('answer_source', 100)->nullable();
+			$table->string('answer_source_link', 200)->nullable();
 			$table->string('answer_chart', 100)->nullable();
 			$table->timestamps();
 		});

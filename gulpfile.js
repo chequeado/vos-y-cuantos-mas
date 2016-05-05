@@ -33,12 +33,28 @@ elixir(function(mix) {
        'resources/assets/js/plugin/angular'
      )
      .copy(
+       'public/bower_components/Chart.js/Chart.js',
+       'resources/assets/js/plugin/chart'
+     )
+     .copy(
+       'public/bower_components/angular-chart.js/dist/angular-chart.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+     .copy(
        'public/bower_components/chosen/chosen.jquery.js',
        'resources/assets/js/plugin/chosen'
      )
      .copy(
+       'public/bower_components/lodash/dist/lodash.min.js',
+       'resources/assets/js/plugin/lodash'
+     )
+     .copy(
        'public/bower_components/chosen/chosen.css',
        'resources/assets/sass/plugin/chosen'
+     )
+     .copy(
+       'public/bower_components/angular-chart.js/dist/angular-chart.min.css',
+       'resources/assets/sass/plugin/charts'
      )
      .copy(
        'public/bower_components/chosen/*.png',
@@ -71,14 +87,15 @@ elixir(function(mix) {
       */
      .sass([
         'frontend/app.scss',
-        'plugin/sweetalert/sweetalert.scss'
+        'plugin/sweetalert/sweetalert.scss',
+        'plugin/charts/angular-chart.min.css',
      ], 'resources/assets/css/frontend/app.css')
 
      /**
       * Combine pre-processed frontend CSS files
       */
      .styles([
-        'frontend/app.css'
+        'frontend/app.css',
      ], 'public/css/frontend.css')
 
      /**
@@ -87,7 +104,10 @@ elixir(function(mix) {
      .scripts([
         'plugin/sweetalert/sweetalert.min.js',
         'plugins.js',
+        'plugin/chart/Chart.js',
+        'plugin/lodash/lodash.min.js',
         'plugin/angular/angular.min.js',
+        'plugin/angular/angular-chart.min.js',
         'frontend/app.js',
         'modules/**/frontend.js'
      ], 'public/js/frontend.js')
