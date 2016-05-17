@@ -46,7 +46,8 @@ return [
         ],
         'questions' => [
             'title' => 'Pregunta',
-            'description' => 'Descripción' ,
+            'description' => 'Prefijo de las opciones' ,
+            'description_suffix' => 'Sufijo de las opciones' ,
             'answer_type_id' => 'Tipo de respuesta',
             'category_id' => 'Categoría',
             'map_file' => 'Mapa' ,

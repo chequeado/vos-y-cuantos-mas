@@ -19,7 +19,8 @@ class QuestionTableSeeder extends Seeder
         $q1->answer_type_id        = 1; //options
         $q1->category_id           = 1; //general
         $q1->title                 = "Asistencia al teatro";
-        $q1->description           = "¿Cuántas veces fuiste al teatro en el último año?";
+        $q1->description           = "";
+        $q1->description_suffix    = "al teatro en el último año.";
         $q1->answer_link           = "http://chequeado.com/ultimas-noticias/espinoza-el-98-de-la-poblacion-de-la-matanza-esta-conectada-a-la-red-de-agua-potable/";
         $q1->answer_title          = "Asistencia al teatro";
         $q1->answer_description    = "Detalle metodológico: Encuesta a la población de 12 años y más de localidades de más de 30.000 habitantes de todo el país. El margen de error máximo es de +/-1,63%.";

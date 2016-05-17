@@ -21,6 +21,13 @@
         </div><!--form control-->
 
         <div class="form-group">
+            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.description_suffix') }}</label>
+            <div class="col-lg-10">
+                {!! Form::text('description_suffix', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description_suffix')]) !!}
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.category_id') }}</label>
             <div class="col-lg-10">
                 {!! Form::select('category_id', $categories, null, array('class'=>'form-control chosen-select')) !!}

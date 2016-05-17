@@ -5,3 +5,21 @@
 /**
  * Frontend Styles Start Here
  */
+.question-options{
+	margin-left: 10px;
+	margin-right: 10px;
+	display: inline;
+	.dropdown-menu{
+		top: 0px;
+		left: 0px;
+		position: fixed;
+	}
+}
+
+.question-text{
+	font-size: 3em;
+}
+
+.btn-option{
+	font-size: inherit;
+}
