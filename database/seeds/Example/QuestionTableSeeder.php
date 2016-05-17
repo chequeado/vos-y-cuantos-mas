@@ -99,7 +99,8 @@ class QuestionTableSeeder extends Seeder
         $q2->answer_type_id        = 1; //options
         $q2->category_id           = 1; //general
         $q2->title                 = "Grupos de edades";
-        $q2->description           = "¿Cuántos años tenés?";
+        $q2->description           = "Tengo";
+        $q2->description_suffix    = "de edad";
         $q2->answer_link           = "http://chequeado.com/ultimas-noticias/espinoza-el-98-de-la-poblacion-de-la-matanza-esta-conectada-a-la-red-de-agua-potable/";
         $q2->answer_title          = "Grupos de edades";
         $q2->answer_description    = "Así están compuestos los grupos de edades en Argentina";
@@ -115,7 +116,7 @@ class QuestionTableSeeder extends Seeder
         $opt                    = new Option;
         $opt->question_id       = $q2->id;
         $opt->key               = "opt0";
-        $opt->text              = "Entre 0 y 19 años";
+        $opt->text              = "entre 0 y 19";
         $opt->value             = "34";
         $opt->text_answer       = "Pequeñito! Perteneces al grupo más grande de poblcación.";
         $opt->icon              = "";
@@ -127,7 +128,7 @@ class QuestionTableSeeder extends Seeder
         $opt                    = new Option;
         $opt->question_id       = $q2->id;
         $opt->key               = "opt1";
-        $opt->text              = "Entre 20 y 39 años";
+        $opt->text              = "entre 20 y 39";
         $opt->value             = "30";
         $opt->text_answer       = "Estás en el grupo del medio y lo compartís con el 30% de la población.";
         $opt->icon              = "";
@@ -139,7 +140,7 @@ class QuestionTableSeeder extends Seeder
         $opt                    = new Option;
         $opt->question_id       = $q2->id;
         $opt->key               = "opt2";
-        $opt->text              = "Entre 40 y 59 años";
+        $opt->text              = "entre 40 y 59";
         $opt->value             = "21";
         $opt->text_answer       = "Hay un 21% de la población que te acompaña en este grupo.";
         $opt->icon              = "";
@@ -151,7 +152,7 @@ class QuestionTableSeeder extends Seeder
         $opt                    = new Option;
         $opt->question_id       = $q2->id;
         $opt->key               = "opt3";
-        $opt->text              = "Entre 60 y 79 años de edad";
+        $opt->text              = "entre 60 y 79";
         $opt->value             = "12";
         $opt->text_answer       = "¡A malcriar nietos se ha dicho!";
         $opt->icon              = "";
@@ -163,7 +164,7 @@ class QuestionTableSeeder extends Seeder
         $opt                    = new Option;
         $opt->question_id       = $q2->id;
         $opt->key               = "opt4";
-        $opt->text              = "Más de 80 años";
+        $opt->text              = "más de 80";
         $opt->value             = "3";
         $opt->text_answer       = "¡Felicitaciones! Estás en el grupo más pequeño y selecto de la población.";
         $opt->icon              = "";
