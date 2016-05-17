@@ -100,7 +100,7 @@ class QuestionTableSeeder extends Seeder
         $q2->category_id           = 1; //general
         $q2->title                 = "Grupos de edades";
         $q2->description           = "Tengo";
-        $q2->description_suffix    = "de edad";
+        $q2->description_suffix    = "años de edad";
         $q2->answer_link           = "http://chequeado.com/ultimas-noticias/espinoza-el-98-de-la-poblacion-de-la-matanza-esta-conectada-a-la-red-de-agua-potable/";
         $q2->answer_title          = "Grupos de edades";
         $q2->answer_description    = "Así están compuestos los grupos de edades en Argentina";
