@@ -1,12 +1,18 @@
-<div class="text-center question-text">
-	{{question.description}}
-	<div class="question-options dropdown" ng-controller="OptionsCtrl">
-	  <button class="btn btn-lg dropdown-toggle btn-option" ng-class="{'btn-primary':!chooseMsg}" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="correctMenuPosition($event)">
-	    {{chooseMsg || '< SELECCIONAR >'}}
-	  </button>
-	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	    <li ng-repeat="(key, opt) in question.options"><a ng-click="clickAnswer(opt)">{{opt.text}}</a></li>
-	  </ul>
+<div class="md-padding">
+	<div layout="row">
+	<h2 class="d-display-3">
+		{{question.description}}
+
+		<md-input-container>
+			<label ng-hide="question.answer">< SELECCIONAR ></label>
+			<md-select ng-model="question.answer">
+	          <md-option ng-repeat="opt in question.options" ng-value="opt">
+	            {{opt.text}}
+	          </md-option>
+	        </md-select>
+	    </md-input-container>
+
+		{{question.description_suffix}}
+	</h2>
 	</div>
-	{{question.description_suffix}}
 </div>

@@ -108,6 +108,7 @@ elixir(function(mix) {
      .sass([
         'plugin/sweetalert/sweetalert.scss',
         'plugin/angular/angular-material.scss',
+        'plugin/charts/angular-chart.min.css',
         'frontend/app.scss',
      ], 'resources/assets/css/frontend/app.css')
 
@@ -151,7 +152,7 @@ elixir(function(mix) {
       * Combine pre-processed backend CSS files
       */
      .styles([
-         'backend/app.css',
+        'backend/app.css',
      ], 'public/css/backend.css')
 
      /**

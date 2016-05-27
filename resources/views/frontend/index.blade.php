@@ -31,8 +31,8 @@
             Fusce tempus ex ut posuere congue. Donec nec consectetur nisi. Aliquam gravida nunc diam, et hendrerit dolor volutpat at. Duis pulvinar rutrum quam, a dapibus mi blandit sed. Sed sagittis, leo eu dignissim rutrum, dolor erat ultrices purus, vel aliquam urna ipsum sed urna. Nullam varius mattis nisl nec bibendum.
           </p>
         </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-          <!--md-button ng-href="/app" class="md-icon-button" aria-label="Comenzar">
+        <!--md-card-actions layout="row" layout-align="end center">
+          <md-button ng-href="/app" class="md-icon-button" aria-label="Comenzar">
             <md-icon md-font-icon="material-icons" ng-style="">face</md-icon>
           </md-button>
         </md-card-actions-->
