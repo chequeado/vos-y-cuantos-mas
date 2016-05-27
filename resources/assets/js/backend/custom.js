@@ -4,11 +4,13 @@ var Backend = {};
 
 Backend.init = function(){
     $(".chosen-select").chosen();
+    $(".icon-select").chosenIcon({
+      disable_search_threshold: 10
+      });
 };
 
 Backend.initEditQuestion = function(){
 
-    console.log('pala');
     
 };
 

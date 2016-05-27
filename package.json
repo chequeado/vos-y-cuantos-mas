@@ -6,8 +6,8 @@
     "laravel-elixir-ngtemplatecache": "^0.2.0"
   },
   "dependencies": {
-    "laravel-elixir": "^4.0.0",
     "bootstrap-sass": "^3.0.0",
-    "font-awesome": "^4.5.0"
+    "font-awesome": "^4.6.3",
+    "laravel-elixir": "^4.0.0"
   }
 }

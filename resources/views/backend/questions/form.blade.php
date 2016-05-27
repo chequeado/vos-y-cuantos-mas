@@ -85,9 +85,11 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.icon') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('icon', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.icon')]) !!}
+                @include('backend.questions.select', array('name' => 'icon','selected' => (isset($obj))?$obj->icon:null))
             </div>
         </div><!--form control-->
+
+
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_source') }}</label>
@@ -100,13 +102,6 @@
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_source_link') }}</label>
             <div class="col-lg-10">
                 {!! Form::text('answer_source_link', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_source_link')]) !!}
-            </div>
-        </div><!--form control-->
-
-        <div class="form-group">
-            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_chart') }}</label>
-            <div class="col-lg-10">
-                {!! Form::text('answer_chart', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_chart')]) !!}
             </div>
         </div><!--form control-->
 

@@ -138,6 +138,7 @@ elixir(function(mix) {
          'plugins.js',
          'backend/app.js',
          'backend/plugin/toastr/toastr.min.js',
+         'backend/plugin/chosenIcon.jquery.js',
          'plugin/chosen/chosen.jquery.js',
          'plugin/angular/angular.min.js',
          'plugin/angular/angular-chosen.min.js',
