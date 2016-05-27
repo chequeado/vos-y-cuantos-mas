@@ -1,5 +1,5 @@
 @import "variable-overrides";
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+/*@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";*/
 @import '../../../../node_modules/font-awesome/scss/font-awesome';
 
 /**
@@ -22,4 +22,8 @@
 
 .btn-option{
 	font-size: inherit;
+}
+
+.btn-arrow .md-font{
+	font-size:37px;
 }

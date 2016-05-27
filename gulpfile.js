@@ -41,6 +41,26 @@ elixir(function(mix) {
        'resources/assets/js/plugin/angular'
      )
      .copy(
+       'public/bower_components/angular-animate/angular-animate.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+     .copy(
+       'public/bower_components/angular-aria/angular-aria.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+     .copy(
+       'public/bower_components/angular-messages/angular-messages.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+     .copy(
+       'public/bower_components/angular-material/angular-material.min.js',
+       'resources/assets/js/plugin/angular'
+     )
+      .copy(
+       'public/bower_components/angular-material/angular-material.scss',
+       'resources/assets/sass/plugin/angular'
+     )
+     .copy(
        'public/bower_components/chosen/chosen.jquery.js',
        'resources/assets/js/plugin/chosen'
      )
@@ -86,16 +106,16 @@ elixir(function(mix) {
       * Process frontend SCSS stylesheets
       */
      .sass([
-        'frontend/app.scss',
         'plugin/sweetalert/sweetalert.scss',
-        'plugin/charts/angular-chart.min.css',
+        'plugin/angular/angular-material.scss',
+        'frontend/app.scss',
      ], 'resources/assets/css/frontend/app.css')
 
      /**
       * Combine pre-processed frontend CSS files
       */
      .styles([
-        'frontend/app.css',
+        'frontend/app.css'
      ], 'public/css/frontend.css')
 
      /**
@@ -107,6 +127,10 @@ elixir(function(mix) {
         'plugin/chart/Chart.js',
         'plugin/lodash/lodash.min.js',
         'plugin/angular/angular.min.js',
+        'plugin/angular/angular-animate.min.js',
+        'plugin/angular/angular-aria.min.js',
+        'plugin/angular/angular-messages.min.js',
+        'plugin/angular/angular-material.min.js',
         'plugin/angular/angular-chart.min.js',
         'frontend/app.js',
         'modules/**/frontend.js'
