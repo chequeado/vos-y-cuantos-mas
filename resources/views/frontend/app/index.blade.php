@@ -37,7 +37,7 @@
                 </div>
 
                 <div ng-hide="questionMode || thanks">
-                    <md-card-content flex layout-padding layout="row">
+                    <md-card-content flex layout-padding layout="row" layout-sm="column" layout-xs="column">
                         <div flex-xs flex-gt-sm="50" layout="column">
                             <h2>@{{question.answer.text_answer}}</h2>
                             <p>Estás dentro de "@{{question.answer.text}}" al igual que el @{{question.answer.value}}% de la población.</p>
