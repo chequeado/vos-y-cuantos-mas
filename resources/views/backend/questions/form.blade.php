@@ -14,6 +14,27 @@
         </div><!--form control-->
 
         <div class="form-group">
+            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.call') }}</label>
+            <div class="col-lg-10">
+                {!! Form::textarea('call_action', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.call')]) !!}
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.category_id') }}</label>
+            <div class="col-lg-10">
+                {!! Form::select('category_id', $categories, null, array('class'=>'form-control chosen-select')) !!}
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.image_file') }}</label>
+            <div class="col-lg-10">
+                {!! Form::text('image_file', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.image_file')]) !!}
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.description') }}</label>
             <div class="col-lg-10">
                 {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description')]) !!}
@@ -27,12 +48,6 @@
             </div>
         </div><!--form control-->
 
-        <div class="form-group">
-            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.category_id') }}</label>
-            <div class="col-lg-10">
-                {!! Form::select('category_id', $categories, null, array('class'=>'form-control chosen-select')) !!}
-            </div>
-        </div><!--form control-->
 
     </div>
 
@@ -78,7 +93,7 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_description') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('answer_description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_description')]) !!}
+                {!! Form::textarea('answer_description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_description')]) !!}
             </div>
         </div><!--form control-->
 
@@ -106,6 +121,21 @@
         </div><!--form control-->
 
     </div>
+
+    <div class="box-header with-border">
+        <h3 class="box-title">{{ trans('custom.backend.questions.share') }}</h3>
+    </div>
+
+    <div class="box-body">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.share_text') }}</label>
+            <div class="col-lg-10">
+                {!! Form::text('share_text', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.share_text')]) !!}
+            </div>
+        </div><!--form control-->
+
+    </div>
+
 </div>
 
 

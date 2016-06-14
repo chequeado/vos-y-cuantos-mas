@@ -45,12 +45,14 @@ return [
             'table' => 'tipo/s de respuestas totales',
         ],
         'questions' => [
-            'title' => 'Pregunta',
+            'title' => 'Título',
+            'call' => 'Desarrollo previo',
             'description' => 'Prefijo de las opciones' ,
             'description_suffix' => 'Sufijo de las opciones' ,
             'answer_type_id' => 'Tipo de respuesta',
             'category_id' => 'Categoría',
             'map_file' => 'Mapa' ,
+            'image_file' => 'Imagen' ,
             'answer_link' => 'Link de nota' ,
             'answer_source' => 'Fuente' ,
             'answer_source_link' => 'Link de la fuente' ,
@@ -65,6 +67,8 @@ return [
             'table' => 'pregunta/s totales',
             'answer' => 'Respuesta',
             'options' => 'Opciones',
+            'share' => 'Compartir',
+            'share_text' => 'Texto para compartir'
         ]
     ]
 

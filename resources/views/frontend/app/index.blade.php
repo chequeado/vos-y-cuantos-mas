@@ -1,15 +1,14 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div ng-controller="MainCtrl" ng-init="init('{{$cat}}')" ng-cloak>
+    <div class="question-container" ng-controller="MainCtrl" ng-init="init('{{$cat}}')" ng-cloak layout="row" layout-fill ng-style="{'background-image': 'url(' + question.image_file + ')'}">
 
-        <md-content layout="row" layout-align="center center" layout-fill ng-show="loading">
-            <md-progress-circular class="md-primary" md-mode="indeterminate" md-diameter="100"></md-progress-circular>
-        </md-content>
-
-        <md-content layout="row" layout-align="center center" layout-fill ng-hide="loading">
-            <div flex-xs flex-gt-sm="75" layout="column">
-              <md-card>
+        <md-content class="question-bg" layout="row" layout-align="center top" layout-fill flex-gt-sm="100">
+            
+            <md-progress-circular ng-show="loading" class="md-primary" md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+            
+            <div flex-xs="" flex-gt-sm="75" ng-hide="loading">
+              <md-card layout="column">
                 <md-toolbar md-accent>
                   <div class="md-toolbar-tools">
                     <md-button class="md-icon-button custom-icon-header" aria-label="Chequeado">
@@ -21,15 +20,18 @@
                     <span flex></span>
                     <p class="md-subhead">@{{index+1}} de @{{questions.length}}</p>
                   </div>
-                </md-toolbar>            
-                
+                </md-toolbar>
                 <div ng-show="questionMode && !thanks">
                     <md-card-content flex layout-padding>
+                        <p>@{{question.call_action}}</p>
                         <div ng-include="include_options">
                             <!-- template de options -->
                         </div>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
+                        <md-button ng-hide="question.answer" ng-click="next()" class="md-raised">
+                            Saltar pregunta
+                        </md-button>
                         <md-button ng-hide="!question.answer" ng-click="goToAnswer()" class="md-raised md-accent">
                             Ver Resultado
                         </md-button>
@@ -69,7 +71,6 @@
               </md-card>
             </div>
         </md-content>
-
 
     </div><!--row-->
 @endsection

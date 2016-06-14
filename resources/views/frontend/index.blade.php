@@ -3,7 +3,7 @@
 @section('content')
 
 
-  <md-content layout="row" layout-align="center center" layout-fill>
+  <md-content layout="row" layout-align="center top" layout-fill>
     <div flex-xs flex-gt-sm="50" layout="column">
       <md-card>
         <md-toolbar md-accent>
@@ -31,15 +31,18 @@
             Fusce tempus ex ut posuere congue. Donec nec consectetur nisi. Aliquam gravida nunc diam, et hendrerit dolor volutpat at. Duis pulvinar rutrum quam, a dapibus mi blandit sed. Sed sagittis, leo eu dignissim rutrum, dolor erat ultrices purus, vel aliquam urna ipsum sed urna. Nullam varius mattis nisl nec bibendum.
           </p>
         </md-card-content>
-        <!--md-card-actions layout="row" layout-align="end center">
-          <md-button ng-href="/app" class="md-icon-button" aria-label="Comenzar">
-            <md-icon md-font-icon="material-icons" ng-style="">face</md-icon>
-          </md-button>
-        </md-card-actions-->
         <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-href="/app" class="md-raised md-accent">
-                Comenzar
-            </md-button>
+            @if(count($cats)>1)
+              @foreach($cats as $cat)
+                <md-button ng-href="/app?cat={{$cat->id}}" class="md-raised md-accent">
+                    {{$cat->name}}
+                </md-button>
+              @endforeach
+            @else
+              <md-button ng-href="/app" class="md-raised md-accent">
+                  Comenzar
+              </md-button>
+            @endif
         </md-card-actions>
       </md-card>
     </div>

@@ -31,3 +31,12 @@
 .custom-icon-header{
 	font-size: 25px;
 }
+.question-container{
+	background-size: cover;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	background-position:50% 50%;
+	.question-bg{
+		background-color: rgba(0,0,0,0.8);
+	}
+}

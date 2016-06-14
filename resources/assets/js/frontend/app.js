@@ -35,8 +35,12 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     };
 
     $scope.next = function(){
-    	$scope.index++;
-    	$scope.renderQuestion();
+        if($scope.index+1 == $scope.questions.length){
+            $scope.finish();
+        }else{
+        	$scope.index++;
+        	$scope.renderQuestion();            
+        }
     };
 
     $scope.finish = function(){

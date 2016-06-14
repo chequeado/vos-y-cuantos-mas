@@ -24,10 +24,8 @@
     </head>
     <body id="app-layout">
 
-        <div class="container">
-            @include('includes.partials.messages')
-            @yield('content')
-        </div><!-- container -->
+        @include('includes.partials.messages')
+        @yield('content')
 
         <!-- JavaScripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

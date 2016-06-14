@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\Backend\Category\CategoryRepositoryContract;
 use Illuminate\Http\Request;
 
 /**
@@ -11,6 +12,14 @@ use Illuminate\Http\Request;
  */
 class FrontendController extends Controller
 {
+
+    public function __construct(
+        CategoryRepositoryContract $categories
+    )
+    {
+        $this->categories       = $categories;
+    }
+
     /**
      * @return \Illuminate\View\View
      */
@@ -20,7 +29,9 @@ class FrontendController extends Controller
             'test' => 'it works!',
         ]);
 
-        return view('frontend.index');
+        $cats = $this->categories->getAllCategories();
+
+        return view('frontend.index')->withCats($cats);
     }
 
     public function app(Request $request)
