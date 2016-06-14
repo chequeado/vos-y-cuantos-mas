@@ -11,7 +11,7 @@
 
 @section('content')
 
-    {!! Form::model($obj, ['route' => ['admin.questions.update', $obj->id], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH']) !!}
+    {!! Form::model($obj, ['route' => ['admin.questions.update', $obj->id], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'files'=>true]) !!}
 
         @include('backend.questions.form')
 

@@ -11,7 +11,7 @@
 
 @section('content')
 
-    {!! Form::open(['route' => 'admin.questions.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
+    {!! Form::open(['route' => 'admin.questions.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post','files'=>true]) !!}
 
         @include('backend.questions.form')
 

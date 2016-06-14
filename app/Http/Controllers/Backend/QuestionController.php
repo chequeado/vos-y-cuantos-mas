@@ -63,7 +63,16 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $this->questions->create($request->all());
+        $fields = $request->except('image_new_file');        
+
+        if ($request->hasFile('image_new_file')) {
+            $extension = $request->file('image_new_file')->getClientOriginalExtension();
+            $fileName = round(microtime(true) * 1000).'.'.$extension;
+            \Image::make($request->file('image_new_file'))->save(public_path().'/uploads/images/'.$fileName);
+            $fields['image_file'] = $fileName;
+        }
+        
+        $id = $this->questions->create($fields);
 
         $this->options->insertAll($id,$request['option']);
 
@@ -92,7 +101,17 @@ class QuestionController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->questions->update($id, $request->all());
+
+        $fields = $request->except('image_new_file');        
+
+        if ($request->hasFile('image_new_file')) {
+            $extension = $request->file('image_new_file')->getClientOriginalExtension();
+            $fileName = round(microtime(true) * 1000).'.'.$extension;
+            \Image::make($request->file('image_new_file'))->save(public_path().'/uploads/images/'.$fileName);
+            $fields['image_file'] = $fileName;
+        }
+
+        $this->questions->update($id, $fields);
 
         $this->options->insertAll($id,$request['option']);
         

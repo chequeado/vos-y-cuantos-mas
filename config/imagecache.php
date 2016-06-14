@@ -31,8 +31,7 @@ return array(
     */
     
     'paths' => array(
-        public_path('upload'),
-        public_path('images')
+        public_path().'/uploads/images'
     ),
 
     /*
@@ -66,6 +65,6 @@ return array(
     |
     */
    
-    'lifetime' => 43200,
+    'lifetime' => 1440,
 
 );

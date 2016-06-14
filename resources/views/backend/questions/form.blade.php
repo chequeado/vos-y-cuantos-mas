@@ -29,8 +29,18 @@
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.image_file') }}</label>
-            <div class="col-lg-10">
+            <div class="hide">
                 {!! Form::text('image_file', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.image_file')]) !!}
+            </div>
+            <div ng-controller="ImageCtrl" ng-init="init('{{isset($obj)?$obj->image_file:''}}')">
+                <div class="col-lg-5">
+                    <input type='file' class="hide" id="inputFile" name="image_new_file"/>
+                    <img id="image_upload_preview" class="img-responsive" ng-src="@{{imgUrl}}" />
+                </div>
+                <div class="col-lg-5">
+                    <a class="btn btn-primary" ng-click="openImage()">Cambiar Imagen</a>
+                    <a class="btn btn-default hide" ng-click="clearImage()">Limpiar imagen</a>
+                </div>
             </div>
         </div><!--form control-->
 
