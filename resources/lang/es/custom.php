@@ -46,6 +46,7 @@ return [
         ],
         'questions' => [
             'title' => 'Título',
+            'question' => 'Preguntas',
             'call' => 'Desarrollo previo',
             'description' => 'Prefijo de las opciones' ,
             'description_suffix' => 'Sufijo de las opciones' ,

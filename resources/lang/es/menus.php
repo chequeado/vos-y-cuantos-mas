@@ -51,14 +51,15 @@ return [
         ],
 
         'log-viewer' => [
-            'main' => 'Gestór de Logs',
-            'dashboard' => 'Principal',
+            'main' => 'Gestor de Logs',
+            'dashboard' => 'Ayuda',
             'logs' => 'Logs',
         ],
 
         'sidebar' => [
-            'dashboard' => 'Principal',
+            'dashboard' => 'Ayuda',
             'general' => 'General',
+            'system' => 'Sistema',
         ],
     ],
 
