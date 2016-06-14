@@ -5,6 +5,7 @@ Homestead.yaml
 Homestead.json
 .env
 
+/public/uploads/images/*
 /public/bower_components
 /public/css/frontend.css
 /public/css/frontend.css.map
