@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
     <div class="question-container" ng-controller="MainCtrl" ng-init="init('{{$cat}}')" ng-cloak layout="row" layout-fill ng-style="{'background-image': 'url(/imagecache/original/' + question.image_file + ')'}">

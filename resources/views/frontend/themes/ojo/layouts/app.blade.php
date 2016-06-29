@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="DesmitificadorApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,19 +13,19 @@
         <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
         @yield('meta')
 
-        {!! Html::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') !!}
+        <!-- Styles -->
+        @yield('before-styles-end')
+        {!! Html::style(elixir('css/frontend.'.$theme.'.css')) !!}
+        @yield('after-styles-end')
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body id="app-layout">
 
-        <div class="container">
-            <hr>
-            @include('includes.partials.messages')
-            <hr>
-            @yield('content')
-        </div><!-- container -->
+        @include('includes.partials.messages')
+        @yield('content')
 
         <!-- JavaScripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

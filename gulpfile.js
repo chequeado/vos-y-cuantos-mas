@@ -109,15 +109,29 @@ elixir(function(mix) {
         'plugin/sweetalert/sweetalert.scss',
         'plugin/angular/angular-material.scss',
         'plugin/charts/angular-chart.min.css',
-        'frontend/app.scss',
-     ], 'resources/assets/css/frontend/app.css')
+        'frontend/chq.scss',
+     ], 'resources/assets/css/frontend/chq.css')
 
      /**
       * Combine pre-processed frontend CSS files
       */
      .styles([
-        'frontend/app.css'
-     ], 'public/css/frontend.css')
+        'frontend/chq.css'
+     ], 'public/css/frontend.chq.css')
+
+     .sass([
+        'plugin/sweetalert/sweetalert.scss',
+        'plugin/angular/angular-material.scss',
+        'plugin/charts/angular-chart.min.css',
+        'frontend/ojo.scss',
+     ], 'resources/assets/css/frontend/ojo.css')
+
+     /**
+      * Combine pre-processed frontend CSS files
+      */
+     .styles([
+        'frontend/ojo.css'
+     ], 'public/css/frontend.ojo.css')
 
      /**
       * Combine frontend scripts
@@ -175,7 +189,8 @@ elixir(function(mix) {
       * Apply version control
       */
      .version([
-        "public/css/frontend.css", 
+        "public/css/frontend.ojo.css", 
+        "public/css/frontend.chq.css", 
         "public/js/frontend.js", 
         "public/css/backend.css", 
         "public/js/backend.js",

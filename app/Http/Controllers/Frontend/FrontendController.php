@@ -25,27 +25,28 @@ class FrontendController extends Controller
      */
     public function index()
     {
+        $theme = \Config::get('site.theme');
+        
         javascript()->put([
-            'test' => 'it works!',
+            'theme' => $theme
         ]);
 
         $cats = $this->categories->getAllCategories();
 
-        return view('frontend.index')->withCats($cats);
+        return view('frontend.themes.'.$theme.'.index')->withCats($cats)->withTheme($theme);
     }
 
     public function app(Request $request)
     {
+        $theme = \Config::get('site.theme');
+        
+        javascript()->put([
+            'theme' => $theme
+        ]);
+
         $cat = ($request->has('cat'))?$request->input('cat'):1;
 
-        return view('frontend.app.index')->withCat($cat);
+        return view('frontend.themes.'.$theme.'.app.index')->withCat($cat)->withTheme($theme);
     }
 
-    /**
-     * @return \Illuminate\View\View
-     */
-    public function macros()
-    {
-        return view('frontend.macros');
-    }
 }

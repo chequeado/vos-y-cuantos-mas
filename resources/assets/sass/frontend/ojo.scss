@@ -1,0 +1,50 @@
+@import "variable-overrides";
+/*@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";*/
+@import '../../../../node_modules/font-awesome/scss/font-awesome';
+
+body{
+	background-image: url('http://cuentasjuradas.ojo-publico.com/ojopublico/logo-video.png');
+}
+
+md-content {
+	background: none;
+}
+
+/**
+ * Frontend Styles Start Here
+ */
+.question-options{
+	margin-left: 10px;
+	margin-right: 10px;
+	display: inline;
+	.dropdown-menu{
+		top: 0px;
+		left: 0px;
+		position: fixed;
+	}
+}
+
+.question-text{
+	font-size: 3em;
+}
+
+.btn-option{
+	font-size: inherit;
+}
+
+.btn-arrow .md-font{
+	font-size:37px;
+}
+
+.custom-icon-header{
+	font-size: 25px;
+}
+.question-container{
+	background-size: cover;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	background-position:50% 50%;
+	.question-bg{
+		background-color: rgba(0,0,0,0.8);
+	}
+}

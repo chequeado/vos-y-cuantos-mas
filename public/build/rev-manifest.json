@@ -1,6 +1,7 @@
 {
   "css/backend.css": "css/backend-2bfd81e39e.css",
-  "css/frontend.css": "css/frontend-621ca2fa06.css",
+  "css/frontend.chq.css": "css/frontend.chq-50e6badc81.css",
+  "css/frontend.ojo.css": "css/frontend.ojo-bab388a37c.css",
   "js/backend.js": "js/backend-190b492b1a.js",
   "js/frontend.js": "js/frontend-eb9bac903b.js",
   "js/templates-backend.js": "js/templates-backend-896b48f3c0.js",

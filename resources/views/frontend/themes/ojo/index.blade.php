@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('frontend.themes.'.$theme.'.layouts.master')
 
 @section('content')
 
@@ -17,7 +17,7 @@
           </div>
         </md-toolbar>
         
-        <img ng-src="http://www.addcovers.com/covers/9is08825ma759m0.jpg" class="md-card-image" alt="Banner">
+        <img ng-src="http://www.f-covers.com/cover/abstract-lines-facebook-cover-timeline-banner-for-fb.jpg" class="md-card-image" alt="Banner">
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Desmitificador</span>
@@ -53,6 +53,6 @@
 @section('after-scripts-end')
     <script>
         //Being injected from FrontendController
-        console.log(test);
+        console.log(theme);
     </script>
 @stop

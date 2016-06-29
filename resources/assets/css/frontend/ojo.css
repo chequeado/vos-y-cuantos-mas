@@ -26521,6 +26521,12 @@ md-tooltip {
   overflow: visible;
   clip: auto; }
 
+body {
+  background-image: url("http://cuentasjuradas.ojo-publico.com/ojopublico/logo-video.png"); }
+
+md-content {
+  background: none; }
+
 /**
  * Frontend Styles Start Here
  */
@@ -26553,6 +26559,4 @@ md-tooltip {
   .question-container .question-bg {
     background-color: rgba(0, 0, 0, 0.8); }
 
-/*# sourceMappingURL=app.css.map */
-
-/*# sourceMappingURL=frontend.css.map */
+/*# sourceMappingURL=ojo.css.map */

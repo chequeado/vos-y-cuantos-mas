@@ -15,7 +15,7 @@
 
         <!-- Styles -->
         @yield('before-styles-end')
-        {!! Html::style(elixir('css/frontend.css')) !!}
+        {!! Html::style(elixir('css/frontend.'.$theme.'.css')) !!}
         @yield('after-styles-end')
 
         <!-- Fonts -->
@@ -45,7 +45,7 @@
              */
             angular.module('HomeApp', ['ngMaterial'])
             .config(function($mdThemingProvider) {
-              $mdThemingProvider.theme('default')
+              $mdThemingProvider.theme('altTheme')
                 /*.primaryPalette('pink')
                 .accentPalette('orange')
                 .backgroundPalette('grey');*/
