@@ -1,7 +1,7 @@
 @extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
-    <div class="question-container" ng-controller="MainCtrl" ng-init="init('{{$cat}}')" ng-cloak layout="row" layout-fill ng-style="{'background-image': 'url(/imagecache/original/' + question.image_file + ')'}">
+    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}", [ "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf" ])' ng-cloak layout="row" layout-fill ng-style="{'background-image': 'url(/imagecache/original/' + question.image_file + ')'}">
 
         <md-content class="question-bg" layout="row" layout-align="center top" layout-fill flex-gt-sm="100">
             
@@ -49,8 +49,18 @@
                         </div>
                         <div flex-xs flex-gt-sm="50" layout="column">
                             <canvas id="doughnut" class="chart chart-doughnut"
-                              chart-data="chart.data" chart-labels="chart.labels" chart-legend="true">
+                              chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
                             </canvas>
+                            <div hide show-xs>
+                                <table class="table">
+                                    <thead>
+                                        <tr><td>Descripción</td><td>Valor</td></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td>@{{o.value}}%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">

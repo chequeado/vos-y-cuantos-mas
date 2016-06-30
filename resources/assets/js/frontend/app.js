@@ -1,7 +1,7 @@
 var DesmitificadorApp = angular.module('DesmitificadorApp', ['templates-frontend','chart.js','ngMaterial']);
 
 DesmitificadorApp.config(function(ChartJsProvider){
-    ChartJsProvider.setOptions({ colours : [  '#dfddf2','#bfbce5','#9e9cd7','#7c7dca','#565fbc','#3b4aa3','#323b80','#292e5f','#1f2140','#151423'] });
+//    ChartJsProvider.setOptions({ colours :  });
 })
 
 DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http) {
@@ -17,8 +17,10 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
 
     $scope.chart = {};
 
-    $scope.init = function(category_id){
-    	$http.get('/api/questions?category_id='+category_id, {})
+    $scope.init = function(category_id,colors){
+        //Chart.defaults.global.colours = colors;
+    	$scope.chart.colours = colors;
+        $http.get('/api/questions?category_id='+category_id, {})
     		.then(function(response){
     			$scope.category = response.data.metadata.category;
     			$scope.questions = response.data.records;
@@ -56,7 +58,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
 
     $scope.goToAnswer = function(){
         $scope.questionMode = false;
-        $scope.question.options = $scope.question.options.sort(function(a, b){return a.value-b.value});
+        $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
         $scope.chart.data = _.map($scope.question.options,function(d){
             return d.value;
         });
