@@ -8,7 +8,7 @@
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="{{$obj->title}}">
   <meta itemprop="description" content="{{$obj->call_action}}">
-  <meta itemprop="image" content="{{URL::to('/').'/imagecache/medium/'.$obj->image_file}}">
+  <meta itemprop="image" content="{{URL::to('/').'/imagecache/large/'.$obj->image_file}}">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
@@ -17,13 +17,13 @@
   <meta name="twitter:description" content="{{$obj->call_action}}">
   <meta name="twitter:creator" content="@chequeado">
   <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content="{{URL::to('/').'/imagecache/medium/'.$obj->image_file}}">
+  <meta name="twitter:image:src" content="{{URL::to('/').'/imagecache/large/'.$obj->image_file}}">
 
   <!-- Open Graph data -->
   <meta property="og:title" content="{{$obj->title}}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{route('frontend.question.view', ['id' => $obj->id])}}" />
-  <meta property="og:image" content="{{URL::to('/').'/imagecache/medium/'.$obj->image_file}}" />
+  <meta property="og:image" content="{{URL::to('/').'/imagecache/large/'.$obj->image_file}}" />
   <meta property="og:description" content="{{$obj->call_action}}" />
   <meta property="og:site_name" content="El Desmitificador" />
   <meta property="fb:admins" content="Facebook numberic ID" /> 
