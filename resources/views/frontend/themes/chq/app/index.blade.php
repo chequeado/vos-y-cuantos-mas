@@ -29,7 +29,7 @@
                         </div>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button ng-hide="question.answer" ng-click="next()" class="md-raised">
+                        <md-button ng-hide="question.answer" ng-click="skip()" class="md-raised">
                             Saltar pregunta
                         </md-button>
                         <md-button ng-hide="!question.answer" ng-click="goToAnswer()" class="md-raised md-accent">
@@ -64,7 +64,7 @@
                         </div>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-raised md-accent" ng-hide="index+1 == questions.length" ng-click="next()">Siguiente pregunta</md-button>
+                        <md-button class="md-raised md-accent" ng-hide="index+1 == questions.length" ng-click="moveNext()">Siguiente pregunta</md-button>
                         <md-button class="md-raised md-accent" ng-show="index+1 == questions.length" ng-click="finish()">Finalizar</md-button>
                     </md-card-actions>
                 </div>

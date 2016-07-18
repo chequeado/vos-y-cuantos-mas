@@ -5,7 +5,7 @@
 
 		<md-input-container>
 			<label ng-hide="question.answer">< SELECCIONAR ></label>
-			<md-select ng-model="question.answer">
+			<md-select ng-model="question.answer" md-on-open="openSelect()" md-on-close="closeSelect()">
 	          <md-option ng-repeat="opt in question.options" ng-value="opt">
 	            {{opt.text}}
 	          </md-option>
