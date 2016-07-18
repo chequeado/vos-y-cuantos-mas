@@ -32,18 +32,18 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     };
 
     $scope.start = function(){
-        ga('send', 'event', 'Category', 'start', $scope.category.name , $scope.category.id);
+        sendEvent('Category', 'start', $scope.category.name , $scope.category.id);
     	$scope.index = 0;
     	$scope.renderQuestion();
     };
 
     $scope.skip = function(){
-        ga('send', 'event', 'Question', 'skip', $scope.question.title, $scope.question.id);
+        sendEvent('Question', 'skip', $scope.question.title, $scope.question.id);
         $scope.next();
     };
 
     $scope.moveNext = function(){
-        ga('send', 'event', 'Question', 'next', $scope.question.title, $scope.question.id);
+        sendEvent('Question', 'next', $scope.question.title, $scope.question.id);
         $scope.next();
     };
 
@@ -68,7 +68,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     };
 
     $scope.goToAnswer = function(){
-        ga('send', 'event', 'Question', 'result', $scope.question.title, $scope.question.id);
+        sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
         $scope.questionMode = false;
         $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
         $scope.chart.data = _.map($scope.question.options,function(d){
@@ -81,14 +81,20 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     };
 
     $scope.openSelect = function(){
-        ga('send', 'event', 'Option', 'open', $scope.question.title, $scope.question.id);
+        sendEvent('Option', 'open', $scope.question.title, $scope.question.id);
     };
 
     $scope.closeSelect = function(){
-        ga('send', 'event', 'Option', 'close', $scope.question.title, $scope.question.id);
+        sendEvent('Option', 'close', $scope.question.title, $scope.question.id);
         if($scope.question.answer){
-            ga('send', 'event', 'Option', 'select', $scope.question.answer.text, $scope.question.answer.id);        
+            sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);        
         }
     };
+
+    function sendEvent(cat,action,label,value){
+        if(ga){
+            ga('send', 'event', cat,action,label,value);
+        }
+    }
 
 });
