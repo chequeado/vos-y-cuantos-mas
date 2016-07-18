@@ -4,7 +4,7 @@ DesmitificadorApp.config(function(ChartJsProvider){
 //    ChartJsProvider.setOptions({ colours :  });
 })
 
-DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http) {
+DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http, $window) {
 
 	$scope.loading = true;
 
@@ -32,18 +32,18 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     };
 
     $scope.start = function(){
-        sendEvent('Category', 'start', $scope.category.name , $scope.category.id);
+        $scope.sendEvent('Category', 'start', $scope.category.name , $scope.category.id);
     	$scope.index = 0;
     	$scope.renderQuestion();
     };
 
     $scope.skip = function(){
-        sendEvent('Question', 'skip', $scope.question.title, $scope.question.id);
+        $scope.sendEvent('Question', 'skip', $scope.question.title, $scope.question.id);
         $scope.next();
     };
 
     $scope.moveNext = function(){
-        sendEvent('Question', 'next', $scope.question.title, $scope.question.id);
+        $scope.sendEvent('Question', 'next', $scope.question.title, $scope.question.id);
         $scope.next();
     };
 
@@ -60,15 +60,18 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     	$scope.thanks = true;
     };
 
+    $scope.bgImage = '';
+
     $scope.renderQuestion = function(){
         $scope.questionMode = true;
         $scope.question = $scope.questions[$scope.index];
+        $scope.bgImage = 'url(/imagecache/original/' + $scope.question.image_file + ')';
         $scope.question.answer = false;
     	$scope.include_options = $scope.question.answer_type.slug+'/frontend.html';
     };
 
     $scope.goToAnswer = function(){
-        sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
+        $scope.sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
         $scope.questionMode = false;
         $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
         $scope.chart.data = _.map($scope.question.options,function(d){
@@ -81,19 +84,19 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http)
     };
 
     $scope.openSelect = function(){
-        sendEvent('Option', 'open', $scope.question.title, $scope.question.id);
+        $scope.sendEvent('Option', 'open', $scope.question.title, $scope.question.id);
     };
 
     $scope.closeSelect = function(){
-        sendEvent('Option', 'close', $scope.question.title, $scope.question.id);
+        $scope.sendEvent('Option', 'close', $scope.question.title, $scope.question.id);
         if($scope.question.answer){
-            sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);        
+            $scope.sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);        
         }
     };
 
-    function sendEvent(cat,action,label,value){
-        if(ga){
-            ga('send', 'event', cat,action,label,value);
+    $scope.sendEvent = function(cat,action,label,value){
+        if($window.ga){
+            $window.ga('send', 'event', cat,action,label,value);
         }
     }
 

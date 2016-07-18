@@ -1,7 +1,7 @@
 @extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
-    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}", [ "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf" ])' ng-cloak layout="row" layout-fill ng-style="{'background-image': 'url(/imagecache/original/' + question.image_file + ')'}">
+    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}", [ "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf" ])' ng-cloak layout="row" layout-fill ng-style="{'background-image': bgImage}">
 
         <md-content class="question-bg" layout="row" layout-align="center top" layout-fill flex-gt-sm="100">
             
