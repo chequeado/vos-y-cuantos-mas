@@ -4388,6 +4388,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
 	$scope.index = null;
 	$scope.thanks = false;
     $scope.answer = false;
+    $scope.bet = 50;
 
 	$scope.questionMode = true;
 
@@ -4443,11 +4444,13 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         $scope.question = $scope.questions[$scope.index];
         $scope.bgImage = 'url(/imagecache/original/' + $scope.question.image_file + ')';
         $scope.question.answer = false;
+        $scope.question.bet = 50;
     	$scope.include_options = $scope.question.answer_type.slug+'/frontend.html';
     };
 
     $scope.goToAnswer = function(){
         $scope.sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
+        $scope.question.diff = Math.abs($scope.question.bet - $scope.question.answer.value);
         $scope.questionMode = false;
         $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
         $scope.chart.data = _.map($scope.question.options,function(d){

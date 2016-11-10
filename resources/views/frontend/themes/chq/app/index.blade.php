@@ -28,6 +28,18 @@
                             <!-- template de options -->
                         </div>
                     </md-card-content>
+                    <md-card-content layout="row" layout-align="center center" ng-hide="!question.answer" flex >
+                        <md-content flex-gt-sm="75" flex layout="column" layout-align="center center">
+                            <md-slider-container>
+                              <span>¿Qué porcentaje de la población creés que es como vos?</span>
+                              <md-slider flex min="0" max="100" ng-model="question.bet" aria-label="bet" id="bet-slider">
+                              </md-slider>
+                            </md-slider-container>
+                            <md-content>
+                                <h2>@{{question.bet}}%</h2>
+                            </md-content>
+                        </md-content>
+                    </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
                         <md-button ng-hide="question.answer" ng-click="skip()" class="md-raised">
                             Saltar pregunta
@@ -42,7 +54,10 @@
                     <md-card-content flex layout-padding layout="row" layout-sm="column" layout-xs="column">
                         <div flex-xs flex-gt-sm="50" layout="column">
                             <h2>@{{question.answer.text_answer}}</h2>
-                            <p>Estás dentro de "@{{question.answer.text}}" al igual que el @{{question.answer.value}}% de la población.</p>
+                            <p>Estás dentro de "@{{question.answer.text}}" al igual que el @{{question.answer.value}}% de la población. Tu estimado fue de @{{question.bet}}%, 
+                            <strong ng-show="question.diff<=10">no estuviste tan lejos, muy bien.</strong>
+                            <strong ng-show="question.diff>10">la realidad es diferente a lo que creías.</strong>
+                            </p>
                             <p>@{{question.answer_description}}</p>
                             <p>Fuente: <a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
                             <p ng-show="question.answer_link"><a target="_blank" href="@{{question.answer_link}}" class="btn btn-default">Ver Nota</a></p>
