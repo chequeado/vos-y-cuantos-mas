@@ -18,33 +18,34 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('menus.backend.sidebar.general') }}</li>
 
-            <li class="{{ Active::pattern('admin/categories/*') }}">
-                <a href="{!!url('admin/categories')!!}"><span>{{ trans('custom.backend.categories.title') }}</span></a>
+            <li class="{{ Active::pattern('admin/categories*') }}">
+                <a href="{!!url('admin/categories')!!}"><i class="fa fa-tag"></i><span>{{ trans('custom.backend.categories.title') }}</span></a>
             </li>
 
-            <li class="{{ Active::pattern('admin/questions/*') }}">
-                <a href="{!!url('admin/questions')!!}"><span>{{ trans('custom.backend.questions.question') }}</span></a>
+            <li class="{{ Active::pattern('admin/questions*') }}">
+                <a href="{!!url('admin/questions')!!}"><i class="fa fa-question"></i><span>{{ trans('custom.backend.questions.question') }}</span></a>
             </li>
 
-            <li class="{{ Active::pattern('admin/answer_types/*') }}">
+            <!--li class="{{ Active::pattern('admin/answer_types/*') }}">
                 <a href="{!!url('admin/answer_types')!!}"><span>{{ trans('custom.backend.answer_types.title') }}</span></a>
-            </li>
+            </li-->
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
 
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ Active::pattern('admin/dashboard') }}">
+            <!--li class="{{ Active::pattern('admin/dashboard') }}">
                 <a href="{!! route('admin.dashboard') !!}"><span>{{ trans('menus.backend.sidebar.dashboard') }}</span></a>
-            </li>
+            </li-->
             @permission('view-access-management')
                 <li class="{{ Active::pattern('admin/access/*') }}">
-                    <a href="{!!url('admin/access/users')!!}"><span>{{ trans('menus.backend.access.title') }}</span></a>
+                    <a href="{!!url('admin/access/users')!!}"><i class="fa fa-users"></i><span>{{ trans('menus.backend.access.title') }}</span></a>
                 </li>
             @endauth
 
 
             <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">
                 <a href="#">
+                    <i class="fa fa-archive"></i>
                     <span>{{ trans('menus.backend.log-viewer.main') }}</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>

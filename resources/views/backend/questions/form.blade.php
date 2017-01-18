@@ -1,11 +1,11 @@
-<div class="box box-success">
-    <div class="box-header with-border">
-        <h3 class="box-title">{{ trans('custom.backend.questions.title') }}</h3>
-    </div>
-
-    <div class="box-body">
-
-
+<div class="nav-tabs-custom">
+    <ul id="myTabs" class="nav nav-tabs">
+      <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false"><i class="fa fa-question"></i> Pregunta</a></li>
+      <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false"><i class="fa fa-list"></i> Opciones</a></li>
+      <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="true"><i class="fa fa-check"></i> Respuesta</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab_1">
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.title') }}</label>
             <div class="col-lg-10">
@@ -38,8 +38,9 @@
                     <img id="image_upload_preview" class="img-responsive" ng-src="@{{imgUrl}}" />
                 </div>
                 <div class="col-lg-5">
-                    <a class="btn btn-primary" ng-click="openImage()">Cambiar Imagen</a>
-                    <a class="btn btn-default hide" ng-click="clearImage()">Limpiar imagen</a>
+                    <a class="btn btn-primary btn-flat" ng-click="openImage()"><i class="fa fa-image"></i> Cambiar Imagen</a>
+                    <a class="btn btn-default btn-flat hide" ng-click="clearImage()"><i class="fa fa-trash"></i> Limpiar imagen</a>
+                    <p>No olvides hacer click en el botón verde de Guardar.</p>
                 </div>
             </div>
         </div><!--form control-->
@@ -57,35 +58,28 @@
                 {!! Form::text('description_suffix', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description_suffix')]) !!}
             </div>
         </div><!--form control-->
+      </div>
+      <!-- /.tab-pane -->
+      <div class="tab-pane" id="tab_2">
+        <div ng-controller="QuestionCtrl">
 
+            <div class="form-group" ng-init="init({{ (isset($obj))?$obj->toJson():'{}' }},{{ (isset($obj))?$obj->options->toJson():'[]' }})">
+                <!--label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_type_id') }}</label>
+                <div class="col-lg-10">
+                    {!! Form::select('answer_type_id', $answer_types, null, array('class'=>'form-control', 'ng-model'=>'answer_type', 'chosen'=>'', 'ng-change' => 'changeType()')) !!}
+                </div-->
+            </div><!--form control-->
+            
+            {!! Form::hidden('answer_type_id', 'options', array('class'=>'form-control', 'ng-model'=>'answer_type')) !!}
 
-    </div>
+             <div ng-if="answer_type" ng-include="include_options">
+                <!-- template de options -->
+             </div>
 
-    <div class="box-header with-border">
-        <h3 class="box-title">{{ trans('custom.backend.questions.options') }}</h3>
-    </div>
-
-    <div class="box-body" ng-controller="QuestionCtrl">
-
-        <div class="form-group" ng-init="init({{ (isset($obj))?$obj->toJson():'{}' }},{{ (isset($obj))?$obj->options->toJson():'[]' }})">
-            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_type_id') }}</label>
-            <div class="col-lg-10">
-                {!! Form::select('answer_type_id', $answer_types, null, array('class'=>'form-control', 'ng-model'=>'answer_type', 'chosen'=>'', 'ng-change' => 'changeType()')) !!}
-            </div>
-        </div><!--form control-->
-
-         <div ng-if="answer_type" ng-include="include_options">
-            <!-- template de options -->
-         </div>
-
-    </div>
-
-    <div class="box-header with-border">
-        <h3 class="box-title">{{ trans('custom.backend.questions.answer') }}</h3>
-    </div>
-
-    <div class="box-body">
-
+        </div>
+      </div>
+      <!-- /.tab-pane -->
+      <div class="tab-pane" id="tab_3">
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_link') }}</label>
             <div class="col-lg-10">
@@ -130,13 +124,6 @@
             </div>
         </div><!--form control-->
 
-    </div>
-
-    <div class="box-header with-border">
-        <h3 class="box-title">{{ trans('custom.backend.questions.share') }}</h3>
-    </div>
-
-    <div class="box-body">
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.share_text') }}</label>
             <div class="col-lg-10">
@@ -144,18 +131,19 @@
             </div>
         </div><!--form control-->
 
+      </div>
+      <!-- /.tab-pane -->
     </div>
-
+    <!-- /.tab-content -->
 </div>
 
-
-<div class="box box-success">
+<div class="box">
     <div class="box-body">
         <div class="pull-left">
-            <a href="{{route('admin.questions.index')}}" class="btn btn-danger">{{ trans('buttons.general.cancel') }}</a>
+            <a href="{{route('admin.questions.index')}}" class="btn btn-danger btn-large btn-flat">{{ trans('buttons.general.cancel') }}</a>
         </div>
         <div class="pull-right">
-            <input type="submit" class="btn btn-success" value="{{ trans('buttons.general.save') }}" />
+            <input type="submit" class="btn btn-success btn-large btn-flat" value="{{ trans('buttons.general.save') }}" />
         </div>
     </div>
 </div>

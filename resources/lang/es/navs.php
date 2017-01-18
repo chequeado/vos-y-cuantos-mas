@@ -18,13 +18,13 @@ return [
     ],
 
     'general' => [
-        'logout' => 'Cerrar Sessión',
+        'logout' => 'Cerrar Sesión',
     ],
 
     'frontend' => [
         'dashboard' => 'Principal',
         'home' => 'Home',
-        'login' => 'Iniciar Sessión',
+        'login' => 'Iniciar Sesión',
         'macros' => 'Macros',
         'register' => 'Registrarse',
 

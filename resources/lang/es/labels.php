@@ -126,8 +126,8 @@ return [
     'frontend' => [
 
         'auth' => [
-            'login_box_title' => 'Login',
-            'login_button' => 'Login',
+            'login_box_title' => 'Ingresar',
+            'login_button' => 'Ingresar',
             'login_with' => 'Login mediante :social_media',
             'register_box_title' => 'Registrarse',
             'register_button' => 'Registrarse',

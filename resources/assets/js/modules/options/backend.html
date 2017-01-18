@@ -7,6 +7,8 @@
             <label class="col-lg-4 control-label">Respuesta</label>
         </div><!--form control-->
 
+        <hr/>
+
     	<div class="form-group" ng-repeat="(key,opt) in options">
             <label class="col-lg-2 control-label">Opción {{$index+1}}</label>
             <div class="col-lg-4">
@@ -19,11 +21,13 @@
                 <input class="form-control" placeholder="Respuesta" name="option[opt{{$index}}][text_answer]" type="text" ng-model="opt.text_answer">
             </div>
             <div class="col-lg-1">
-                <button type="button" class="btn btn-xs btn-danger" ng-click="removeOption($index)"><i data-original-title="Eliminar opción" class="fa fa-trash" data-toggle="tooltip" data-placement="top" title=""></i>
+                <button type="button" class="btn btn-xs btn-danger btn-flat" ng-click="removeOption($index)"><i data-original-title="Eliminar opción" class="fa fa-trash" data-toggle="tooltip" data-placement="top" title=""></i>
                 </button>
             </div>
         </div><!--form control-->
 
-        <button type="button" class="btn btn-lg btn-primary" ng-click="addOption()">Agregar opción</button>
+        <p class="text-center">
+        <button type="button" class="btn btn-md btn-flat btn-primary" ng-click="addOption()"><i class="fa fa-plus"></i> Agregar opción</button>
+        </p>
 
     </div>

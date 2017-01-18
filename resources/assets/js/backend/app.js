@@ -143,6 +143,11 @@ $.AdminLTE.options = {
  * options above.
  */
 $(function () {
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    });
+
     //Extend options if external options exist
     if (typeof AdminLTEOptions !== 'undefined') {
         $.extend(true,

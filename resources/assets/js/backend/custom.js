@@ -48,8 +48,10 @@ BackendApp.controller('QuestionCtrl', function ($scope,$templateCache) {
         $scope.options = options;
         if(data.answer_type_id){
             $scope.answer_type = data.answer_type_id;
-            $scope.changeType();
+        } else {
+            $scope.answer_type = 'options';
         }
+        $scope.changeType();
     };
 
 });

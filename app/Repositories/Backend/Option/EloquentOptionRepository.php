@@ -103,12 +103,14 @@ class EloquentOptionRepository implements OptionRepositoryContract
             $opt->delete();
         }
 
-        foreach ($items as $key => $value) {
-            $op = new Option();
-            $op->key = $key;
-            $op->question_id = $question_id;
-            $op->fill($value);
-            $op->save();
+        if(is_array($items)){
+            foreach ($items as $key => $value) {
+                $op = new Option();
+                $op->key = $key;
+                $op->question_id = $question_id;
+                $op->fill($value);
+                $op->save();
+            }            
         }
 
     }

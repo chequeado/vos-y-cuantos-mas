@@ -13,10 +13,10 @@
 <div class="box box-success">
     <div class="box-body">
         <div class="pull-left">
-            <a href="{{route('admin.categories.index')}}" class="btn btn-danger">{{ trans('buttons.general.cancel') }}</a>
+            <a href="{{route('admin.categories.index')}}" class="btn btn-danger btn-flat">{{ trans('buttons.general.cancel') }}</a>
         </div>
         <div class="pull-right">
-            <input type="submit" class="btn btn-success" value="{{ trans('buttons.general.save') }}" />
+            <input type="submit" class="btn btn-success btn-flat" value="{{ trans('buttons.general.save') }}" />
         </div>
     </div>
 </div>

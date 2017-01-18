@@ -24,7 +24,7 @@
                                 <table class="table table-striped table-hover table-bordered dashboard-table">
                                     <tr>
                                         <th>{{ trans('labels.frontend.user.profile.avatar') }}</th>
-                                        <td><img src="{!! $user->picture !!}" class="user-profile-image" /></td>
+                                        <td><img src="https://www.gravatar.com/avatar/{!! md5(access()->user()->email) !!}" class="img-circle" alt="User Image" /><br/>Se utiliza el avatar de Gravatar para tu mail.</td>
                                     </tr>
                                     <tr>
                                         <th>{{ trans('labels.frontend.user.profile.name') }}</th>
@@ -45,10 +45,10 @@
                                     <tr>
                                         <th>{{ trans('labels.general.actions') }}</th>
                                         <td>
-                                            <a href="{!! route('frontend.user.profile.edit') !!}" class="btn btn-primary btn-xs">{{ trans('labels.frontend.user.profile.edit_information') }}</a>
+                                            <a href="{!! route('frontend.user.profile.edit') !!}" class="btn btn-primary btn-xs btn-flat">{{ trans('labels.frontend.user.profile.edit_information') }}</a>
 
                                             @if ($user->canChangePassword())
-                                                <a href="{!! route('auth.password.change') !!}" class="btn btn-warning btn-xs">{{ trans('navs.frontend.user.change_password') }}</a>
+                                                <a href="{!! route('auth.password.change') !!}" class="btn btn-warning btn-xs btn-flat">{{ trans('navs.frontend.user.change_password') }}</a>
                                             @endif
                                         </td>
                                     </tr>
