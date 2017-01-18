@@ -28,7 +28,8 @@
         "barryvdh/laravel-debugbar": "^2.1",
         "laracasts/generators": "^1.1",
         "xethron/migrations-generator": "dev-l5",
-        "way/generators": "dev-feature/laravel-five-stable"
+        "way/generators": "dev-feature/laravel-five-stable",
+        "laravel/homestead": "^4.0"
     },
     "autoload": {
         "classmap": [
