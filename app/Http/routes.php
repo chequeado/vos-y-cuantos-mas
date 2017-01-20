@@ -17,10 +17,11 @@ Route::group(['middleware' => 'web'], function() {
         require (__DIR__ . '/Routes/Frontend/Access.php');
     });
 
-    Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
-        require (__DIR__ . '/Routes/Api/Api.php');
-    });
 
+});
+
+Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
+        require (__DIR__ . '/Routes/Api/Api.php');
 });
 
 /**

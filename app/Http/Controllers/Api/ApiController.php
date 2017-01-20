@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Repositories\Backend\Category\CategoryRepositoryContract;
 use App\Repositories\Backend\Question\QuestionRepositoryContract;
+use App\Repositories\Backend\Option\OptionRepositoryContract;
+use App\Repositories\Backend\Vote\VoteRepositoryContract;
 use Illuminate\Http\Request;
 
 /**
@@ -16,11 +18,15 @@ class ApiController extends Controller
 
     public function __construct(
         CategoryRepositoryContract $categories,
+        VoteRepositoryContract $vote,
+        OptionRepositoryContract $option,
         QuestionRepositoryContract $questions
     )
     {
         $this->categories       = $categories;
-        $this->questions       = $questions;
+        $this->questions        = $questions;
+        $this->votes            = $vote;
+        $this->options          = $option;
     }
 
     /**
@@ -36,6 +42,20 @@ class ApiController extends Controller
         $idCategory = ($request->has('category_id'))?$request->input('category_id'):1;
     	$cat = $this->categories->findFullOrThrowException($idCategory, true);
     	return response()->json(array('metadata'=>array('category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$cat->questions));
+    }
+
+    public function registerVote(Request $request)
+    {
+        $response = false;
+        if($request->ajax()) {
+            $all = $request->all();
+            var_dump($request->session()->token());
+            var_dump($all['_token']);
+            if($request->has('option_id') && $request->has('question_id') && $this->options->existByQuestion($all['question_id'],$all['option_id'])){
+                $response = $this->votes->create($all);
+            }            
+        }
+        return response()->json(array('response'=>$response));
     }
 
 }

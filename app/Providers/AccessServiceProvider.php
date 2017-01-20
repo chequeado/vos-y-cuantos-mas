@@ -119,6 +119,12 @@ class AccessServiceProvider extends ServiceProvider
         \App\Repositories\Backend\Option\EloquentOptionRepository::class
         );
 
+
+        $this->app->bind(
+        \App\Repositories\Backend\Vote\VoteRepositoryContract::class,
+        \App\Repositories\Backend\Vote\EloquentVoteRepository::class
+        );
+
     }
 
     /**

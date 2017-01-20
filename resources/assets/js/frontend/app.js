@@ -93,7 +93,8 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     $scope.closeSelect = function(){
         $scope.sendEvent('Option', 'close', $scope.question.title, $scope.question.id);
         if($scope.question.answer){
-            $scope.sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);        
+            $scope.sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);
+            $scope.saveVote($scope.question.id,$scope.question.answer.id);
         }
     };
 
@@ -101,6 +102,21 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         if($window.ga){
             $window.ga('send', 'event', cat,action,label,value);
         }
-    }
+    };
+
+    $scope.saveVote = function(question_id,option_id){
+
+        $http.post('/api/vote', 
+            {
+                'question_id':question_id,
+                'option_id':option_id,
+                '_token':$('meta[name="_token"]').attr('content')
+            })
+            .then(function(response){
+                console.log(response);
+            }, function(e){
+                console.error(e);
+            });
+    };
 
 });

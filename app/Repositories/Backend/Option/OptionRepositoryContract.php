@@ -52,4 +52,6 @@ interface OptionRepositoryContract
 
     public function insertAll($question_id,$items);
 
+    public function existByQuestion($question_id,$option_id);
+
 }

@@ -114,4 +114,10 @@ class EloquentOptionRepository implements OptionRepositoryContract
         }
 
     }
+
+    public function existByQuestion($question_id,$option_id){
+        return (Option::where('id',$option_id)
+            ->where('question_id',$question_id)
+            ->count()==1);
+    }
 }
