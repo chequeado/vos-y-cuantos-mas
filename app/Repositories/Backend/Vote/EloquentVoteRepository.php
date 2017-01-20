@@ -40,4 +40,11 @@ class EloquentVoteRepository implements VoteRepositoryContract
         return Vote::where('question_id',$question)->count();
     }
 
+    public function totalByQuestion($question){
+        return Vote::select(\DB::raw('option_id as id,count(1) as total'))
+            ->where('question_id',$question)
+            ->groupBy('option_id')
+            ->get();
+    }
+
 }

@@ -26,6 +26,10 @@
                 <a href="{!!url('admin/questions')!!}"><i class="fa fa-question"></i><span>{{ trans('custom.backend.questions.question') }}</span></a>
             </li>
 
+            <li class="{{ Active::pattern('admin/stats*') }}">
+                <a href="{!!url('admin/stats')!!}"><i class="fa fa-pie-chart"></i><span>Estadísticas de votos</span></a>
+            </li>
+
             <!--li class="{{ Active::pattern('admin/answer_types/*') }}">
                 <a href="{!!url('admin/answer_types')!!}"><span>{{ trans('custom.backend.answer_types.title') }}</span></a>
             </li-->

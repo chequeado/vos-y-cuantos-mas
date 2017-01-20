@@ -44,17 +44,19 @@ class ApiController extends Controller
     	return response()->json(array('metadata'=>array('category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$cat->questions));
     }
 
+    public function votesByQuestion(Request $request){
+        return response()->json(array('records'=>$this->votes->totalByQuestion($request->input('question_id'))));
+    }
+
     public function registerVote(Request $request)
     {
         $response = false;
-        if($request->ajax()) {
+        //if($request->ajax()) {
             $all = $request->all();
-            var_dump($request->session()->token());
-            var_dump($all['_token']);
             if($request->has('option_id') && $request->has('question_id') && $this->options->existByQuestion($all['question_id'],$all['option_id'])){
                 $response = $this->votes->create($all);
             }            
-        }
+        //}
         return response()->json(array('response'=>$response));
     }
 

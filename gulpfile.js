@@ -157,6 +157,7 @@ elixir(function(mix) {
      .sass([
          'backend/app.scss',
          'backend/plugin/toastr/toastr.scss',
+         'plugin/charts/angular-chart.min.css',
          'plugin/sweetalert/sweetalert.scss',
          'plugin/chosen/chosen.css',
          'backend/main.scss'
@@ -175,12 +176,15 @@ elixir(function(mix) {
      .scripts([
          'plugin/sweetalert/sweetalert.min.js',
          'plugins.js',
+         'plugin/chart/Chart.js',
+         'plugin/lodash/lodash.min.js',
          'backend/app.js',
          'backend/plugin/toastr/toastr.min.js',
          'backend/plugin/chosenIcon.jquery.js',
          'plugin/chosen/chosen.jquery.js',
          'plugin/angular/angular.min.js',
          'plugin/angular/angular-chosen.min.js',
+         'plugin/angular/angular-chart.min.js',
          'backend/custom.js',
          'modules/**/backend.js'
      ], 'public/js/backend.js')

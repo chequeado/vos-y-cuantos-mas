@@ -36,7 +36,7 @@ $(function() {
 
 //angular
 
-var BackendApp = angular.module('BackendApp', ['angular.chosen','templates-backend']);
+var BackendApp = angular.module('BackendApp', ['angular.chosen','templates-backend','chart.js']);
 
 BackendApp.controller('QuestionCtrl', function ($scope,$templateCache) {
   
@@ -96,6 +96,94 @@ BackendApp.controller('ImageCtrl', function ($scope,$templateCache) {
             $scope.changed = true;
             $scope.readURL(this);
         });
+    };
+
+});
+
+BackendApp.controller('StatsCtrl', function ($scope,$http,$timeout) {
+  
+    $scope.loading = true;
+
+    $scope.colors = [ "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf" ];
+
+    $scope.chart1 = {};
+    $scope.chart2 = {};
+
+    $scope.init = function(category_id){
+        $http.get('/api/questions?category_id='+category_id, {})
+            .then(function(response){
+                $scope.category = response.data.metadata.category;
+                $scope.questions = response.data.records;
+                $scope.start();
+                $scope.loading = false;
+            }, function(e){
+                console.error(e);
+            });
+    };
+
+    $scope.start = function(){
+        $scope.renderQuestion($scope.questions[0]);
+    };
+
+    $scope.selectQuestion = function(q){
+        $scope.renderQuestion(q);
+    };
+
+    $scope.renderQuestion = function($question){
+        $scope.loadingVotes = true;
+        $scope.question = $question;
+        $scope.question.options = _.map($scope.question.options,function(o,i){
+            o.color = $scope.colors[i];
+            return o;
+        });
+        $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
+        $scope.chart1.colors = _.map($scope.question.options,function(d){
+            return d.color;
+        });
+        $scope.chart1.data = _.map($scope.question.options,function(d){
+            return d.value;
+        });
+
+        $scope.chart1.labels = _.map($scope.question.options,function(d){
+            return d.text;
+        });
+
+        $timeout(function(){
+            $http.get('/api/results?question_id='+$scope.question.id, {})
+                .then(function(response){
+                    var values = response.data.records;
+
+                    $scope.voteTotal = 0;
+
+                    $scope.voteOptions = angular.copy($scope.question.options);
+
+                    $scope.voteTotal = _.sumBy(values, 'total');
+
+                    _.forEach($scope.voteOptions,function(vo){
+                        var val = _.find(values, { 'id': parseInt(vo.id) });
+                        vo.value = (val)?((val.total*100)/$scope.voteTotal).toFixed(1):0;
+                    });
+
+                    $scope.voteOptions = $scope.voteOptions.sort(function(a, b){return b.value-a.value});
+
+                    $scope.loadingVotes = false;
+                    $scope.chart2.colors = _.map($scope.voteOptions,function(d){
+                        return d.color;
+                    });
+                    $scope.chart2.data = _.map($scope.voteOptions,function(d){
+                        return d.value;
+                    });
+
+                    $scope.chart2.labels = _.map($scope.voteOptions,function(d){
+                        return d.text;
+                    });
+
+                }, function(e){
+                    console.error(e);
+                });
+        },1000);
+
+
     };
 
 });
