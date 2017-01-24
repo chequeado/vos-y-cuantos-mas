@@ -113,6 +113,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
                 '_token':$('meta[name="_token"]').attr('content')
             })
             .then(function(response){
+                $scope.votes = response.data.response;
                 console.log(response);
             }, function(e){
                 console.error(e);

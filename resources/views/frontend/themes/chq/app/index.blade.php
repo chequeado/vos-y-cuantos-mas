@@ -30,8 +30,8 @@
                     </md-card-content>
                     <md-card-content layout="row" layout-align="center center" ng-hide="!question.answer" flex >
                         <md-content flex-gt-sm="75" flex layout="column" layout-align="center center">
+                            <p>¿Qué porcentaje de la población creés que es como vos?</p>
                             <md-slider-container>
-                              <span>¿Qué porcentaje de la población creés que es como vos?</span>
                               <md-slider flex min="0" max="100" ng-model="question.bet" aria-label="bet" id="bet-slider">
                               </md-slider>
                             </md-slider-container>
@@ -76,6 +76,12 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                    </md-card-content>
+                    <md-card-content flex layout-padding layout="row" layout-sm="column" layout-xs="column">
+                        <div flex-xs flex-gt-sm="100" layout="column">
+                            <p class="lead">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.
+                            </p>
                         </div>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">

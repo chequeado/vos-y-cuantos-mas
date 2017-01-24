@@ -57,9 +57,7 @@
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo mauris at massa rhoncus, et ornare erat porttitor. Nulla non egestas ex, non finibus metus. Pellentesque mi dui, sagittis non viverra a, molestie ut dolor. Integer blandit, quam vitae accumsan vestibulum, purus metus facilisis risus, et dapibus nisi turpis sed dolor.
           </p>
-          <p>
-            Fusce tempus ex ut posuere congue. Donec nec consectetur nisi. Aliquam gravida nunc diam, et hendrerit dolor volutpat at. Duis pulvinar rutrum quam, a dapibus mi blandit sed. Sed sagittis, leo eu dignissim rutrum, dolor erat ultrices purus, vel aliquam urna ipsum sed urna. Nullam varius mattis nisl nec bibendum.
-          </p>
+          <p>*Algunos datos de tus respuestas serán guardados de forma anónima con fines estadísticos</p>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             @if(count($cats)>1)
