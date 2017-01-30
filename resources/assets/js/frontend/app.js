@@ -1,10 +1,10 @@
-var DesmitificadorApp = angular.module('DesmitificadorApp', ['templates-frontend','chart.js','ngMaterial']);
+var DesmitificadorApp = angular.module('DesmitificadorApp', ['chart.js','ui.bootstrap-slider']);
 
 DesmitificadorApp.config(function(ChartJsProvider){
 //    ChartJsProvider.setOptions({ colours :  });
 })
 
-DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http, $window) {
+DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http, $window,$anchorScroll) {
 
 	$scope.loading = true;
 
@@ -14,9 +14,15 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     $scope.answer = false;
     $scope.bet = 50;
 
-	$scope.questionMode = true;
-
     $scope.chart = {};
+
+    $scope.state = null;
+    $scope.bgImage = '';
+
+    $scope.isMobile = function detectmob(){ 
+        console.log($window.innerWidth,$window.innerHeight);
+        return ($window.innerWidth <= 800)?true:false;
+    };
 
     $scope.init = function(category_id,colors){
         //Chart.defaults.global.colours = colors;
@@ -38,12 +44,59 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     	$scope.renderQuestion();
     };
 
+    $scope.renderQuestion = function(){
+        $anchorScroll('app-layout');
+        $scope.question = $scope.questions[$scope.index];
+        $scope.bgImage = 'url(/imagecache/original/' + $scope.question.image_file + ')';
+        if(!$scope.isMobile()){
+            $('body').css('background-image',$scope.bgImage);
+        }
+        $scope.question.answer = false;
+        $scope.state = 'options';
+    };
+
+    $scope.chooseOption = function(opt){
+        $scope.question.answer = opt;
+        $scope.sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);
+        $scope.saveVote($scope.question.id,$scope.question.answer.id);
+        $scope.state = 'slider';
+        $scope.renderSlider();
+    };
+
+    $scope.changeOption = function(){
+        $scope.renderQuestion();
+    };
+
+    $scope.renderSlider = function(){
+        $scope.question.bet = 50;
+        $scope.state = 'slider';
+    };
+
+    $scope.chooseBet = function($event,value){
+        console.log('chooseBet');
+        $scope.renderAnswer();
+    };
+
+    $scope.renderAnswer = function(){
+        $scope.state = 'answer';
+        $scope.sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
+        $scope.question.diff = Math.abs($scope.question.bet - $scope.question.answer.value);
+        $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
+        $scope.chart.data = _.map($scope.question.options,function(d){
+            return d.value;
+        });
+
+        $scope.chart.labels = _.map($scope.question.options,function(d){
+            return d.text;
+        });
+    };
+
     $scope.skip = function(){
         $scope.sendEvent('Question', 'skip', $scope.question.title, $scope.question.id);
         $scope.next();
     };
 
-    $scope.moveNext = function(){
+    $scope.moveNext = function(){   
         $scope.sendEvent('Question', 'next', $scope.question.title, $scope.question.id);
         $scope.next();
     };
@@ -58,44 +111,10 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     };
 
     $scope.finish = function(){
-    	$scope.thanks = true;
-    };
-
-    $scope.bgImage = '';
-
-    $scope.renderQuestion = function(){
-        $scope.questionMode = true;
-        $scope.question = $scope.questions[$scope.index];
-        $scope.bgImage = 'url(/imagecache/original/' + $scope.question.image_file + ')';
-        $scope.question.answer = false;
-        $scope.question.bet = 50;
-    	$scope.include_options = $scope.question.answer_type.slug+'/frontend.html';
-    };
-
-    $scope.goToAnswer = function(){
-        $scope.sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
-        $scope.question.diff = Math.abs($scope.question.bet - $scope.question.answer.value);
-        $scope.questionMode = false;
-        $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
-        $scope.chart.data = _.map($scope.question.options,function(d){
-            return d.value;
-        });
-
-        $scope.chart.labels = _.map($scope.question.options,function(d){
-            return d.text;
-        });
-    };
-
-    $scope.openSelect = function(){
-        $scope.sendEvent('Option', 'open', $scope.question.title, $scope.question.id);
-    };
-
-    $scope.closeSelect = function(){
-        $scope.sendEvent('Option', 'close', $scope.question.title, $scope.question.id);
-        if($scope.question.answer){
-            $scope.sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);
-            $scope.saveVote($scope.question.id,$scope.question.answer.id);
+        if(!$scope.isMobile()){
+            $('body').css('background-image','none');
         }
+    	$scope.state = 'thanks';
     };
 
     $scope.sendEvent = function(cat,action,label,value){

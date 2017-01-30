@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_token" content="{{ csrf_token() }}" />
 
-        <title>@yield('title', app_name())</title>
+        <title>¿Vos y cuántos más?</title>
 
         <!-- Meta -->
         <meta name="description" content="@yield('meta_description', '¿Vos y cuántos más?')">
@@ -19,12 +19,13 @@
         @yield('after-styles-end')
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Capriola" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
     </head>
-    <body id="app-layout">
+    <body id="app-layout" class="body-app" ng-cloak>
 
         @include('includes.partials.messages')
+        @include('frontend.themes.'.$theme.'.includes.nav')
         @yield('content')
 
         <!-- JavaScripts -->
@@ -34,7 +35,6 @@
 
         @yield('before-scripts-end')
         {!! Html::script(elixir('js/frontend.js')) !!}
-        {!! HTML::script(elixir('js/templates-frontend.js')) !!}
         @yield('after-scripts-end')
 
         @include('includes.partials.ga')

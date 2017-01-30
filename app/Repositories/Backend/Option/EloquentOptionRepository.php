@@ -97,21 +97,43 @@ class EloquentOptionRepository implements OptionRepositoryContract
         throw new GeneralException(trans('exceptions.backend.access.roles.delete_error'));
     }
 
-    public function insertAll($question_id,$items) {
+    public function insertAll($question_id,$options) {
 
-        foreach (Option::where('question_id',$question_id)->get() as $key => $opt) {
-            $opt->delete();
+        $newOptions = collect([]);
+        $oldOptions = collect([]);
+
+        if(is_array($options)){
+            $newOptions = collect($options);
+            $oldOptions = Option::where('question_id',$question_id)->get();
         }
 
-        if(is_array($items)){
-            foreach ($items as $key => $value) {
-                $op = new Option();
-                $op->key = $key;
-                $op->question_id = $question_id;
-                $op->fill($value);
-                $op->save();
-            }            
+        $createItems = $newOptions->filter(function($o){return $o['id']=='';});
+        $updateItems = $newOptions->filter(function($o){return $o['id']!='';});
+
+        $newIds = $updateItems->map(function($o){return (int)$o['id'];})->flatten();
+        $oldIds = $oldOptions->map(function($o){return $o->id;});
+        var_dump($newIds);
+        var_dump($oldIds);
+        $diff = array_diff($oldIds->toArray(),$newIds->toArray());
+
+        //create
+        foreach ($createItems as $key => $value) {
+            $op = new Option();
+            $op->key = $key;
+            $op->question_id = $question_id;
+            $op->fill($value);
+            $op->save();
         }
+
+        //update
+        foreach ($updateItems as $key => $value) {
+            $op = Option::where('id',(string)$value['id'])->first();
+            $op->fill($value);
+            $op->save();
+        }
+
+        //delete
+        Option::whereIn('id',$diff)->delete();
 
     }
 

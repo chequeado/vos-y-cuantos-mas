@@ -45,6 +45,7 @@ BackendApp.controller('QuestionCtrl', function ($scope,$templateCache) {
     };
 
     $scope.init = function(data,options){
+        console.log(options);
         $scope.options = options;
         if(data.answer_type_id){
             $scope.answer_type = data.answer_type_id;

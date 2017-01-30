@@ -1,109 +1,143 @@
 @extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
-    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}", [ "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf" ])' ng-cloak layout="row" layout-fill ng-style="{'background-image': bgImage}">
+    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}", [ "#19845b", "#a50f0f", "#facf5a", "#444854", "#1a2156" ])' ng-cloak>
 
-        <md-content class="question-bg" layout="row" layout-align="center top" layout-fill flex-gt-sm="100">
-            
-            <md-progress-circular ng-show="loading" class="md-primary" md-mode="indeterminate" md-diameter="100"></md-progress-circular>
-            
-            <div flex-xs="" flex-gt-sm="75" ng-hide="loading">
-              <md-card layout="column">
-                <md-toolbar md-accent>
-                  <div class="md-toolbar-tools">
-                    <md-button class="md-icon-button custom-icon-header" aria-label="Chequeado">
-                        <i class="@{{question.icon}}"></i>
-                    </md-button>
-                    <h2>
-                      <span>@{{question.title}}</span>
-                    </h2>
-                    <span flex></span>
-                    <p class="md-subhead">@{{index+1}} de @{{questions.length}}</p>
-                  </div>
-                </md-toolbar>
-                <div ng-show="questionMode && !thanks">
-                    <md-card-content flex layout-padding>
-                        <p>@{{question.call_action}}</p>
-                        <div ng-include="include_options">
-                            <!-- template de options -->
-                        </div>
-                    </md-card-content>
-                    <md-card-content layout="row" layout-align="center center" ng-hide="!question.answer" flex >
-                        <md-content flex-gt-sm="75" flex layout="column" layout-align="center center">
-                            <p>¿Qué porcentaje de la población creés que es como vos?</p>
-                            <md-slider-container>
-                              <md-slider flex min="0" max="100" ng-model="question.bet" aria-label="bet" id="bet-slider">
-                              </md-slider>
-                            </md-slider-container>
-                            <md-content>
-                                <h2>@{{question.bet}}%</h2>
-                            </md-content>
-                        </md-content>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button ng-hide="question.answer" ng-click="skip()" class="md-raised">
-                            Saltar pregunta
-                        </md-button>
-                        <md-button ng-hide="!question.answer" ng-click="goToAnswer()" class="md-raised md-accent">
-                            Ver Resultado
-                        </md-button>
-                    </md-card-actions>
+        <!-- container -->
+        <div class="container theme-showcase" role="main">
+            <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="jumbotron">
+
+                <!-- question -->
+                <div ng-show="state != 'thanks'">
+                    <h1>@{{question.title}}</h1>
+                    <div class="progress">
+                     <div data-percentage="0%" ng-style="{'width': ((index+1)*100/questions.length) + '%' }" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
+                    <p class="pregunta-counter">Pregunta @{{index+1}} de @{{questions.length}}</p>
+                    <div class="well">
+                      <p>@{{question.description}} ... @{{question.description_suffix}}</p>
+                    </div>
                 </div>
+                <!-- /question -->
+                
+                <!-- options -->
+                <div class="row" ng-show="state == 'options'">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-8">
+                    <div class="list-group">
+                      <a href="#" ng-repeat="opt in question.options" ng-click="chooseOption(opt)" class="list-group-item">@{{opt.text}}</a>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-1"></div>
+                  <button class="btn btn-default btn-especial boton-abajo-right" ng-click="skip()" >Saltar esta pregunta <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+                <!-- /options -->
 
-                <div ng-hide="questionMode || thanks">
-                    <md-card-content flex layout-padding layout="row" layout-sm="column" layout-xs="column">
-                        <div flex-xs flex-gt-sm="50" layout="column">
-                            <h2>@{{question.answer.text_answer}}</h2>
-                            <p>Estás dentro de "@{{question.answer.text}}" al igual que el @{{question.answer.value}}% de la población. Tu estimado fue de @{{question.bet}}%, 
-                            <strong ng-show="question.diff<=10">no estuviste tan lejos, muy bien.</strong>
-                            <strong ng-show="question.diff>10">la realidad es diferente a lo que creías.</strong>
-                            </p>
-                            <p>@{{question.answer_description}}</p>
-                            <p>Fuente: <a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
-                            <p ng-show="question.answer_link"><a target="_blank" href="@{{question.answer_link}}" class="btn btn-default">Ver Nota</a></p>
+                <!-- slider -->
+                <div class="row" ng-show="state == 'slider'">
+                    <div class="col-md-12">
+                        <p class="respuesta">Tu respuesta: @{{question.answer.text}}</p>
+                        <h2>¿Qué porcentaje de la población crees que es como vos?</h2>
+                    </div>
+                    
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <slider ng-model="question.bet" min="0" step="1" max="100" tooltip="'hide'" on-stop-slide="chooseBet($event,value)"></slider>
+                        <span class="numero-grande">@{{question.bet}}%</span>
+                    </div>
+
+                    <button class="btn btn-default btn-especial boton-abajo-left" ng-click="changeOption()"><i class="fa fa-caret-left" aria-hidden="true"></i> Modificar mi respuesta</button>
+
+                </div>
+                <!-- /slider -->
+
+                <!-- answer -->
+                <div class="row" ng-show="state == 'answer'">
+
+                    <div class="col-md-12">
+                        <p class="respuesta">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <canvas id="doughnut" class="chart chart-doughnut"
+                          chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
+                        </canvas>
+                        <div hide show-xs>
+                            <table class="table">
+                                <thead>
+                                    <tr><td>Descripción</td><td class="text-right">Valor</td></tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value}}%</td></tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div flex-xs flex-gt-sm="50" layout="column">
-                            <canvas id="doughnut" class="chart chart-doughnut"
-                              chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
-                            </canvas>
-                            <div hide show-xs>
-                                <table class="table">
-                                    <thead>
-                                        <tr><td>Descripción</td><td>Valor</td></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td>@{{o.value}}%</td></tr>
-                                    </tbody>
-                                </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <b>@{{question.answer.text}}</b> al igual que el <span class="numero-grande">@{{question.answer.value}}%</span> de la población.
+                            </div>
+                            <div class="col-md-6 text-center resultado-carita">
+                                 Tu estimado fue de <strong>@{{question.bet}}%</strong>, 
+                                <strong ng-show="question.diff<=10">no estuviste tan lejos, muy bien.</strong>
+                                <strong ng-show="question.diff>10">la realidad es diferente a lo que creías.</strong>
+                                <img alt="" ng-show="question.diff<=10" ng-src="images/bien.png" class="img-responsive"/>
+                                <img alt="" ng-show="question.diff>10" ng-src="images/sorpresa.png" class="img-responsive"/>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button ng-click="changeOption()" class="btn btn-default btn-especial-chico">Modificar mi respuesta</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button href="#" class="btn btn-default btn-especial-chico" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Ver más información</button>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="collapse" id="collapseExample">
+                                    <p>Fuente: <a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                                    <p>@{{question.answer_description}}</p>
+                                </div>
                             </div>
                         </div>
-                    </md-card-content>
-                    <md-card-content flex layout-padding layout="row" layout-sm="column" layout-xs="column">
-                        <div flex-xs flex-gt-sm="100" layout="column">
-                            <p class="lead">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.
-                            </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button href="#" class="btn btn-default btn-especial-chico"><i class="fa fa-twitter" aria-hidden="true"></i></button>
+                                <button href="#" class="btn btn-default btn-especial-chico"><i class="fa fa-facebook-official" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="col-md-6">
+                                <a target="_blank" ng-show="question.answer_link" class="btn btn-default btn-especial-chico" href="@{{question.answer_link}}">Leer la nota</a>
+                            </div>
                         </div>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-raised md-accent" ng-hide="index+1 == questions.length" ng-click="moveNext()">Siguiente pregunta</md-button>
-                        <md-button class="md-raised md-accent" ng-show="index+1 == questions.length" ng-click="finish()">Finalizar</md-button>
-                    </md-card-actions>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br/><br/>
+                    <button ng-click="moveNext()" ng-hide="index+1 == questions.length" class="btn btn-default btn-especial-grande boton-abajo-right">Siguiente pregunta <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                    <button ng-click="finish()" ng-show="index+1 == questions.length" class="btn btn-default btn-especial-grande boton-abajo-right">Finalizar <i class="fa fa-caret-right" aria-hidden="true"></i></button>            
                 </div>
+                <!-- /answer -->
 
-                <div ng-show="thanks">
-                    <md-card-content flex layout-padding>
+                  <!-- answer -->
+                <div class="row" ng-show="state == 'thanks'">
+
+                    <div class="col-md-12">
                         <h1>Muchas gracias por participar!</h1>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-raised md-accent" href="/">Volver</md-button>
-                    </md-card-actions>
+                    </div>
+                    <a href="/" ng-show="index+1 == questions.length" class="btn btn-default btn-especial-grande boton-abajo-right">Jugar otra vez <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+
                 </div>
 
-              </md-card>
-            </div>
-        </md-content>
+              </div> <!-- /jumbotron -->
+        </div> <!-- /col -->
+        </div> <!-- /row -->
+        </div> <!-- /container -->
 
-    </div><!--row-->
+    </div><!--main-->
 @endsection
 
 @section('after-scripts-end')

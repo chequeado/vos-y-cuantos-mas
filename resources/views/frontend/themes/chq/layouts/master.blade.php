@@ -13,14 +13,11 @@
         {!! Html::style(elixir('css/frontend.'.$theme.'.css')) !!}
         @yield('after-styles-end')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body ng-app="HomeApp" ng-cloak>
-
+    <body class="body-home">
 
         @include('includes.partials.messages')
+        @include('frontend.themes.'.$theme.'.includes.nav')
         @yield('content')
 
         <!-- JavaScripts -->
@@ -35,16 +32,7 @@
 
         <!-- Your application bootstrap  -->
           <script type="text/javascript">    
-            /**
-             * You must include the dependency on 'ngMaterial' 
-             */
-            angular.module('HomeApp', ['ngMaterial'])
-            .config(function($mdThemingProvider) {
-              $mdThemingProvider.theme('altTheme')
-                /*.primaryPalette('pink')
-                .accentPalette('orange')
-                .backgroundPalette('grey');*/
-            });
+
           </script>
 
         @include('includes.partials.ga')

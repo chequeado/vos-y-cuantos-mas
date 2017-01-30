@@ -41,24 +41,16 @@ elixir(function(mix) {
        'resources/assets/js/plugin/angular'
      )
      .copy(
-       'public/bower_components/angular-animate/angular-animate.min.js',
-       'resources/assets/js/plugin/angular'
+       'public/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js',
+       'resources/assets/js/plugin/slider'
      )
      .copy(
-       'public/bower_components/angular-aria/angular-aria.min.js',
-       'resources/assets/js/plugin/angular'
+       'public/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css',
+       'resources/assets/sass/plugin/slider'
      )
      .copy(
-       'public/bower_components/angular-messages/angular-messages.min.js',
+       'public/bower_components/angular-bootstrap-slider/slider.js',
        'resources/assets/js/plugin/angular'
-     )
-     .copy(
-       'public/bower_components/angular-material/angular-material.min.js',
-       'resources/assets/js/plugin/angular'
-     )
-      .copy(
-       'public/bower_components/angular-material/angular-material.scss',
-       'resources/assets/sass/plugin/angular'
      )
      .copy(
        'public/bower_components/chosen/chosen.jquery.js',
@@ -91,24 +83,13 @@ elixir(function(mix) {
             removeComments: true
         }
       })
-      .ngTemplateCache('/**/frontend.html', 'public/js', 'resources/assets/js/modules', {
-        templateCache: {
-            standalone: true,
-            filename: "templates-frontend.js",
-            module:"templates-frontend"
-        },
-        htmlmin: {
-            collapseWhitespace: true,
-            removeComments: true
-        }
-      })
      /**
       * Process frontend SCSS stylesheets
       */
      .sass([
         'plugin/sweetalert/sweetalert.scss',
-        'plugin/angular/angular-material.scss',
         'plugin/charts/angular-chart.min.css',
+        'plugin/slider/bootstrap-slider.min.css',
         'frontend/chq.scss',
      ], 'resources/assets/css/frontend/chq.css')
 
@@ -119,20 +100,6 @@ elixir(function(mix) {
         'frontend/chq.css'
      ], 'public/css/frontend.chq.css')
 
-     .sass([
-        'plugin/sweetalert/sweetalert.scss',
-        'plugin/angular/angular-material.scss',
-        'plugin/charts/angular-chart.min.css',
-        'frontend/ojo.scss',
-     ], 'resources/assets/css/frontend/ojo.css')
-
-     /**
-      * Combine pre-processed frontend CSS files
-      */
-     .styles([
-        'frontend/ojo.css'
-     ], 'public/css/frontend.ojo.css')
-
      /**
       * Combine frontend scripts
       */
@@ -142,11 +109,9 @@ elixir(function(mix) {
         'plugin/chart/Chart.js',
         'plugin/lodash/lodash.min.js',
         'plugin/angular/angular.min.js',
-        'plugin/angular/angular-animate.min.js',
-        'plugin/angular/angular-aria.min.js',
-        'plugin/angular/angular-messages.min.js',
-        'plugin/angular/angular-material.min.js',
         'plugin/angular/angular-chart.min.js',
+        'plugin/slider/bootstrap-slider.min.js',
+        'plugin/angular/slider.js',
         'frontend/app.js',
         'modules/**/frontend.js'
      ], 'public/js/frontend.js')
@@ -193,12 +158,10 @@ elixir(function(mix) {
       * Apply version control
       */
      .version([
-        "public/css/frontend.ojo.css", 
         "public/css/frontend.chq.css", 
         "public/js/frontend.js", 
         "public/css/backend.css", 
         "public/js/backend.js",
-        "public/js/templates-backend.js",
-        "public/js/templates-frontend.js",
+        "public/js/templates-backend.js"
       ]);
 });

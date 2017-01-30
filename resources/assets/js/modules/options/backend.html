@@ -11,6 +11,8 @@
 
     	<div class="form-group" ng-repeat="(key,opt) in options">
             <label class="col-lg-2 control-label">Opción {{$index+1}}</label>
+            <input class="form-control" name="option[opt{{$index}}][id]" type="hidden" ng-model="opt.id">
+
             <div class="col-lg-4">
 				<input class="form-control" placeholder="Texto" name="option[opt{{$index}}][text]" type="text" ng-model="opt.text">
             </div>

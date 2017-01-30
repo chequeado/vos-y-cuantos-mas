@@ -1,9 +1,7 @@
 {
   "css/backend.css": "css/backend-6417932b1c.css",
-  "css/frontend.chq.css": "css/frontend.chq-0657ae633e.css",
-  "css/frontend.ojo.css": "css/frontend.ojo-bb377845cc.css",
-  "js/backend.js": "js/backend-8b02b87aa0.js",
-  "js/frontend.js": "js/frontend-feb8ac5cef.js",
-  "js/templates-backend.js": "js/templates-backend-6724afa56a.js",
-  "js/templates-frontend.js": "js/templates-frontend-a93e9ec053.js"
+  "css/frontend.chq.css": "css/frontend.chq-4ff6cdfbc0.css",
+  "js/backend.js": "js/backend-07bcd3263b.js",
+  "js/frontend.js": "js/frontend-9bbc27667e.js",
+  "js/templates-backend.js": "js/templates-backend-159dabcd96.js"
 }

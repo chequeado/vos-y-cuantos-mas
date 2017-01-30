@@ -1,42 +1,262 @@
 @import "variable-overrides";
-/*@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";*/
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import '../../../../node_modules/font-awesome/scss/font-awesome';
 
-/**
- * Frontend Styles Start Here
- */
-.question-options{
-	margin-left: 10px;
-	margin-right: 10px;
-	display: inline;
-	.dropdown-menu{
-		top: 0px;
-		left: 0px;
-		position: fixed;
+body{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+    -moz-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+    box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+
+   background-color: #000;
+	
+    &.body-home{
+    	padding-top: 60px;
+    }
+    &.body-app{
+    	padding-top: 100px;
+    }
 	}
-}
-
-.question-text{
-	font-size: 3em;
-}
-
-.btn-option{
-	font-size: inherit;
-}
-
-.btn-arrow .md-font{
-	font-size:37px;
-}
-
-.custom-icon-header{
-	font-size: 25px;
-}
-.question-container{
-	background-size: cover;
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: crisp-edges;
-	background-position:50% 50%;
-	.question-bg{
-		background-color: rgba(0,0,0,0.8);
+.jumbotron{
+	box-shadow: -20px -20px 0px #a80e16;
+	background-color: #fff;
 	}
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.container .jumbotron {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius:0px;
+	margin-top:20px;
+	padding-top:20px;
+}
+.navbar-inverse{
+	background:#e5e5e5;
+    border: none;
+	}
+.navbar-nav{
+	text-align:right;
+	float:right;
+	}
+.navbar-brand{
+	font-family: 'Montserrat', sans-serif;
+	font-size:30px;
+	color:#1a2157;
+	text-transform:uppercase;
+	font-weight:300;
+	text-shadow:0;
+	}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color:#1a2157;
+	}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color:#a80e16;
+	}
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color:#a80e16;
+}
+
+.jumbotron h1{
+	font-family: 'Montserrat', sans-serif;
+	font-size:30px;
+	text-align:center;
+	text-transform:uppercase;
+	margin-bottom:30px;
+}
+h2{
+	font-family: 'Capriola', sans-serif;
+	text-align:center;
+	color:#494949;
+}
+.progress-bar-success {
+background-color: #a50f10;
+background-image: none;
+}
+
+.jumbotron p.pregunta-counter{
+	font-size:12px;
+	font-weight:200;
+	color:#a50f10;
+	padding:0;
+	margin:0;
+	text-transform:uppercase;
+	}
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+	background-image: none;
+    background-color:#1a2157;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	font-family: 'Capriola', sans-serif;
+	color:white;
+	margin:20px 0;
+}
+.well p{
+	font-size:22px;	
+	}
+.list-group{
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow:  none;
+	margin:20px 0 40px 0;
+	}
+a.list-group-item:focus, a.list-group-item, button.list-group-item:focus, button.list-group-item {
+    color: #000;
+    text-decoration: none;
+    background-color: #e5e5e5;
+	font-family: 'Capriola', sans-serif;
+	font-size:16px;
+	border:none;
+	margin-bottom:15px;
+}
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    color: #a50f10;
+    text-decoration: none;
+    background-color: #f5f5f5;
+	border:none;
+}
+.btn-especial{
+  position: relative;
+  vertical-align: center;
+  color: #1a2156;
+  text-align: center;
+  background: #e5e5e5;
+  border: 0;
+  border-left: 10px solid #a50f0f;
+  cursor: pointer;
+  border-radius:0px;
+  text-transform:uppercase;
+  text-shadow: none;
+  margin-bottom:0;
+  padding:14px 15px 14px 15px;
+}
+.btn-especial-chico{
+  position: relative;
+  vertical-align: center;
+  color: #000000;
+  text-align: center;
+  background: #e5e5e5;
+  border: 0;
+  border-left: 10px solid #a50f0f;
+  cursor: pointer;
+  border-radius:0px;
+  text-transform:uppercase;
+  text-shadow: none;
+  margin-top:20px;
+  margin-bottom:0;
+  padding:10px 12px 10px 12px;
+}
+.btn-especial-grande{
+  position: relative;
+  vertical-align: center;
+  color: #a50f0f;
+  text-align: center;
+  background: #e5e5e5;
+  border: 0;
+  border-left: 10px solid #a50f0f;
+  cursor: pointer;
+  border-radius:0px;
+  text-transform:uppercase;
+  text-shadow: none;
+  margin-bottom:0;
+  line-height:22px;
+  padding:13px 15px 13px 15px;
+  font-size:21px;
+}
+.btn-especial:active {
+  top: 2px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-especial:hover {
+  background: #e5e5e5;
+  color: #a50f0f;
+}
+.boton-abajo-right{
+  float:right;
+	}
+.boton-abajo-left{
+  float:left;
+	}
+.boton-abajo-right i{
+color: #a50f0f;
+	}
+.boton-abajo-left i{
+color: #a50f0f;
+	}
+	
+.ui-slider-range {
+   background:green;
+}
+.morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
+.morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
+.numero-grande{
+	font-size:80px;
+	color:#a50f0f;
+	display:block;
+	}
+.resultado-carita .img-responsive {
+    margin: 20px auto 0 auto;
+}
+.ui-slider-range {
+   background:green;
+}
+.percent {
+  color:green;
+  font-weight:bold;
+  text-align:center;
+  width:100%;
+  border:none;
+}
+
+.slider.slider-horizontal .slider-track{
+	height: 4px;
+}
+
+.slider.slider-horizontal .slider-tick, 
+.slider.slider-horizontal .slider-handle{
+	margin-top: -8px;
+	background:#a50f0f;
+}
+
+.slider-selection{
+	background: #a50f0f;
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
 }
