@@ -9038,11 +9038,20 @@ body {
 
 .navbar-brand {
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   color: #1a2157;
   text-transform: uppercase;
   font-weight: 300;
   text-shadow: 0; }
+
+@media (min-width: 1200px) {
+  .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #1a2157;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-shadow: 0; } }
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
   color: #1a2157; }
@@ -9055,15 +9064,29 @@ body {
 
 .jumbotron h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 30px; }
+  margin-bottom: 20px; }
 
 h2 {
   font-family: 'Capriola', sans-serif;
   text-align: center;
-  color: #494949; }
+  color: #494949;
+  font-size: 20px; }
+
+@media (min-width: 1200px) {
+  .jumbotron h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px; }
+  h2 {
+    font-family: 'Capriola', sans-serif;
+    text-align: center;
+    color: #494949;
+    font-size: 30px; } }
 
 .progress-bar-success {
   background-color: #a50f10;
@@ -9079,8 +9102,7 @@ h2 {
 
 .well {
   min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
+  padding: 10px;
   background-image: none;
   background-color: #1a2157;
   border: none;
@@ -9088,24 +9110,54 @@ h2 {
   box-shadow: none;
   font-family: 'Capriola', sans-serif;
   color: white;
-  margin: 20px 0; }
+  margin: 20px 0 0 0; }
 
 .well p {
-  font-size: 22px; }
+  font-size: 16px; }
+
+@media (min-width: 1200px) {
+  .well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-image: none;
+    background-color: #1a2157;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: 'Capriola', sans-serif;
+    color: white;
+    margin: 20px 0; }
+  .well p {
+    font-size: 22px; } }
 
 .list-group {
   border-radius: 0px;
   box-shadow: none;
-  margin: 20px 0 40px 0; }
+  margin: 20px 0 5px 0; }
 
 a.list-group-item:focus, a.list-group-item, button.list-group-item:focus, button.list-group-item {
   color: #000;
   text-decoration: none;
   background-color: #e5e5e5;
   font-family: 'Capriola', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   border: none;
-  margin-bottom: 15px; }
+  margin-bottom: 5px; }
+
+@media (min-width: 1200px) {
+  .list-group {
+    border-radius: 0px;
+    box-shadow: none;
+    margin: 20px 0 40px 0; }
+  a.list-group-item:focus, a.list-group-item, button.list-group-item:focus, button.list-group-item {
+    color: #000;
+    text-decoration: none;
+    background-color: #e5e5e5;
+    font-family: 'Capriola', sans-serif;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 15px; } }
 
 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
   color: #a50f10;
