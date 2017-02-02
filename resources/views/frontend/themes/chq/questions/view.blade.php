@@ -45,7 +45,7 @@
                       <h1>{{$obj->title}}</h1>
                       
                       <div class="well">
-                        <p>{{$obj->description}} .. {{$obj->description_suffix}}</p>
+                        <p>{{$obj->call_action}}</p>
                       </div>
 
 

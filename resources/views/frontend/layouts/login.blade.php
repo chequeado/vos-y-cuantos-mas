@@ -32,11 +32,6 @@
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
         {!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!}
 
-        @yield('before-scripts-end')
-        {!! Html::script(elixir('js/frontend.js')) !!}
-        {!! HTML::script(elixir('js/templates-frontend.js')) !!}
-        @yield('after-scripts-end')
-
         @include('includes.partials.ga')
     </body>
 </html>

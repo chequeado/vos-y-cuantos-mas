@@ -14,7 +14,7 @@
         </div><!--form control-->
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.call') }}</label>
+            <label class="col-lg-2 control-label">Pregunta</label>
             <div class="col-lg-10">
                 {!! Form::textarea('call_action', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.call')]) !!}
             </div>

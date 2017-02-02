@@ -18,7 +18,7 @@
                     
                     <p class="pregunta-counter">Pregunta @{{index+1}} de @{{questions.length}}</p>
                     <div class="well">
-                      <p>@{{question.description}} ... @{{question.description_suffix}}</p>
+                      <p>@{{question.call_action}}</p>
                     </div>
                 </div>
                 <!-- /question -->
