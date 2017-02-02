@@ -36,13 +36,13 @@
                 <div class="row">
 
                     <div class="col-md-4">
-                        <a ng-repeat="q in votes.muchos" class="btn btn-default btn-block">@{{q.question.title}}</a>
+                        <a ng-cloak ng-repeat="q in votes.muchos" class="btn btn-default btn-block">@{{q.question.title}}</a>
                     </div>
                     <div class="col-md-4">
-                        <a ng-repeat="q in votes.algunos" class="btn btn-default btn-block">@{{q.question.title}}</a>
+                        <a ng-cloak ng-repeat="q in votes.algunos" class="btn btn-default btn-block">@{{q.question.title}}</a>
                     </div>
                     <div class="col-md-4">
-                        <a ng-repeat="q in votes.pocos" class="btn btn-default btn-block">@{{q.question.title}}</a>
+                        <a ng-cloak ng-repeat="q in votes.pocos" class="btn btn-default btn-block">@{{q.question.title}}</a>
                     </div>
 
                 </div>

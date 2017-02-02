@@ -25,6 +25,9 @@ class QuestionController extends Controller
         $theme = \Config::get('site.theme');
 
         $obj = $this->questions->findOrThrowException($id, true);
+        if($obj){
+            $obj->load('options');
+        }
         return view('frontend.themes.'.$theme.'.questions.view')
             ->withTheme($theme)
             ->withObj($obj);

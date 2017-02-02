@@ -10,9 +10,11 @@
       <a class="navbar-brand" href="#">¿Vos y cuántos más?</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
+      @if(strpos(Request::url(), 'questions')===false)
       <ul class="nav navbar-nav">
         <li><a href="#">MIS RESULTADOS <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
       </ul>
+      @endif
     </div><!--/.nav-collapse -->
   </div>
 </nav>

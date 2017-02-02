@@ -142,7 +142,6 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
 
 });
 
-
 DesmitificadorApp.controller('SummaryCtrl', function ($scope,$templateCache, $http, $window,$anchorScroll) {
 
     $scope.loading = true;
@@ -182,8 +181,57 @@ DesmitificadorApp.controller('SummaryCtrl', function ($scope,$templateCache, $ht
             });*/
     };
 
-    $scope.start = function(){
-        console.log('start!');
+});
+
+DesmitificadorApp.controller('QuestionCtrl', function ($scope) {
+
+    $scope.loading = true;
+
+    $scope.votes = {};
+
+    $scope.isMobile = function(){ 
+        return ($window.innerWidth <= 800)?true:false;
+    };
+
+    $scope.init = function(question,colors){
+
+        $scope.question = question;
+        $scope.chart = {};
+
+        $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
+        $scope.chart.data = _.map($scope.question.options,function(d){
+            return d.value;
+        });
+
+        $scope.chart.labels = _.map($scope.question.options,function(d){
+            return d.text;
+        });
+
+       /* votes.map(function(v){
+            var cuantos = 'pocos';
+            if(v.option.value>=50){
+                cuantos = 'muchos';
+            }else if(v.option.value<50 && v.option.value >20){
+                cuantos = 'algunos';
+            }
+            v.col = cuantos;
+            return v;
+        });
+
+        $scope.votes = _.groupBy(votes,'col');*/
+
+        //Chart.defaults.global.colours = colors;
+/*        $scope.category_id = category_id;
+//        $scope.chart.colours = colors;
+        $http.get('/api/questions?category_id='+category_id, {})
+            .then(function(response){
+                $scope.category = response.data.metadata.category;
+                $scope.questions = response.data.records;
+                $scope.start();
+                $scope.loading = false;
+            }, function(e){
+                console.error(e);
+            });*/
     };
 
 });
