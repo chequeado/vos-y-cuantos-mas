@@ -10,7 +10,6 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
 
 	$scope.question = null;
 	$scope.index = null;
-	$scope.thanks = false;
     $scope.answer = false;
     $scope.bet = 50;
 
@@ -26,6 +25,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
 
     $scope.init = function(category_id,colors){
         //Chart.defaults.global.colours = colors;
+        $scope.category_id = category_id;
     	$scope.chart.colours = colors;
         $http.get('/api/questions?category_id='+category_id, {})
     		.then(function(response){
@@ -114,7 +114,8 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         if(!$scope.isMobile()){
             $('body').css('background-image','none');
         }
-    	$scope.state = 'thanks';
+        $window.location = '/summary?key='+$('meta[name="_token"]').attr('content')+'&cat='+$scope.category_id;
+    	//$scope.state = 'thanks';
     };
 
     $scope.sendEvent = function(cat,action,label,value){
@@ -137,6 +138,52 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
             }, function(e){
                 console.error(e);
             });
+    };
+
+});
+
+
+DesmitificadorApp.controller('SummaryCtrl', function ($scope,$templateCache, $http, $window,$anchorScroll) {
+
+    $scope.loading = true;
+
+    $scope.votes = {};
+
+    $scope.isMobile = function(){ 
+        return ($window.innerWidth <= 800)?true:false;
+    };
+
+    $scope.init = function(category_id,votes,colors){
+
+        votes.map(function(v){
+            var cuantos = 'pocos';
+            if(v.option.value>=50){
+                cuantos = 'muchos';
+            }else if(v.option.value<50 && v.option.value >20){
+                cuantos = 'algunos';
+            }
+            v.col = cuantos;
+            return v;
+        });
+
+        $scope.votes = _.groupBy(votes,'col');
+
+        //Chart.defaults.global.colours = colors;
+/*        $scope.category_id = category_id;
+//        $scope.chart.colours = colors;
+        $http.get('/api/questions?category_id='+category_id, {})
+            .then(function(response){
+                $scope.category = response.data.metadata.category;
+                $scope.questions = response.data.records;
+                $scope.start();
+                $scope.loading = false;
+            }, function(e){
+                console.error(e);
+            });*/
+    };
+
+    $scope.start = function(){
+        console.log('start!');
     };
 
 });

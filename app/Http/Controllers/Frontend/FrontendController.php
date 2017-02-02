@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\Backend\Category\CategoryRepositoryContract;
+use App\Repositories\Backend\Vote\VoteRepositoryContract;
 use Illuminate\Http\Request;
 
 /**
@@ -14,10 +15,12 @@ class FrontendController extends Controller
 {
 
     public function __construct(
-        CategoryRepositoryContract $categories
+        CategoryRepositoryContract $categories,
+        VoteRepositoryContract $votes
     )
     {
         $this->categories       = $categories;
+        $this->votes       = $votes;
     }
 
     /**
@@ -39,6 +42,8 @@ class FrontendController extends Controller
 
     public function app(Request $request)
     {
+        \Session::regenerateToken();
+
         $theme = \Config::get('site.theme');
         
         javascript()->put([
@@ -48,6 +53,19 @@ class FrontendController extends Controller
         $cat = ($request->has('cat'))?$request->input('cat'):1;
 
         return view('frontend.themes.'.$theme.'.app.index')->withCat($cat)->withTheme($theme);
+    }
+
+    public function summary(Request $request)
+    {
+        $theme = \Config::get('site.theme');
+        
+        javascript()->put([
+            'theme' => $theme
+        ]);
+
+        $cat = ($request->has('cat'))?$request->input('cat'):1;
+
+        return view('frontend.themes.'.$theme.'.app.summary')->withCat($cat)->withVotes($this->votes->getByHash($request->input('key')))->withTheme($theme);
     }
 
 }

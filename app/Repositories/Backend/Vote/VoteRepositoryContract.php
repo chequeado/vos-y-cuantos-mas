@@ -11,4 +11,6 @@ interface VoteRepositoryContract
 
     public function create($input);
 
+    public function getByHash($key);
+
 }

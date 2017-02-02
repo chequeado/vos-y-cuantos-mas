@@ -32,6 +32,13 @@ class EloquentVoteRepository implements VoteRepositoryContract
 
     }
 
+    public function getByHash($key){
+        $votes = Vote::where('_token',$key)->get();
+        $votes->load('question');
+        $votes->load('option');
+        return $votes;
+    }
+
     public function getCountByOption($option){
         return Vote::where('option_id',$option)->count();
     }

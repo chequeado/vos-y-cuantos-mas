@@ -5,6 +5,7 @@
  */
 Route::get('/', 'FrontendController@index')->name('frontend.index');
 Route::get('/app', 'FrontendController@app')->name('frontend.app');
+Route::get('/summary', 'FrontendController@summary')->name('frontend.summary');
 Route::get('/questions/{id}', 'QuestionController@view')->name('frontend.question.view');
 /*Route::get('macros', 'FrontendController@macros')->name('frontend.macros');*/
 
