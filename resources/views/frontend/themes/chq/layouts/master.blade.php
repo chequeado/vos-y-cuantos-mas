@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_token" content="{{ csrf_token() }}" />
 
+        <title>¿Vos y cuántos más?</title>
+
+        <!-- Meta -->
+        <meta name="description" content="@yield('meta_description', '¿Vos y cuántos más?')">
+        <meta name="author" content="@yield('meta_author', 'Chequeado.com')">
         @yield('meta')
 
         <!-- Styles -->
@@ -13,27 +18,32 @@
         {!! Html::style(elixir('css/frontend.'.$theme.'.css')) !!}
         @yield('after-styles-end')
 
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Capriola" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
     </head>
-    <body class="body-home">
+    <body class="body-home body2">
 
         @include('includes.partials.messages')
-        @include('frontend.themes.'.$theme.'.includes.nav')
         @yield('content')
+        @include('frontend.themes.'.$theme.'.includes.footer')
 
         <!-- JavaScripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
 
         {!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!}
+        @include('includes.partials.fb')
 
         @yield('before-scripts-end')
         {!! Html::script(elixir('js/frontend.js')) !!}
         @yield('after-scripts-end')
 
         <!-- Your application bootstrap  -->
-          <script type="text/javascript">    
+        <script type="text/javascript">    
 
-          </script>
+        </script>
 
         @include('includes.partials.ga')
     </body>

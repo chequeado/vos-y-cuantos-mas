@@ -27,11 +27,13 @@
         @include('includes.partials.messages')
         @include('frontend.themes.'.$theme.'.includes.nav')
         @yield('content')
+        @include('frontend.themes.'.$theme.'.includes.footer')
 
         <!-- JavaScripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
         {!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!}
+        @include('includes.partials.fb')
 
         @yield('before-scripts-end')
         {!! Html::script(elixir('js/frontend.js')) !!}

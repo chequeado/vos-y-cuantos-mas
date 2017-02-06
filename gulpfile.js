@@ -112,6 +112,7 @@ elixir(function(mix) {
         'plugin/angular/angular-chart.min.js',
         'plugin/slider/bootstrap-slider.min.js',
         'plugin/angular/slider.js',
+        'plugin/socialshare/socialshare.js',
         'frontend/app.js',
         'modules/**/frontend.js'
      ], 'public/js/frontend.js')

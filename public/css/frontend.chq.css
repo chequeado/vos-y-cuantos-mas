@@ -9003,17 +9003,33 @@ button.close {
   clip: auto; }
 
 body {
+  background: #000 no-repeat center center fixed;
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
-  box-shadow: rgba(0, 0, 0, 0.2) 3px 5px 5px;
-  background-color: #000; }
+  box-shadow: none; }
   body.body-home {
-    padding-top: 60px; }
+    padding-top: 0px; }
   body.body-app {
     padding-top: 100px; }
 
+.body2 {
+  background: url("/images/bg-home.jpg") no-repeat center center fixed;
+  background-size: cover; }
+
 .jumbotron {
   box-shadow: -20px -20px 0px #a80e16;
+  background-color: #fff; }
+
+.jumbotron-home {
+  box-shadow: none;
+  background-color: none;
+  background: url("/images/bg-transparente.png") repeat;
+  height: 100vh; }
+  .jumbotron-home .logo-home {
+    margin: 30px 0; }
+
+.jumbotron-final {
+  box-shadow: -20px 0px 0px #a80e16;
   background-color: #fff; }
 
 .jumbotron p {
@@ -9074,6 +9090,13 @@ h2 {
   text-align: center;
   color: #494949;
   font-size: 20px; }
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #494949;
+  font-size: 11px;
+  text-transform: uppercase; }
 
 @media (min-width: 1200px) {
   .jumbotron h1 {
@@ -9213,6 +9236,38 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   padding: 13px 15px 13px 15px;
   font-size: 21px; }
 
+.btn-especial2 {
+  position: relative;
+  vertical-align: center;
+  color: #fff;
+  text-align: center;
+  background: #a50f0f;
+  border: 0;
+  border-left: 10px solid #1a2156;
+  cursor: pointer;
+  border-radius: 0px;
+  text-transform: uppercase;
+  text-shadow: none;
+  margin: 30px 0;
+  padding: 14px 35px 14px 35px;
+  font-size: 20px; }
+
+.btn-especial3 {
+  position: relative;
+  vertical-align: center;
+  color: #a50f0f;
+  text-align: center;
+  background: #e5e5e5;
+  border: 0;
+  border-left: 10px solid #a50f0f;
+  cursor: pointer;
+  border-radius: 0px;
+  text-transform: uppercase;
+  text-shadow: none;
+  margin: 30px 0;
+  padding: 10px 25px 10px 25px;
+  font-size: 16px; }
+
 .btn-especial:active {
   top: 2px;
   outline: none;
@@ -9276,6 +9331,24 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   text-align: center;
   width: 100%;
   border: none; }
+
+.bg-info {
+  background-color: #e5e5e5;
+  padding: 10px;
+  font-family: 'Capriola', sans-serif; }
+  .bg-info img {
+    margin: 10px auto; }
+
+footer {
+  background-color: #1a2156;
+  padding: 10px 0; }
+
+footer a {
+  margin: 5px;
+  color: #fff; }
+
+footer a:hover {
+  color: #fff; }
 
 .slider.slider-horizontal .slider-track {
   height: 4px; }

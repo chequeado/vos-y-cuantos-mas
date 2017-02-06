@@ -107,8 +107,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <button href="#" class="btn btn-default btn-especial-chico"><i class="fa fa-twitter" aria-hidden="true"></i></button>
-                                <button href="#" class="btn btn-default btn-especial-chico"><i class="fa fa-facebook-official" aria-hidden="true"></i></button>
+                                <a href="#" class="share-btn share-twitter btn btn-default btn-especial-chico" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a id="share-facebook" data-url="{{url('questions')}}/@{{question.id}}" class="btn btn-default btn-especial-chico"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                             </div>
                             <div class="col-md-6">
                                 <a target="_blank" ng-show="question.answer_link" class="btn btn-default btn-especial-chico" href="@{{question.answer_link}}">Leer la nota</a>
