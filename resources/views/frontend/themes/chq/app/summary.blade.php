@@ -1,34 +1,5 @@
 @extends('frontend.themes.'.$theme.'.layouts.master')
 
-@section('meta')
-  <!-- Place this data between the <head> tags of your website -->
-  <title>¿Vos y cuántos más? - Mis resultados</title>
-  <meta name="description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados." />
-
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="¿Vos y cuántos más?">
-  <meta itemprop="description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados.">
-  <meta itemprop="image" content="{{URL::to('/').'/images/logo-share.png'}}">
-
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@chequeado">
-  <meta name="twitter:title" content="¿Vos y cuántos más?">
-  <meta name="twitter:description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados.">
-  <meta name="twitter:creator" content="@chequeado">
-  <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content="{{URL::to('/').'/images/logo-share.png'}}">
-
-  <!-- Open Graph data -->
-  <meta property="og:title" content="¿Vos y cuántos más?" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="{{Request::fullUrl()}}" />
-  <meta property="og:image" content="{{URL::to('/').'/images/logo-share.png'}}" />
-  <meta property="og:description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados." />
-  <meta property="og:site_name" content="¿Vos y cuántos más?" />
-
-@endsection
-
 @section('content')
 
     <div class="question-container" ng-controller="SummaryCtrl" ng-init='init("{{$cat}}", {!!$votes!!}, [ "#19845b", "#a50f0f", "#facf5a", "#444854", "#1a2156" ])' ng-cloak>
