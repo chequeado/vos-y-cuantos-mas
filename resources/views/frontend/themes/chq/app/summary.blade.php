@@ -31,7 +31,7 @@
 
 @section('content')
 
-    <div class="question-container" ng-controller="SummaryCtrl" ng-init='init("{{$cat}}", {!!$votes!!}, [ "#19845b", "#a50f0f", "#facf5a", "#444854", "#1a2156" ])' ng-cloak>
+    <div class="question-container" ng-controller="SummaryCtrl" ng-init='init("{{$cat}}", {!!$votes!!})' ng-cloak>
 
         <div class="container theme-showcase" role="main">
           <div class="jumbotron-final">
@@ -41,27 +41,39 @@
                   <div class="col-md-4"><img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive" style="margin:30px 0 0 0"/></div>
                   <div class="col-md-4"></div>
                 </div>
+                <div class="final-final text-center">
+                  <h1>¡De <b>@{{total}}</b> preguntas, le acertaste a <b>@{{correctas}}</b>!</h1>
+                </div>
                 <div class="clearfix"></div>
                 <div class="text-center"><h2>Resultados finales</h2></div>
                 <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-md-offset-2">
                         <div class="row">
                           <div class="col-md-4">
                             <p class="bg-info"><img alt="Vos y cuantos más?" src="images/monton.png" class="img-responsive"/></p>
-                            <h3>respondieron igual en temas de</h3>
+                            <h3 ng-show="votes.muchos.length>0">respondieron igual en temas de:</h3>
+                            <h3 ng-show="!votes.muchos">sin coincidencias</h3>
                             <p class="bg-info" ng-cloak ng-repeat="q in votes.muchos">@{{q.question.title}}</p>
                           </div>
                           <div class="col-md-4">
                             <p class="bg-info"><img alt="Vos y cuantos más?" src="images/muchos.png" class="img-responsive"/></p>
-                            <h3>respondieron igual en temas de</h3>
+                            <h3 ng-show="votes.algunos.length>0">respondieron igual en temas de:</h3>
+                            <h3 ng-show="!votes.algunos">sin coincidencias</h3>
                             <p class="bg-info" ng-cloak ng-repeat="q in votes.algunos">@{{q.question.title}}</p>
                           </div>
                           <div class="col-md-4">
                             <p class="bg-info"><img alt="Vos y cuantos más?" src="images/pocos.png" class="img-responsive"/></p>
-                            <h3>respondieron igual en temas de</h3>
+                            <h3 ng-show="votes.pocos.length>0">respondieron igual en temas de:</h3>
+                            <h3 ng-show="!votes.pocos">sin coincidencias</h3>
                             <p class="bg-info" ng-cloak ng-repeat="q in votes.pocos">@{{q.question.title}}</p>
+                          </div>
+                        </div>
+                        <div ng-if="notas.length>0" class="row">
+                          <div class="col-md-12">
+                            <h3 ng-show="!votes.muchos">Por cómo respondiste te recomendamos las siguientes notas:</h3>
+                            <ul>
+                              <li ng-repeat="n in notas"><a href="@{{n.question.answer_link}}">@{{n.question.answer_title}}</a></li>
+                            </ul>
                           </div>
                         </div>
                         <div class="row">
@@ -76,8 +88,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-1"></div>
                 </div>
             </div>
         </div>

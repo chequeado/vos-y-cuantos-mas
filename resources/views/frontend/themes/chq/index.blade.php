@@ -37,6 +37,7 @@
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
             <img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive logo-home"/>
+            <p class="text-muted text-right">Argentina</p>
           </div>
         </div>
         <div class="clearfix"></div>
@@ -65,8 +66,5 @@
       </div>
         
     </div> <!-- /container -->
-
-
-
 
 @endsection

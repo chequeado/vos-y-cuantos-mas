@@ -60,4 +60,19 @@ class ApiController extends Controller
         return response()->json(array('response'=>$response));
     }
 
+    public function receiveSuggest(Request $request,$type)
+    {
+        $response = false;
+        //if($request->ajax()) {
+            $all = $request->all();
+            $all['type'] = $type;
+            $response = $all;
+            /*if($request->has('option_id') && $request->has('question_id') && $this->options->existByQuestion($all['question_id'],$all['option_id'])){
+                $response = $this->votes->create($all);
+            }*/            
+        //}
+        return response()->json(array('response'=>$response));
+    }
+    
+
 }

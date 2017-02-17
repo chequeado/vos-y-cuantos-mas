@@ -9,4 +9,5 @@ Route::get('/results', 'ApiController@votesByQuestion');
 
 Route::group(['middleware' => 'vote'], function() {
 	Route::post('/vote','ApiController@registerVote');
+	Route::post('/receive/{type}','ApiController@receiveSuggest');
 });

@@ -10,7 +10,7 @@ class Vote extends Model {
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['question_id','option_id','_token'];
+    protected $fillable = ['question_id','option_id','_token','bet'];
 
     public function question()
     {

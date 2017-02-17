@@ -4763,6 +4763,7 @@ DesmitificadorApp.config(function(ChartJsProvider){
 DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http, $window,$anchorScroll) {
 
 	$scope.loading = true;
+    $scope.saving = false;
 
 	$scope.question = null;
 	$scope.index = null;
@@ -4775,7 +4776,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     $scope.bgImage = '';
 
     $scope.isMobile = function detectmob(){ 
-        console.log($window.innerWidth,$window.innerHeight);
+        //console.log($window.innerWidth,$window.innerHeight);
         return ($window.innerWidth <= 800)?true:false;
     };
 
@@ -4814,7 +4815,6 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     $scope.chooseOption = function(opt){
         $scope.question.answer = opt;
         $scope.sendEvent('Option', 'select', $scope.question.answer.text, $scope.question.answer.id);
-        $scope.saveVote($scope.question.id,$scope.question.answer.id);
         $scope.state = 'slider';
         $scope.renderSlider();
     };
@@ -4829,14 +4829,23 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     };
 
     $scope.chooseBet = function($event,value){
-        console.log('chooseBet');
+        $scope.sendEvent('Option', 'bet', $scope.question.bet, $scope.question.answer.id);
         $scope.renderAnswer();
     };
 
+    $scope.skipBet = function(){
+        $scope.sendEvent('Option', 'skip', null, $scope.question.answer.id);
+        $scope.question.bet = null;
+        $scope.renderAnswer();
+    }
+
     $scope.renderAnswer = function(){
+        $scope.saveVote($scope.question.id,$scope.question.answer.id,$scope.question.bet);
         $scope.state = 'answer';
         $scope.sendEvent('Question', 'result', $scope.question.title, $scope.question.id);
-        $scope.question.diff = Math.abs($scope.question.bet - $scope.question.answer.value);
+        if($scope.question.bet){
+            $scope.question.diff = Math.abs($scope.question.bet - $scope.question.answer.value);
+        }
         $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
         $scope.chart.data = _.map($scope.question.options,function(d){
             return d.value;
@@ -4880,17 +4889,19 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         }
     };
 
-    $scope.saveVote = function(question_id,option_id){
-
+    $scope.saveVote = function(question_id,option_id, bet){
+        $scope.saving = true;
         $http.post('/api/vote', 
             {
                 'question_id':question_id,
                 'option_id':option_id,
+                'bet':bet,
                 '_token':$('meta[name="_token"]').attr('content')
             })
             .then(function(response){
                 $scope.votes = response.data.response;
-                console.log(response);
+                $scope.saving = false;
+                //console.log(response);
             }, function(e){
                 console.error(e);
             });
@@ -4908,9 +4919,20 @@ DesmitificadorApp.controller('SummaryCtrl', function ($scope,$templateCache, $ht
         return ($window.innerWidth <= 800)?true:false;
     };
 
-    $scope.init = function(category_id,votes,colors){
+    $scope.init = function(category_id,votes){
+
+        $scope.total = votes.length;
+        $scope.correctas = 0;
 
         votes.map(function(v){
+            if(v.bet){
+                v.diff = Math.abs(v.bet - v.option.value);                
+                v.correcta = (v.diff<=10)?true:false;
+                $scope.correctas += (v.diff<=10)?1:0;
+            } else {
+                v.correcta = false;
+            }
+
             var cuantos = 'pocos';
             if(v.option.value>=50){
                 cuantos = 'muchos';
@@ -4923,18 +4945,10 @@ DesmitificadorApp.controller('SummaryCtrl', function ($scope,$templateCache, $ht
 
         $scope.votes = _.groupBy(votes,'col');
 
-        //Chart.defaults.global.colours = colors;
-/*        $scope.category_id = category_id;
-//        $scope.chart.colours = colors;
-        $http.get('/api/questions?category_id='+category_id, {})
-            .then(function(response){
-                $scope.category = response.data.metadata.category;
-                $scope.questions = response.data.records;
-                $scope.start();
-                $scope.loading = false;
-            }, function(e){
-                console.error(e);
-            });*/
+        $scope.notas = _.sampleSize(votes.filter(function(v){
+            return v.question.answer_link!='' && v.correcta;
+        }), 3);
+
     };
 
 });
@@ -4991,6 +5005,62 @@ DesmitificadorApp.controller('QuestionCtrl', function ($scope) {
     };
 
 });
+
+DesmitificadorApp.controller('FeedbackCtrl', function ($scope,$http) {
+    $scope.sugerencias = {};
+    $scope.preguntas = {};
+    $scope.loading = false;
+    $scope.sent = false;
+
+    $scope.sugerenciasValid = function(){
+        return  ($scope.sugerencias.nombre && $scope.sugerencias.nombre != '') &&
+                ($scope.sugerencias.email && $scope.sugerencias.email != '') &&
+                ($scope.sugerencias.sugerencia && $scope.sugerencias.sugerencia != '');
+    }
+
+    $scope.preguntasValid = function(){
+        return  ($scope.preguntas.nombre && $scope.preguntas.nombre != '') &&
+                ($scope.preguntas.email && $scope.preguntas.email != '') &&
+                ($scope.preguntas.pregunta && $scope.preguntas.pregunta != '') &&
+                ($scope.preguntas.link && $scope.preguntas.link != '');
+    }
+
+    $scope.processSugerenciasForm = function() {
+        if($scope.sugerenciasValid()){
+            $scope.loading = true;
+            $scope.sent = false;
+            $scope.sendForm($scope.sugerencias,'sugerencias');        
+        }
+    };
+
+    $scope.processPreguntasForm = function() {
+        if($scope.preguntasValid()){
+            $scope.loading = true;
+            $scope.sent = false;
+            $scope.sendForm($scope.preguntas,'preguntas');        
+        }
+    };
+
+    $scope.sendForm = function(data,type) {
+      data._token = $('meta[name="_token"]').attr('content');
+
+      $http.post('/api/receive/'+type,
+        data)
+          .then(function(response) {
+            $scope.loading = false;
+            $scope.sent = true;
+            $scope[type] = {};
+            setTimeout(function(){
+                jQuery('#'+type+'Modal').modal('hide');
+                $scope.sent = false;
+                $scope.$apply();
+            },3000);
+            console.log(response);
+          });
+    };
+});
+
+
 DesmitificadorApp.controller('OptionsCtrl', function ($scope) {
 
 });

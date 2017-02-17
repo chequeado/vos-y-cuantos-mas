@@ -9002,6 +9002,16 @@ button.close {
   overflow: visible;
   clip: auto; }
 
+*:focus,
+* {
+  outline: none !important; }
+
+textarea {
+  resize: none; }
+
+.form-control {
+  border-radius: 0px; }
+
 body {
   background: #000 no-repeat center center fixed;
   background-size: cover;
@@ -9036,13 +9046,15 @@ body {
   margin-bottom: 15px;
   font-size: 16px;
   font-weight: 200; }
+  .jumbotron p.respuesta {
+    margin-top: 20px; }
 
 .container .jumbotron {
   padding-right: 15px;
   padding-left: 15px;
   border-radius: 0px;
   margin-top: 20px;
-  padding-top: 20px; }
+  padding-top: 0px !important; }
 
 .navbar-inverse {
   background: #e5e5e5;
@@ -9060,7 +9072,15 @@ body {
   font-weight: 300;
   text-shadow: 0; }
 
+.navbar-brand span.text-muted {
+  color: #ccc;
+  font-weight: normal;
+  font-size: 12px; }
+
 @media (min-width: 1200px) {
+  .navbar-brand span.text-muted {
+    color: #ccc;
+    font-weight: normal; }
   .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -9201,7 +9221,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   text-transform: uppercase;
   text-shadow: none;
   margin-bottom: 0;
-  padding: 14px 15px 14px 15px; }
+  padding: 14px 15px 14px 15px;
+  outline: none !important; }
 
 .btn-especial-chico {
   position: relative;
@@ -9217,7 +9238,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   text-shadow: none;
   margin-top: 20px;
   margin-bottom: 0;
-  padding: 10px 12px 10px 12px; }
+  padding: 10px 12px 10px 12px;
+  outline: none !important; }
 
 .btn-especial-grande {
   position: relative;
@@ -9345,10 +9367,22 @@ footer {
 
 footer a {
   margin: 5px;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
 
 footer a:hover {
   color: #fff; }
+
+.final-final {
+  background-color: #ebebeb;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  padding: 15px;
+  color: #a50f0f;
+  text-align: center; }
+
+.final-final b {
+  text-decoration: underline; }
 
 .slider.slider-horizontal .slider-track {
   height: 4px; }
@@ -9361,10 +9395,34 @@ footer a:hover {
 .slider-selection {
   background: #a50f0f; }
 
+.modal-chq .modal-dialog {
+  box-shadow: -20px -20px 0px #a80e16;
+  background-color: #fff;
+  border-radius: 0px; }
+  .modal-chq .modal-dialog .modal-content {
+    box-shadow: none;
+    border: none; }
+    .modal-chq .modal-dialog .modal-content .modal-header {
+      border: none; }
+    .modal-chq .modal-dialog .modal-content .modal-footer {
+      border: none; }
+
+.btn-container {
+  margin-top: 20px; }
+
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .resultado-carita {
+    margin-top: 20px; } }
+
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  footer a {
+    display: block;
+    width: 100%; } }
+
 /* Custom, iPhone Retina */
 
 /*# sourceMappingURL=chq.css.map */
