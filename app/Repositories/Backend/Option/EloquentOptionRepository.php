@@ -112,8 +112,7 @@ class EloquentOptionRepository implements OptionRepositoryContract
 
         $newIds = $updateItems->map(function($o){return (int)$o['id'];})->flatten();
         $oldIds = $oldOptions->map(function($o){return $o->id;});
-        var_dump($newIds);
-        var_dump($oldIds);
+
         $diff = array_diff($oldIds->toArray(),$newIds->toArray());
 
         //create

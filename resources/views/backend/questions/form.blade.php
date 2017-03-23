@@ -9,14 +9,16 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.title') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.title')]) !!}
+                {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.title'),'maxlength'=>'100']) !!}
+                <p class="help-block">Límite 100 caracteres</p>
             </div>
         </div><!--form control-->
 
         <div class="form-group">
             <label class="col-lg-2 control-label">Pregunta</label>
             <div class="col-lg-10">
-                {!! Form::textarea('call_action', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.call')]) !!}
+                {!! Form::textarea('call_action', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.call'),'maxlength'=>'400']) !!}
+                <p class="help-block">Límite 400 caracteres</p>
             </div>
         </div><!--form control-->
 
@@ -48,14 +50,16 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.description') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description')]) !!}
+                {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 200 caracteres</p>
             </div>
         </div><!--form control-->
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.description_suffix') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('description_suffix', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description_suffix')]) !!}
+                {!! Form::text('description_suffix', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description_suffix'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 200 caracteres</p>
             </div>
         </div><!--form control-->
       </div>
@@ -83,21 +87,24 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_link') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('answer_link', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_link')]) !!}
+                {!! Form::text('answer_link', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_link'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 200 caracteres</p>
             </div>
         </div><!--form control-->
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_title') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('answer_title', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_title')]) !!}
+                {!! Form::text('answer_title', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_title'),'maxlength'=>'100']) !!}
+                <p class="help-block">Límite 100 caracteres</p>
             </div>
         </div><!--form control-->
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_description') }}</label>
             <div class="col-lg-10">
-                {!! Form::textarea('answer_description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_description')]) !!}
+                {!! Form::textarea('answer_description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_description'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 200 caracteres</p>
             </div>
         </div><!--form control-->
 
@@ -113,21 +120,24 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_source') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('answer_source', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_source')]) !!}
+                {!! Form::text('answer_source', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_source'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 200 caracteres</p>
             </div>
         </div><!--form control-->
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_source_link') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('answer_source_link', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_source_link')]) !!}
+                {!! Form::text('answer_source_link', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_source_link'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 200 caracteres</p>
             </div>
         </div><!--form control-->
 
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.share_text') }}</label>
             <div class="col-lg-10">
-                {!! Form::text('share_text', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.share_text')]) !!}
+                {!! Form::text('share_text', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.share_text'),'maxlength'=>'200']) !!}
+                <p class="help-block">Límite 100 caracteres</p>
             </div>
         </div><!--form control-->
 
