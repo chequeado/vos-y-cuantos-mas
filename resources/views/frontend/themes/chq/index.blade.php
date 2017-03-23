@@ -37,7 +37,7 @@
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
             <img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive logo-home"/>
-            <p class="text-muted text-right">Argentina</p>
+            <p class="text-muted text-right">Argentina | BETA</p>
           </div>
         </div>
         <div class="clearfix"></div>
@@ -45,7 +45,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-1"></div>
           <div class="col-md-8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum libero vel volutpat facilisis. Ut tristique diam sapien, vel rutrum ante finibus in. Sed blandit enim quis magna finibus, ut pharetra nibh facilisis. Vestibulum enim turpis, finibus in odio vestibulum, aliquet laoreet mi. Morbi a orci mollis, aliquet quam a, iaculis odio. Pellentesque quam ipsum, faucibus tincidunt interdum nec, convallis non tellus. Aliquam erat volutpat. Curabitur quis laoreet velit. Sed nec mauris consequat, viverra mi quis, viverra arcu. Quisque sed lacinia massa, vitae sollicitudin justo. </p>
+            <p></p>
               <div class="text-center">
                 @if(count($cats)>1)
                   @foreach($cats as $cat)

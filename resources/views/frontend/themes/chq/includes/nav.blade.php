@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/')}}">¿Vos y cuántos más? <span class="text-muted">Argentina</span></a>
+      <a class="navbar-brand" href="{{url('/')}}">¿Vos y cuántos más? <span class="text-muted">Argentina | beta</span></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       @if(strpos(Request::url(), 'questions')===false)

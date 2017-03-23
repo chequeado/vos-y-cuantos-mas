@@ -77,7 +77,10 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            <p class="respuesta" ng-show="!saving">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.</p>
+                            <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}}. 
+                            <span ng-if="votes.total_option>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.</span>
+                            <span ng-if="votes.total_option==1 && votes.total_question>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, eres la primera que contesta de esta manera. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.</span>
+                            </p>
                             <p class="respuesta" ng-show="saving">Calculando "Vos y cuántos más"...</p>
                         </div>
 
@@ -87,12 +90,13 @@
                         <div class="col-md-6 col-md-push-6">
                             <div class="row">
                                 <div class="col-md-6 text-center">
-                                    <b>@{{question.answer.text}}</b> al igual que el <span class="numero-grande">@{{question.answer.value}}%</span> de la población.
+                                    <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value}}%</span> de la población.
                                 </div>
                                 <div class="col-md-6 text-center resultado-carita">
                                     <span ng-show="question.bet">
                                          Tu estimado fue de <strong>@{{question.bet}}%</strong>, 
-                                        <strong ng-show="question.diff<=10">no estuviste tan lejos, muy bien.</strong>
+                                        <strong ng-show="question.diff==0">¡excelente! ¡exacto!.</strong>
+                                        <strong ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</strong>
                                         <strong ng-show="question.diff>10">la realidad es diferente a lo que creías.</strong>
                                         <img alt="" ng-show="question.diff<=10" ng-src="images/bien.png" class="img-responsive"/>
                                         <img alt="" ng-show="question.diff>10" ng-src="images/sorpresa.png" class="img-responsive"/>
