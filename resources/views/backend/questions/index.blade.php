@@ -23,7 +23,7 @@
                 <tr>
                     <th>Id</th>
                     <th>@sortablelink ('title', trans('custom.backend.questions.title'))</th>
-                    <th>Descripción</th>
+                    <th>Pregunta</th>
                     <!--th>@sortablelink ('answer_type_id', trans('custom.backend.questions.answer_type_id'))</th-->
                     <th>@sortablelink ('category_id', trans('custom.backend.questions.category_id'))</th>
                 </tr>
@@ -33,7 +33,7 @@
                     <tr>
                         <td>{!! $l->id !!}</td>
                         <td>{!! $l->title !!}</td>
-                        <td>{!! $l->description !!} < opciones > {!! $l->description_suffix !!}</td>
+                        <td>{!! $l->call_action !!}</td>
                         <!--td>{!! $l->answer_type->name !!}</td-->
                         <td>{!! $l->category->name !!}</td>
                         <td>

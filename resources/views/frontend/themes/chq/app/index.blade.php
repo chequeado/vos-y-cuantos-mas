@@ -77,9 +77,9 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}}. 
-                            <span ng-if="votes.total_option>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.</span>
-                            <span ng-if="votes.total_option==1 && votes.total_question>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, eres la primera que contesta de esta manera. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(2)}}%</strong>.</span>
+                            <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}} 
+                            <span ng-if="votes.total_option>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
+                            <span ng-if="votes.total_option==1 && votes.total_question>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, eres la primera que contesta de esta manera. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
                             </p>
                             <p class="respuesta" ng-show="saving">Calculando "Vos y cuántos más"...</p>
                         </div>
@@ -90,7 +90,7 @@
                         <div class="col-md-6 col-md-push-6">
                             <div class="row">
                                 <div class="col-md-6 text-center">
-                                    <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value}}%</span> de la población.
+                                    <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value.replace('.0','')}}%</span> de la población.
                                 </div>
                                 <div class="col-md-6 text-center resultado-carita">
                                     <span ng-show="question.bet">
@@ -153,7 +153,7 @@
                                         <tr><td>Descripción</td><td class="text-right">Valor</td></tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value}}%</td></tr>
+                                        <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value.replace('.0','')}}%</td></tr>
                                     </tbody>
                                 </table>
                             </div>
