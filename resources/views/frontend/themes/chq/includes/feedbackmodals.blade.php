@@ -102,3 +102,40 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 </div>
+
+<div id="disclaimerModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Más información sobre "¿Vos y cuántos más?</h4>
+      </div>
+        <div class="modal-body">
+          <p>Nota sobre información:</p>
+          <ul>
+            <li></li>
+          </ul>
+          <p>Con el apoyo de:</p>
+          <ul>
+            <li></li>
+          </ul>
+          <p>Agradecimientos:</p>
+          <ul>
+            <li></li>
+          </ul>
+          <p>Equipo:</p>
+          <ul>
+            <li></li>
+          </ul>
+          <p>Tecnologías utilizadas:</p>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-especial boton-abajo-left" data-dismiss="modal"><i class="fa fa-caret-left" aria-hidden="true"></i>  Cerrar</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal-dialog -->
