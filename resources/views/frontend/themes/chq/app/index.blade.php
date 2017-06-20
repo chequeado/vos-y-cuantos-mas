@@ -86,9 +86,25 @@
 
                     </div>
 
+
                     <div class="row">
-                        <div class="col-md-6 col-md-push-6">
-                            <div class="row">
+                        <div class="col-md-6"> <!--col-md-pull-6-->
+                            <canvas id="doughnut" class="chart chart-doughnut"
+                              chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
+                            </canvas>
+                            <div hide show-xs>
+                                <table class="table">
+                                    <thead>
+                                        <tr><td>Descripción</td><td class="text-right">Valor</td></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value.replace('.0','')}}%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
                                 <div class="col-md-6 text-center">
                                     <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value.replace('.0','')}}%</span> de la población.
                                 </div>
@@ -110,12 +126,12 @@
                             </div>
                             <div class="row">
                               <h3>¿Te sorprendió la respuesta?</h3>
-                              <div class="col-md-6">
+                              <div class="col-md-6 col-xs-6">
                                 <a href="#" class="btn btn-default btn-especial-chico btn-block share-btn share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
                                 Compartila en <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-6 col-xs-6">
                                 <a id="share-facebook" data-url="{{url('questions')}}/@{{question.id}}" href="#" class="btn btn-default btn-especial-chico btn-block">
                                 Compartila en <i class="fa fa-facebook-official" aria-hidden="true"></i>
                                 </a>
@@ -142,23 +158,9 @@
                                 </a>
                               </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-md-pull-6">
-                            <canvas id="doughnut" class="chart chart-doughnut"
-                              chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
-                            </canvas>
-                            <div hide show-xs>
-                                <table class="table">
-                                    <thead>
-                                        <tr><td>Descripción</td><td class="text-right">Valor</td></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value.replace('.0','')}}%</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                      </div>
                     </div>
+
                     <div class="clearfix"></div>
                     <div class="row btn-container">
                         <button class="btn btn-default btn-especial boton-abajo-left" ng-click="changeOption()"><i class="fa fa-caret-left" aria-hidden="true"></i> Modificar mi respuesta</button>
