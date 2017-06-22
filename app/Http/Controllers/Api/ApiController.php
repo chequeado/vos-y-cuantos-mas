@@ -8,6 +8,7 @@ use App\Repositories\Backend\Question\QuestionRepositoryContract;
 use App\Repositories\Backend\Option\OptionRepositoryContract;
 use App\Repositories\Backend\Vote\VoteRepositoryContract;
 use Illuminate\Http\Request;
+use Mail;
 
 /**
  * Class DashboardController
@@ -64,14 +65,16 @@ class ApiController extends Controller
     {
         $response = false;
         //if($request->ajax()) {
-            $all = $request->all();
-            $all['type'] = $type;
-            $response = $all;
-            /*if($request->has('option_id') && $request->has('question_id') && $this->options->existByQuestion($all['question_id'],$all['option_id'])){
-                $response = $this->votes->create($all);
-            }*/            
+            $fields = $request->all();
+            $fields['type'] = $type;
+
+            Mail::send('emails.'.$type, ['fields' => $fields], function ($m) use ($fields) {
+                $m->from($fields['email'], $fields['nombre']);
+                $m->subject('VYCM: '.$fields['type']);
+            });
+
         //}
-        return response()->json(array('response'=>$response));
+        return response()->json(array('response'=>$fields));
     }
     
 
