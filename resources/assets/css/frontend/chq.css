@@ -9024,7 +9024,7 @@ body {
     padding-top: 100px; }
 
 .body2 {
-  background: url(../img/bg-home.jpg) no-repeat center center fixed;
+  background: url(/images/bg-home.jpg) no-repeat center center fixed;
   background-size: cover; }
 
 .jumbotron {
@@ -9034,7 +9034,7 @@ body {
 .jumbotron-home {
   box-shadow: none;
   background-color: none;
-  background: url(../img/bg-transparente.png) repeat;
+  background: url(/images/bg-transparente.png) repeat;
   height: 100vh; }
 
 .jumbotron-final {
@@ -9413,7 +9413,8 @@ footer {
 
 footer a {
   margin: 5px;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
 
 footer a:hover {
   color: #fff; }

@@ -37,7 +37,7 @@
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
             <img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive logo-home"/>
-            <p class="text-right">Un juego para saber qué porcentaje de la población es similar a vos en la Argentina</p>
+            <p class="text-right">Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.</p>
             <p class="text-muted text-right">BETA</p>
           </div>
         </div>

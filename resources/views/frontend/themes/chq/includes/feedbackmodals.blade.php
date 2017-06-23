@@ -108,28 +108,22 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Más información sobre "¿Vos y cuántos más?</h4>
+        <h4 class="modal-title">Más información sobre <i>¿Vos y cuántos más?</i></h4>
       </div>
         <div class="modal-body">
-          <p>Nota sobre información:</p>
-          <ul>
-            <li></li>
-          </ul>
+          <p><i>¿Vos y cuántos más?</i> es un juego que permite conocer qué porcentaje de la población de la Argentina es similar al usuario, interactuando con preguntas y respuestas basadas en datos públicos.</p>
           <p>Con el apoyo de:</p>
-          <ul>
-            <li></li>
-          </ul>
-          <p>Agradecimientos:</p>
-          <ul>
-            <li></li>
-          </ul>
+          <p><a target="_blank" href="https://latin-america.hivos.org/"><img src="/images/hivos.svg" title="hivos" /></a></p>
           <p>Equipo:</p>
           <ul>
             <li></li>
           </ul>
           <p>Tecnologías utilizadas:</p>
           <ul>
-            <li></li>
+            <li>Laravel PHP</li>
+            <li>MySQL</li>
+            <li>Angular JS</li>
+            <li><a target="_blank" href="https://github.com/chequeado/desmitificador">Código fuente en github</a></li>
           </ul>
         </div>
         <div class="modal-footer">
