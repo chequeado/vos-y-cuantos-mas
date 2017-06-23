@@ -2,9 +2,11 @@
 Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.
 
 Creado por el equipo de [Chequeado](http://chequeado.com)
+
 ![Logo Chequeado](http://chequeado.com/wp-content/uploads/2015/02/logo2.png)
 
 Con el apoyo de [HIVOS](https://latin-america.hivos.org/)
+
 ![Logo Hivos](https://latin-america.hivos.org/sites/all/themes/hivos/logo.svg)
 
 Basado en:
