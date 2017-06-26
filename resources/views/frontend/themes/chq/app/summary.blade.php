@@ -41,7 +41,7 @@
                   <div class="col-md-4"><img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive" style="margin:30px 0 0 0"/></div>
                   <div class="col-md-4"></div>
                 </div>
-                <div class="final-final text-center">
+                <div class="final-final text-center ng-cloak">
                   <h1>¡De <b>@{{total}}</b> preguntas, le acertaste a <b>@{{correctas}}</b>!</h1>
                 </div>
                 <div class="clearfix"></div>

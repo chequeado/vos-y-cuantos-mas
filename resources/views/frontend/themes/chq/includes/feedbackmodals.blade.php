@@ -124,7 +124,7 @@
           <hr/>
           <h4 class="text-center"><strong>Tecnologías utilizadas</strong></h4>
           <p class="text-center">Laravel PHP - MySQL - Angular JS</p>
-          <h4 class="text-center"><a target="_blank" href="https://github.com/chequeado/desmitificador">Código fuente en GitHub</a></h4>
+          <h4 class="text-center"><a target="_blank" href="https://github.com/chequeado/vos-y-cuantos-mas">Código fuente en GitHub</a></h4>
           <hr/>
           <h4 class="text-center"><strong>Con el apoyo de</strong></h4>
           <p class="text-center"><a target="_blank" href="https://latin-america.hivos.org/"><img src="/images/hivos.svg" title="hivos" width="100"/></a></p>
