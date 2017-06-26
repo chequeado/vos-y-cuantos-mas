@@ -116,7 +116,7 @@
           <h4 class="text-center"><strong>Equipo</strong></h4>
           <p class="text-center">Dirección de proyecto: <a href="https://twitter.com/fernandezpm" target="_blank">Pablo M. Fernández</a></p>
           <p class="text-center">Desarrollo fullstack: <a href="https://twitter.com/palamago" target="_blank">Pablo H. Paladino</a></p>
-          <p class="text-center">Investigación, anápsis de datos y redacción: <a href="https://twitter.com/am_riera" target="_blank">Ariel Riera</a></p>
+          <p class="text-center">Investigación, análisis de datos y redacción: <a href="https://twitter.com/am_riera" target="_blank">Ariel Riera</a></p>
           <p class="text-center">Diseño web y UX: <a href="https://twitter.com/marianavarelatw" target="_blank">Mariana Varela</a></p>
           <hr/>
           <h4 class="text-center"><strong>Dirección ejecutiva</strong></h4>
