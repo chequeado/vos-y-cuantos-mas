@@ -112,18 +112,25 @@
       </div>
         <div class="modal-body">
           <p><i>¿Vos y cuántos más?</i> es un juego que permite conocer qué porcentaje de la población de la Argentina es similar al usuario, interactuando con preguntas y respuestas basadas en datos públicos.</p>
-          <p>Con el apoyo de:</p>
-          <p><a target="_blank" href="https://latin-america.hivos.org/"><img src="/images/hivos.svg" title="hivos" /></a></p>
-          <p>Equipo:</p>
+          <p class="text-center"><strong>Con el apoyo de</strong></p>
+          <p class="text-center"><a target="_blank" href="https://latin-america.hivos.org/"><img src="/images/hivos.svg" title="hivos" /></a></p>
+          <p><strong>Equipo:</strong></p>
           <ul>
-            <li></li>
+            <li>Dirección de proyecto: <a href="https://twitter.com/fernandezpm" target="_blank">Pablo M. Fernández</a></li>
+            <li>Desarrollo fullstack: <a href="https://twitter.com/palamago" target="_blank">Pablo H. Paladino</a></li>
+            <li>Investigación, análisis de datos y redacción: <a href="https://twitter.com/am_riera" target="_blank">Ariel Riera</a></li>
+            <li>Diseño web y UX: <a href="https://twitter.com/marianavarelatw" target="_blank">Mariana Varela</a></li>
+          </ul>
+          <p><strong>Dirección ejecutiva:</strong></p>
+          <ul>
+            <li><a href="https://twitter.com/lauzommer" target="_blank">Laura Zommer</a></li>
           </ul>
           <p>Tecnologías utilizadas:</p>
           <ul>
             <li>Laravel PHP</li>
             <li>MySQL</li>
             <li>Angular JS</li>
-            <li><a target="_blank" href="https://github.com/chequeado/desmitificador">Código fuente en github</a></li>
+            <li><a target="_blank" href="https://github.com/chequeado/desmitificador">Código fuente en GitHub</a></li>
           </ul>
         </div>
         <div class="modal-footer">
