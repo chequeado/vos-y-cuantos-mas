@@ -24,11 +24,13 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         return ($window.innerWidth <= 800)?true:false;
     };
 
-    $scope.init = function(category_id,colors){
+    $scope.init = function(category_id,limit,colors){
+        console.log(limit);
         //Chart.defaults.global.colours = colors;
         $scope.category_id = category_id;
+        $scope.limit = limit;
     	$scope.chart.colours = colors;
-        $http.get('/api/questions?category_id='+category_id, {})
+        $http.get('/api/questions?category_id='+category_id+'&limit='+limit+'&r='+Date.now(), {})
     		.then(function(response){
     			$scope.category = response.data.metadata.category;
     			$scope.questions = response.data.records;
@@ -211,6 +213,8 @@ DesmitificadorApp.controller('QuestionCtrl', function ($scope) {
 
         $scope.question = question;
         $scope.chart = {};
+
+        $scope.chart.colours = colors;
 
         $scope.question.options = $scope.question.options.sort(function(a, b){return b.value-a.value});
         $scope.chart.data = _.map($scope.question.options,function(d){

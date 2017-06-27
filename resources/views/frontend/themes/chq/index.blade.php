@@ -50,14 +50,68 @@
               <div class="text-center">
                 @if(count($cats)>1)
                   @foreach($cats as $cat)
-                    <a href="/app?cat={{$cat->id}}" class="btn btn-default btn-especial2">
+                    <a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal{{$cat->id}}">
                         {{$cat->name}} <i class="fa fa-caret-right" aria-hidden="true"></i>
                     </a>
+                    <div id="chooseModal{{$cat->id}}" class="modal modal-chq fade" tabindex="-1" role="dialog">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
+                          </div>
+                            <div class="modal-body">
+                              <p class="text-center">
+                                <a href="/app?cat={{$cat->id}}&limit=10" class="btn btn-default btn-especial2">
+                                  Contestar 10 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                </a>
+                              </p>
+                              <p class="text-center">
+                                <a href="/app?cat={{$cat->id}}&limit=20" class="btn btn-default btn-especial2">
+                                  Contestar 20 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                </a>
+                              </p>
+                              <p class="text-center">
+                                <a href="/app?cat={{$cat->id}}" class="btn btn-default btn-especial2">
+                                  Contestar todas las preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                </a>
+                              </p>
+                            </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal-dialog -->
                   @endforeach
                 @else
-                  <a href="/app" class="btn btn-default btn-especial2">
+                  <a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal">
                       Comenzar <i class="fa fa-caret-right" aria-hidden="true"></i>
                   </a>
+                  <div id="chooseModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
+                        </div>
+                          <div class="modal-body">
+                            <p class="text-center">
+                              <a href="/app?limit=10" class="btn btn-default btn-especial2">
+                                Contestar 10 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                              </a>
+                            </p>
+                            <p class="text-center">
+                              <a href="/app?limit=20" class="btn btn-default btn-especial2">
+                                Contestar 20 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                              </a>
+                            </p>
+                            <p class="text-center">
+                              <a href="/app" class="btn btn-default btn-especial2">
+                                Contestar todas las preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                              </a>
+                            </p>
+                          </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal-dialog -->
                 @endif
               </div>
           </div>

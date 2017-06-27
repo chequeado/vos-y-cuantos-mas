@@ -51,8 +51,9 @@ class FrontendController extends Controller
         ]);
 
         $cat = ($request->has('cat'))?$request->input('cat'):1;
+        $limit = ($request->has('limit'))?$request->input('limit'):'';
 
-        return view('frontend.themes.'.$theme.'.app.index')->withCat($cat)->withTheme($theme);
+        return view('frontend.themes.'.$theme.'.app.index')->withCat($cat)->withLimit($limit)->withTheme($theme);
     }
 
     public function summary(Request $request)

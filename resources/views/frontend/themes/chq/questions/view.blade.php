@@ -32,7 +32,7 @@
 
 @section('content')
 
-    <div class="question-container" ng-controller="QuestionCtrl" ng-init='init({!!$obj!!}, [ "#19845b", "#a50f0f", "#facf5a", "#444854", "#1a2156" ])'>
+    <div class="question-container" ng-controller="QuestionCtrl" ng-init='init({!!$obj!!}, [ "#19845b", "#a50f0f", "#67a3aa", "#444854", "#1a2156" ])'>
 
         <!-- container -->
         <div class="container theme-showcase" role="main">

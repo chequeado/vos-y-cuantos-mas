@@ -41,8 +41,14 @@ class ApiController extends Controller
     public function questionsByCategory(Request $request)
     {
         $idCategory = ($request->has('category_id'))?$request->input('category_id'):1;
-    	$cat = $this->categories->findFullOrThrowException($idCategory, true);
-    	return response()->json(array('metadata'=>array('category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$cat->questions));
+        $cat = $this->categories->findFullOrThrowException($idCategory, true);
+
+        $records = collect([]);
+        $temp = $cat->questions;
+        $limit = ($request->has('limit'))?($request->input('limit')>$temp->count())?$temp->count():$request->input('limit'):$temp->count();
+        $records = $records->merge($cat->questions->random($limit)->all());
+
+    	return response()->json(array('metadata'=>array('category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
     }
 
     public function votesByQuestion(Request $request){

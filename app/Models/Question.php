@@ -14,6 +14,8 @@ class Question extends Model {
 
     protected $guarded = ['id'];
 
+    protected $relations = ['options'];
+
     public function category()
     {
         return $this->belongsTo('App\Models\Category');

@@ -1,7 +1,7 @@
 @extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
-    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}", [ "#19845b", "#a50f0f", "#67a3aa", "#444854", "#1a2156" ])' ng-cloak>
+    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#19845b", "#a50f0f", "#67a3aa", "#444854", "#1a2156" ])' ng-cloak>
 
         <!-- container -->
         <div class="container theme-showcase" role="main">
