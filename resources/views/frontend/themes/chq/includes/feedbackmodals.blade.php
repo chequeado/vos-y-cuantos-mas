@@ -112,6 +112,7 @@
       </div>
         <div class="modal-body">
           <p><i>¿Vos y cuántos más?</i> es un juego que permite conocer qué porcentaje de la población de la Argentina es similar al usuario, interactuando con preguntas y respuestas basadas en datos públicos.</p>
+          <p>Chequeado sólo guarda datos anónimos del uso del juego "¿Vos y cuántos más?" con fines estadísticos. No almacenamos IP, ubicación, ni otro dato similar.</p>
           <hr/>
           <h4 class="text-center"><strong>Equipo</strong></h4>
           <p class="text-center">Dirección de proyecto: <a href="https://twitter.com/fernandezpm" target="_blank">Pablo M. Fernández</a></p>
