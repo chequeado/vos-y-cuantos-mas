@@ -6570,7 +6570,10 @@ BackendApp.controller('StatsCtrl', function ($scope,$http,$timeout) {
         $timeout(function(){
             $http.get('/api/results?question_id='+$scope.question.id, {})
                 .then(function(response){
-                    var values = response.data.records;
+                    var values = response.data.records.map(function(r){
+                        r.total = parseInt(r.total);
+                        return r;
+                    });
 
                     $scope.voteTotal = 0;
 
