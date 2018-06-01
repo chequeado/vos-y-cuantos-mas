@@ -59,6 +59,13 @@ class EloquentCategoryRepository implements CategoryRepositoryContract
             ->get();
     }
 
+    public function getPublicCategories($order_by = 'name', $sort = 'asc')
+    {
+        return Category::orderBy($order_by, $sort)
+            ->where('inhome',true)
+            ->get();
+    }
+
     public function getListCategories($order_by = 'name', $sort = 'asc')
     {
         return Category::orderBy($order_by, $sort)->lists('name', 'id');

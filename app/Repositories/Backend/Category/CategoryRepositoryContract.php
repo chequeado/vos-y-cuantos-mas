@@ -32,6 +32,7 @@ interface CategoryRepositoryContract
     public function getAllCategories($order_by = 'id', $sort = 'asc');
     public function getListCategories($order_by = 'name', $sort = 'asc');
 
+    public function getPublicCategories($order_by = 'name', $sort = 'asc');
 
     /**
      * @param  $input

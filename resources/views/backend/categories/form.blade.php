@@ -6,6 +6,24 @@
                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.categories.name')]) !!}
             </div>
         </div><!--form control-->
+        <div class="form-group">
+            <label class="col-lg-2 control-label">¿Visible en la home?</label>
+            <div class="col-lg-10">
+                <div class="checkbox">
+                  <label>
+                    {{ Form::radio('inhome', '1') }}
+                    SI
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    {{ Form::radio('inhome', '0') }}
+                    NO
+                  </label>
+                </div>
+            </div>
+        </div><!--form control-->
+                
     </div>
 </div>
 

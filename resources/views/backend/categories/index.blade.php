@@ -24,6 +24,7 @@
                 <tr>
                     <th>Id</th>
                     <th>@sortablelink ('name', trans('custom.backend.categories.name'))</th>
+                    <th>¿Visible en la home?</th>
                     <th>Link directo</th>
                     <th></th>
                 </tr>
@@ -33,6 +34,7 @@
                     <tr>
                         <td>{!! $l->id !!}</td>
                         <td>{!! $l->name !!}</td>
+                        <td>{!! (intval($l->inhome)==1)?'SI':'NO' !!}</td>
                         <td><a href="{{ url('app?cat='.$l->id) }}" target="_blank">{{ url('app?cat='.$l->id) }}</a></td>
                         <td>
                             <a href="{!! route('admin.categories.edit', $l->id) !!}" class="btn btn-flat btn-sm btn-primary"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="{{ trans('custom.backend.categories.edit') }}"></i> Modificar</a>

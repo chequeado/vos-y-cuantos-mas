@@ -34,7 +34,7 @@ class FrontendController extends Controller
             'theme' => $theme
         ]);
 
-        $cats = $this->categories->getAllCategories();
+        $cats = $this->categories->getPublicCategories();
 
         //return redirect()->route('frontend.app');
         return view('frontend.themes.'.$theme.'.index')->withCats($cats)->withTheme($theme);
