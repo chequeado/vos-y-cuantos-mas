@@ -9,14 +9,14 @@
             <div class="col-md-12">
               <div class="jumbotron">
 
-                <!-- question -->
-                <div class="row" ng-show="state != 'thanks'">
-                    <div class="col-md-12">
-                        <h1>@{{question.title}}</h1>
+                  <!-- question -->
+                  <div class="row" ng-show="state != 'thanks'">
+                      <div class="col-md-12">
+                          <h1>@{{question.title}}</h1>
                         <div class="progress">
                          <div data-percentage="0%" ng-style="{'width': ((index+1)*100/questions.length) + '%' }" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        
+
                         <p class="pregunta-counter">Pregunta @{{index+1}} de @{{questions.length}}</p>
                         <div class="well">
                           <p>@{{question.call_action}}</p>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <!-- /question -->
-                
+
                 <!-- options -->
                 <div ng-show="state == 'options'">
                     <div class="row">
@@ -52,7 +52,7 @@
                             <p class="respuesta">Tu respuesta: @{{question.answer.text}}</p>
                             <h2>¿Qué porcentaje de la población crees que es como vos?</h2>
                         </div>
-                        
+
                         <div class="col-md-8 col-md-offset-2 text-center">
                             <slider ng-model="question.bet" min="0" step="1" max="100" tooltip="'hide'" on-stop-slide="chooseBet($event,value)"></slider>
                             <span class="numero-grande">@{{question.bet}}%</span>
@@ -77,7 +77,7 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}} 
+                            <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}}
                             <span ng-if="votes.total_option>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
                             <span ng-if="votes.total_option==1 && votes.total_question>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, eres la primera que contesta de esta manera. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
                             </p>
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="col-md-6 text-center resultado-carita">
                                     <span ng-show="question.bet">
-                                         Tu estimado fue de <strong>@{{question.bet}}%</strong>, 
+                                         Tu estimado fue de <strong>@{{question.bet}}%</strong>,
                                         <strong ng-show="question.diff==0">¡excelente! ¡exacto!.</strong>
                                         <strong ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</strong>
                                         <strong ng-show="question.diff>10">la realidad es diferente a lo que creías.</strong>
@@ -181,6 +181,9 @@
                 </div>
 
               </div> <!-- /jumbotron -->
+              <a id="img-credit" ng-show="!isMobile() && (question.image_credit_source || question.image_credit_link)" ng-href="@{{question.image_credit_link}}">
+                <i class="fa fa-picture-o" aria-hidden="true"></i> Créditos @{{question.image_credit_source}}
+              </a>
         </div> <!-- /col -->
         </div> <!-- /row -->
         </div> <!-- /container -->

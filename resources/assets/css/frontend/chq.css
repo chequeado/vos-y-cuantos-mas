@@ -9448,7 +9448,7 @@ body{
     -webkit-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
     -moz-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
     box-shadow: none;
-  
+
     &.body-home{
       padding-top: 0px;
     }
@@ -9457,7 +9457,7 @@ body{
     }
   }
 .body2{
-  background: url('/images/bg-home.jpg') no-repeat center center fixed; 
+  background: url('/images/bg-home.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9470,7 +9470,7 @@ body{
 .jumbotron-home{
   box-shadow:none;
   background-color: none;
-  background: url('/images/bg-transparente.png') repeat; 
+  background: url('/images/bg-transparente.png') repeat;
   height: 100vh;
     .logo-home{
       margin: 30px 0;
@@ -9529,7 +9529,7 @@ body{
     font-weight:300;
     text-shadow:0;
   }
-}  
+}
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
     color:#1a2157;
   }
@@ -9601,7 +9601,7 @@ background-image: none;
   margin:20px 0 0 0;
 }
 .well p{
-  font-size:16px; 
+  font-size:16px;
   }
 @media (min-width: 1200px) {
 .well {
@@ -9619,7 +9619,7 @@ background-image: none;
   margin:20px 0;
 }
 .well p{
-  font-size:22px; 
+  font-size:22px;
   }
 }
 .list-group{
@@ -9764,7 +9764,7 @@ color: #a50f0f;
 .boton-abajo-left i{
 color: #a50f0f;
   }
-  
+
 .ui-slider-range {
    background:green;
 }
@@ -9849,6 +9849,12 @@ footer a:hover{
 
 .btn-container {
   margin-top: 20px; }
+
+#img-credit {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  font-size: 12px; }
 
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */

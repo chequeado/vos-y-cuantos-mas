@@ -66,6 +66,22 @@
         </div><!--form control-->
 
         <div class="form-group">
+            <label class="col-lg-2 control-label">Créditos de la imagen: texto</label>
+            <div class="col-lg-10">
+                {!! Form::text('image_credit_source', null, ['class' => 'form-control', 'placeholder' => 'Créditos de la imagen: texto','maxlength'=>'400']) !!}
+                <p class="help-block">Límite 400 caracteres</p>
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Créditos de la imagen: link</label>
+            <div class="col-lg-10">
+                {!! Form::text('image_credit_link', null, ['class' => 'form-control', 'placeholder' => 'Créditos de la imagen: link','maxlength'=>'400']) !!}
+                <p class="help-block">Límite 400 caracteres</p>
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.description') }}</label>
             <div class="col-lg-10">
                 {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.description'),'maxlength'=>'200']) !!}
