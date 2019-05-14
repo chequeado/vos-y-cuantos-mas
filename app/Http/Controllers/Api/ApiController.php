@@ -45,13 +45,14 @@ class ApiController extends Controller
 
         $records = collect([]);
         $temp = $cat->questions->where('published',1);
+
         $limit = $request->has('limit')?intval($request->input('limit')):$temp->count();
         $limit = $limit>$temp->count()?$temp->count():$limit;
 
         if($limit === 1){
-            $temp = collect([$temp->random($limit)]);
+            $temp = collect([$temp->first()]);
         } else {
-            $temp = $temp->random($limit);
+            $temp = $temp->random()->get()->slice(0,$limit);
         }
         $records = $records->merge($temp);
 
