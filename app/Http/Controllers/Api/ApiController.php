@@ -57,7 +57,7 @@ class ApiController extends Controller
         }
         $records = $records->merge($temp);
 
-    	return response()->json(array('metadata'=>array('limit'=>$limit,'category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
+    	return response()->json(array('metadata'=>array('limit'=>$limit,'category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records,'test'=>$cat->questions->all()));
     }
 
     public function votesByQuestion(Request $request){
