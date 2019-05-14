@@ -52,7 +52,8 @@ class ApiController extends Controller
         if($limit === 1){
             $temp = collect([$temp->first()]);
         } else {
-            $temp = $temp->random()->get()->slice(0,$limit);
+            $temp = $temp->all();
+            $temp = array_slice($temp, 0, $limit, true);
         }
         $records = $records->merge($temp);
 
