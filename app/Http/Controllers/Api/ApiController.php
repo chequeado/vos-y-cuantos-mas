@@ -45,10 +45,17 @@ class ApiController extends Controller
 
         $records = collect([]);
         $temp = $cat->questions->where('published',1);
-        $limit = ($request->has('limit'))?($request->input('limit')>$temp->count())?$temp->count():$request->input('limit'):$temp->count();
-        $records = $records->merge($cat->questions->where('published',1)->random($limit)->all());
+        $limit = $request->has('limit')?intval($request->input('limit')):$temp->count();
+        $limit = $limit>$temp->count()?$temp->count():$limit;
 
-    	return response()->json(array('metadata'=>array('category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
+        if($limit === 1){
+            $temp = collect([$temp->random($limit)]);
+        } else {
+            $temp = $temp->random($limit);
+        }
+        $records = $records->merge($temp);
+
+    	return response()->json(array('metadata'=>array('limit'=>$limit,'category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
     }
 
     public function votesByQuestion(Request $request){
