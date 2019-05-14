@@ -44,7 +44,7 @@ class ApiController extends Controller
         $cat = $this->categories->findFullOrThrowException($idCategory, true);
 
         $records = collect([]);
-        $temp = $cat->questions->where('published',1);
+        $temp = $cat->questions->where('published',true);
 
         $limit = $request->has('limit')?intval($request->input('limit')):$temp->count();
         $limit = $limit>$temp->count()?$temp->count():$limit;
