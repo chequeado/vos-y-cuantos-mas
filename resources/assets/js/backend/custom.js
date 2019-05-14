@@ -11,7 +11,7 @@ Backend.init = function(){
 
 Backend.initEditQuestion = function(){
 
-    
+
 };
 
 
@@ -39,13 +39,13 @@ $(function() {
 var BackendApp = angular.module('BackendApp', ['angular.chosen','templates-backend','chart.js']);
 
 BackendApp.controller('QuestionCtrl', function ($scope,$templateCache) {
-  
+
     $scope.changeType = function(){
         $scope.include_options = $scope.answer_type+'/backend.html';
     };
 
     $scope.init = function(data,options){
-        console.log(options);
+        //console.log(options);
         $scope.options = options;
         if(data.answer_type_id){
             $scope.answer_type = data.answer_type_id;
@@ -102,7 +102,7 @@ BackendApp.controller('ImageCtrl', function ($scope,$templateCache) {
 });
 
 BackendApp.controller('StatsCtrl', function ($scope,$http,$timeout) {
-  
+
     $scope.loading = true;
 
     $scope.colors = [ "#19845b", "#a50f0f", "#67a3aa", "#444854", "#1a2156" ];

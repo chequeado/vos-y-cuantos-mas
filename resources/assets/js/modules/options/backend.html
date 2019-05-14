@@ -10,7 +10,7 @@
             <span class="col-lg-2"></span>
             <span class="col-lg-4 text-right"><small class="text-muted">Límite 100 caracteres</small></span>
             <span class="col-lg-1 text-right"><small class="text-muted">Ej. 15.1</small></span>
-            <span class="col-lg-4 text-right"><small class="text-muted">Límite 100 caracteres</small></span>
+            <span class="col-lg-4 text-right"><small class="text-muted">Sin límite</small></span>
         </div><!--form control-->
 
         <hr/>
@@ -26,7 +26,7 @@
 				<input class="form-control" placeholder="Valor" name="option[opt{{$index}}][value]" type="text" ng-model="opt.value">
             </div>
             <div class="col-lg-4">
-                <input class="form-control" placeholder="Respuesta" name="option[opt{{$index}}][text_answer]" type="text" ng-model="opt.text_answer" maxlength="100">
+                <input class="form-control" placeholder="Respuesta" name="option[opt{{$index}}][text_answer]" type="text" ng-model="opt.text_answer">
             </div>
             <div class="col-lg-1">
                 <button type="button" class="btn btn-xs btn-danger btn-flat" ng-click="removeOption($index)"><i data-original-title="Eliminar opción" class="fa fa-trash" data-toggle="tooltip" data-placement="top" title=""></i>

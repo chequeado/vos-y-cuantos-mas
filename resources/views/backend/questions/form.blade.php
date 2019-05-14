@@ -121,8 +121,8 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.answer_description') }}</label>
             <div class="col-lg-10">
-                {!! Form::textarea('answer_description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_description'),'maxlength'=>'200']) !!}
-                <p class="help-block">Límite 200 caracteres</p>
+                {!! Form::textarea('answer_description', null, ['class' => 'form-control', 'placeholder' => trans('custom.backend.questions.answer_description')]) !!}
+                <p class="help-block">Este campo no tiene límite de caracteres</p>
             </div>
         </div><!--form control-->
 
