@@ -34,11 +34,11 @@
                     <tr>
                         <td>{!! $l->id !!}</td>
                         <td>{!! $l->name !!}</td>
-                        <td>{!! (intval($l->inhome)==1)?'SI':'NO' !!}</td>
+                        <td>{!! (intval($l->inhome)===1)?'SI':'NO' !!}</td>
                         <td><a href="{{ url('app?cat='.$l->id) }}" target="_blank">{{ url('app?cat='.$l->id) }}</a></td>
                         <td>
                             <a href="{!! route('admin.categories.edit', $l->id) !!}" class="btn btn-flat btn-sm btn-primary"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="{{ trans('custom.backend.categories.edit') }}"></i> Modificar</a>
-                            <a href="{!! route('admin.categories.destroy', $l->id) !!}'" data-method="delete" class="btn btn-flat btn-sm btn-danger" 
+                            <a href="{!! route('admin.categories.destroy', $l->id) !!}'" data-method="delete" class="btn btn-flat btn-sm btn-danger"
                             data-trans-button-cancel="{{ trans('custom.backend.delete.cancel') }}"
                             data-trans-button-confirm="{{ trans('custom.backend.delete.confirm') }}"
                             data-trans-title="{{ trans('custom.backend.delete.title') }}"
@@ -49,7 +49,7 @@
                     @endforeach
                 </tbody>
             </table>
-        
+
         </div>
     </div>
 

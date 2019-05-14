@@ -29,7 +29,7 @@ class EloquentQuestionRepository implements QuestionRepositoryContract
 
     public function findPublishedOrThrowException($id)
     {
-        $q = Question::where('id', $id)->where('published',true)->first();
+        $q = Question::where('id', $id)->where('published',1)->first();
         if (! is_null($q)) {
             return $q;
         }
