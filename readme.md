@@ -7,7 +7,7 @@ Creado por el equipo de [Chequeado](http://chequeado.com)
 
 Con el apoyo de [HIVOS](https://latin-america.hivos.org/)
 
-![Logo Hivos](https://latin-america.hivos.org/sites/all/themes/hivos/logo.svg)
+![Logo Hivos](https://vosycuantosmas.chequeado.com/images/hivos.svg)
 
 Basado en:
 

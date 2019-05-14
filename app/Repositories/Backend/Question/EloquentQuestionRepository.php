@@ -27,6 +27,16 @@ class EloquentQuestionRepository implements QuestionRepositoryContract
         throw new GeneralException(trans('exceptions.backend.access.roles.not_found'));
     }
 
+    public function findPublishedOrThrowException($id)
+    {
+        $q = Question::where('id', $id)->where('published',1)->first();
+        if (! is_null($q)) {
+            return $q;
+        }
+        return false;
+        throw new GeneralException(trans('exceptions.backend.access.roles.not_found'));
+    }
+
     /**
      * @param  $per_page
      * @param  string      $order_by

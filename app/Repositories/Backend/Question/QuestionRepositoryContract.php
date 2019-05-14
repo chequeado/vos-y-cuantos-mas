@@ -15,6 +15,8 @@ interface QuestionRepositoryContract
      */
     public function findOrThrowException($id);
 
+    public function findPublishedOrThrowException($id);
+
     /**
      * @param  $per_page
      * @param  string      $order_by

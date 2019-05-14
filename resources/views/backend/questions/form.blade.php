@@ -23,6 +23,24 @@
         </div><!--form control-->
 
         <div class="form-group">
+            <label class="col-lg-2 control-label">¿Publicada?</label>
+            <div class="col-lg-10">
+                <div class="radio-inline">
+                  <label>
+                    {{ Form::radio('published', '1') }}
+                    SI
+                  </label>
+                </div>
+                <div class="radio-inline">
+                  <label>
+                    {{ Form::radio('published', '0') }}
+                    NO
+                  </label>
+                </div>
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.category_id') }}</label>
             <div class="col-lg-10">
                 {!! Form::select('category_id', $categories, null, array('class'=>'form-control chosen-select')) !!}
@@ -73,7 +91,7 @@
                     {!! Form::select('answer_type_id', $answer_types, null, array('class'=>'form-control', 'ng-model'=>'answer_type', 'chosen'=>'', 'ng-change' => 'changeType()')) !!}
                 </div-->
             </div><!--form control-->
-            
+
             {!! Form::hidden('answer_type_id', 'options', array('class'=>'form-control', 'ng-model'=>'answer_type')) !!}
 
              <div ng-if="answer_type" ng-include="include_options">

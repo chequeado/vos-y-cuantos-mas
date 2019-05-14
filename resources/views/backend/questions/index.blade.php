@@ -26,6 +26,7 @@
                     <th>Pregunta</th>
                     <!--th>@sortablelink ('answer_type_id', trans('custom.backend.questions.answer_type_id'))</th-->
                     <th>@sortablelink ('category_id', trans('custom.backend.questions.category_id'))</th>
+                    <th>Publicada</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,9 +37,10 @@
                         <td>{!! $l->call_action !!}</td>
                         <!--td>{!! $l->answer_type->name !!}</td-->
                         <td>{!! $l->category->name !!}</td>
+                        <td>{!! (intval($l->published)==1)?'SI':'NO' !!}</td>
                         <td>
                             <a href="{!! route('admin.questions.edit', $l->id) !!}" class="btn btn-sm btn-flat btn-primary"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="{{ trans('custom.backend.questions.edit') }}"></i></a>
-                            <a href="{!! route('admin.questions.destroy', $l->id) !!}'" data-method="delete" class="btn btn-sm btn-flat btn-danger" 
+                            <a href="{!! route('admin.questions.destroy', $l->id) !!}'" data-method="delete" class="btn btn-sm btn-flat btn-danger"
                             data-trans-button-cancel="{{ trans('custom.backend.delete.cancel') }}"
                             data-trans-button-confirm="{{ trans('custom.backend.delete.confirm') }}"
                             data-trans-title="{{ trans('custom.backend.delete.title') }}"
@@ -49,7 +51,7 @@
                     @endforeach
                 </tbody>
             </table>
-        
+
         </div>
     </div>
 

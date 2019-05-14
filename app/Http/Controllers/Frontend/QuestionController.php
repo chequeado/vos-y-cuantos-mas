@@ -24,13 +24,17 @@ class QuestionController extends Controller
     {
         $theme = \Config::get('site.theme');
 
-        $obj = $this->questions->findOrThrowException($id, true);
+        $obj = $this->questions->findPublishedOrThrowException($id, true);
         if($obj){
             $obj->load('options');
+            return view('frontend.themes.'.$theme.'.questions.view')
+                ->withTheme($theme)
+                ->withObj($obj);
+        } else {
+            return view('frontend.themes.'.$theme.'.questions.not_found')
+                ->withTheme($theme);
         }
-        return view('frontend.themes.'.$theme.'.questions.view')
-            ->withTheme($theme)
-            ->withObj($obj);
+
     }
 
 }

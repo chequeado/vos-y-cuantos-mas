@@ -44,9 +44,9 @@ class ApiController extends Controller
         $cat = $this->categories->findFullOrThrowException($idCategory, true);
 
         $records = collect([]);
-        $temp = $cat->questions;
+        $temp = $cat->questions->where('published',1);
         $limit = ($request->has('limit'))?($request->input('limit')>$temp->count())?$temp->count():$request->input('limit'):$temp->count();
-        $records = $records->merge($cat->questions->random($limit)->all());
+        $records = $records->merge($cat->questions->where('published',1)->random($limit)->all());
 
     	return response()->json(array('metadata'=>array('category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
     }
@@ -62,7 +62,7 @@ class ApiController extends Controller
             $all = $request->all();
             if($request->has('option_id') && $request->has('question_id') && $this->options->existByQuestion($all['question_id'],$all['option_id'])){
                 $response = $this->votes->create($all);
-            }            
+            }
         //}
         return response()->json(array('response'=>$response));
     }
@@ -82,6 +82,6 @@ class ApiController extends Controller
         //}
         return response()->json(array('response'=>$fields));
     }
-    
+
 
 }
