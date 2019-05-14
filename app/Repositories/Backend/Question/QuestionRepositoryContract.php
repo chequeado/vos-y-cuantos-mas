@@ -14,7 +14,7 @@ interface QuestionRepositoryContract
      * @return mixed
      */
     public function findOrThrowException($id);
-
+    public function findPublishedByCategory($idCat);
     public function findPublishedOrThrowException($id);
 
     /**

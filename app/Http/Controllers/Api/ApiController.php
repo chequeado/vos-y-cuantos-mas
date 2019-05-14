@@ -44,10 +44,12 @@ class ApiController extends Controller
         $cat = $this->categories->findFullOrThrowException($idCategory, true);
 
         $records = collect([]);
-        $temp = $cat->questions->where('published',1);
 
-        $limit = $request->has('limit')?intval($request->input('limit')):$temp->count();
-        $limit = $limit>$temp->count()?$temp->count():$limit;
+        $temp = $this->questions->findPublishedByCategory($idCategory)->load('options');
+
+        $count = $temp->count();
+        $limit = $request->has('limit')?intval($request->input('limit')):$count;
+        $limit = $limit>$count?$count:$limit;
 
         if($limit === 1){
             $temp = collect([$temp->first()]);
@@ -57,7 +59,7 @@ class ApiController extends Controller
         }
         $records = $records->merge($temp);
 
-    	return response()->json(array('metadata'=>array('limit'=>$limit,'category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records,'test'=>$cat->questions->all()));
+    	return response()->json(array('metadata'=>array('limit'=>$limit,'category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
     }
 
     public function votesByQuestion(Request $request){
