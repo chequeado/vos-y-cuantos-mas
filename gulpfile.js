@@ -84,7 +84,7 @@ elixir(function(mix) {
         }
       })
      /**
-      * Process frontend SCSS stylesheets
+      * Process frontend SCSS CHQ theme stylesheets
       */
      .sass([
         'plugin/sweetalert/sweetalert.scss',
@@ -94,11 +94,28 @@ elixir(function(mix) {
      ], 'resources/assets/css/frontend/chq.css')
 
      /**
-      * Combine pre-processed frontend CSS files
+      * Combine pre-processed frontend CSS CHQ files
       */
      .styles([
         'frontend/chq.css'
      ], 'public/css/frontend.chq.css')
+
+    /**
+      * Process frontend SCSS UNICEF theme stylesheets
+      */
+    .sass([
+      'plugin/sweetalert/sweetalert.scss',
+      'plugin/charts/angular-chart.min.css',
+      'plugin/slider/bootstrap-slider.min.css',
+      'frontend/unicef.scss',
+    ], 'resources/assets/css/frontend/unicef.css')
+
+    /**
+      * Combine pre-processed frontend CSS UNICEF files
+      */
+    .styles([
+      'frontend/unicef.css'
+    ], 'public/css/frontend.unicef.css')
 
      /**
       * Combine frontend scripts
@@ -159,9 +176,10 @@ elixir(function(mix) {
       * Apply version control
       */
      .version([
-        "public/css/frontend.chq.css", 
-        "public/js/frontend.js", 
-        "public/css/backend.css", 
+        "public/css/frontend.unicef.css",
+        "public/css/frontend.chq.css",
+        "public/js/frontend.js",
+        "public/css/backend.css",
         "public/js/backend.js",
         "public/js/templates-backend.js"
       ]);
