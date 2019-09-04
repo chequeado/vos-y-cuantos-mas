@@ -39,16 +39,17 @@
             <!-- Title -->
             <div class="row">
               <div class="col-lg-6 col-lg-offset-6 col-md-8 col-md-offset-4 col-sm-12 flex-align-end flex-direction-col">
-                <img alt="Vos y cuantos más?" src="images/unicef/Titulo_vycm.png" class="img-responsive logo-home"/>
-                <p class="text-right text-subtitle-1">Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.</p>
-                <p class="text-right text-subtitle-2">NUEVA GENERACIÓN</p>
+                <img alt="Vos y cuantos más?" src="images/unicef/iconito_user.svg" class="img-responsive logo-home"/>
+                <p class="text-right text-title-1">¿VOS Y CUÁNTOS MAS?</p>
+                <p class="text-right text-subtitle-1">NUEVA GENERACIÓN</p>
+                <p class="text-right text-subtitle-2">Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.</p>
               </div>
 
               <!-- Buttons -->
               <div class="col-md-12 flex-justify-end">
                 @if(count($cats)>1)
                   @foreach($cats as $cat)
-                    <a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal{{$cat->id}}">
+                    <a href="javascript:;" class="btn btn-unicef-green" data-toggle="modal" data-target="#chooseModal{{$cat->id}}">
                         {{$cat->name}} <i class="fa fa-caret-right" aria-hidden="true"></i>
                     </a>
                     <div id="chooseModal{{$cat->id}}" class="modal modal-chq fade" tabindex="-1" role="dialog">
@@ -60,17 +61,17 @@
                           </div>
                             <div class="modal-body">
                               <p class="text-center">
-                                <a href="/app?cat={{$cat->id}}&limit=10" class="btn btn-default btn-especial2">
+                                <a href="/app?cat={{$cat->id}}&limit=10" class="btn btn-unicef-green">
                                   Contestar 10 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
                                 </a>
                               </p>
                               <p class="text-center">
-                                <a href="/app?cat={{$cat->id}}&limit=20" class="btn btn-default btn-especial2">
+                                <a href="/app?cat={{$cat->id}}&limit=20" class="btn btn-unicef-green">
                                   Contestar 20 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
                                 </a>
                               </p>
                               <p class="text-center">
-                                <a href="/app?cat={{$cat->id}}" class="btn btn-default btn-especial2">
+                                <a href="/app?cat={{$cat->id}}" class="btn btn-unicef-green">
                                   Contestar todas las preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
                                 </a>
                               </p>
@@ -81,7 +82,7 @@
                   @endforeach
                 @else
                   <a href="javascript:;" class="btn-unicef-circle" data-toggle="modal" data-target="#chooseModal"></a>
-                  <div id="chooseModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
+                  <div id="chooseModal" class="modal modal-unicef fade" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -90,18 +91,18 @@
                         </div>
                           <div class="modal-body">
                             <p class="text-center">
-                              <a href="/app?limit=10" class="btn btn-default btn-especial2">
-                                Contestar 10 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                              <a href="/app?limit=10" class="btn btn-block btn-unicef-green">
+                                <span>Contestar 10 preguntas</span><i class="fa fa-caret-right" aria-hidden="true"></i>
                               </a>
                             </p>
                             <p class="text-center">
-                              <a href="/app?limit=20" class="btn btn-default btn-especial2">
-                                Contestar 20 preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                              <a href="/app?limit=20" class="btn btn-block btn-unicef-green">
+                                <span>Contestar 20 preguntas</span><i class="fa fa-caret-right" aria-hidden="true"></i>
                               </a>
                             </p>
                             <p class="text-center">
-                              <a href="/app" class="btn btn-default btn-especial2">
-                                Contestar todas las preguntas <i class="fa fa-caret-right" aria-hidden="true"></i>
+                              <a href="/app" class="btn btn-block btn-unicef-green">
+                                <span>Contestar todas las preguntas</span><i class="fa fa-caret-right" aria-hidden="true"></i>
                               </a>
                             </p>
                           </div>
