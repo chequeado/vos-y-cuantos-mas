@@ -31,23 +31,21 @@
 @endsection
 
 @section('content')
-    
-    <div class="container theme-showcase" role="main">
-      <div class="jumbotron-home">
+
+    <div id="container-home" class="container" role="main">
         <div class="row">
-          <div class="col-md-4 col-md-offset-4">
-            <img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive logo-home"/>
-            <p class="text-right">Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.</p>
-            <p class="text-muted text-right">BETA</p>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-8">
-            <p></p>
-              <div class="text-center">
+          <div id="central-container" class="col-sm-10 col-sm-offset-1 col-xs-12 flex-direction-col flex-justify-space-between">
+
+            <!-- Title -->
+            <div class="row">
+              <div class="col-lg-6 col-lg-offset-6 col-md-8 col-md-offset-4 col-sm-12 flex-align-end flex-direction-col">
+                <img alt="Vos y cuantos más?" src="images/unicef/Titulo_vycm.png" class="img-responsive logo-home"/>
+                <p class="text-right text-subtitle-1">Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.</p>
+                <p class="text-right text-subtitle-2">NUEVA GENERACIÓN</p>
+              </div>
+
+              <!-- Buttons -->
+              <div class="col-md-12 flex-justify-end">
                 @if(count($cats)>1)
                   @foreach($cats as $cat)
                     <a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal{{$cat->id}}">
@@ -82,9 +80,7 @@
                     </div><!-- /.modal-dialog -->
                   @endforeach
                 @else
-                  <a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal">
-                      Comenzar <i class="fa fa-caret-right" aria-hidden="true"></i>
-                  </a>
+                  <a href="javascript:;" class="btn-unicef-circle" data-toggle="modal" data-target="#chooseModal"></a>
                   <div id="chooseModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -114,12 +110,17 @@
                   </div><!-- /.modal-dialog -->
                 @endif
               </div>
-          </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-        </div>
-      </div>
-        
-    </div> <!-- /container -->
+            </div>
+
+            <!-- Footer -->
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2 col-xs-12">
+                <img alt="Chequedo + UNICEF" src="images/unicef/logos_chq_unicef.png" class="img-responsive"/>
+              </div>
+            </div>
+
+          </div> <!-- /central-container -->
+        </div> <!-- /row -->
+    </div> <!-- /container-home -->
 
 @endsection

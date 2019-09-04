@@ -28,8 +28,6 @@
         @include('includes.partials.logout')
         @include('includes.partials.messages')
         @yield('content')
-        @include('frontend.themes.'.$theme.'.includes.footer')
-        @include('frontend.themes.'.$theme.'.includes.feedbackmodals')
 
         <!-- JavaScripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -9012,9 +9012,9 @@ textarea {
 .form-control {
   border-radius: 0px; }
 
-/* CSS de  Mariana */
+/* CSS de  UNICEF */
 body {
-  background: #000 no-repeat center center fixed;
+  background: url(/images/unicef/VYCM_BG_2.png) no-repeat center center fixed;
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
   box-shadow: none; }
@@ -9023,14 +9023,96 @@ body {
   body.body-app {
     padding-top: 100px; }
 
-.body2 {
-  background-color: steelblue;
-  /*background: url(/images/bg-home.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/ }
+body:after {
+  display: none;
+  content: url(/images/unicef/boton_comenzar_click.png); }
 
+#container-home {
+  height: 100vh; }
+  #container-home .logo-home {
+    margin-bottom: 15px; }
+
+#central-container {
+  background: url(/images/unicef/bg-transparente.png) repeat;
+  height: 100vh;
+  padding: 30px 50px; }
+  #central-container:before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    width: 37px;
+    height: 100vh;
+    background-image: url(/images/unicef/mases_VYCM.png);
+    background-repeat: repeat-y; }
+
+.text-subtitle-1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 20px; }
+
+.text-subtitle-2 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 15px; }
+
+.btn-unicef-circle {
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin: 15px 0px;
+  background-image: url(/images/unicef/boton_comenzar.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: opacity .5s ease;
+  opacity: 0.75; }
+  .btn-unicef-circle:hover {
+    background-image: url(/images/unicef/boton_comenzar_click.png);
+    opacity: 1; }
+
+.flex-justify-end {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.flex-align-end {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+
+.flex-direction-col {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.flex-justify-space-between {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: url(/images/unicef/VYCM_BG_1.png); }
+  #central-container {
+    background: none; }
+  .btn-unicef-circle {
+    opacity: 1; }
+  .text-subtitle-1 {
+    font-size: 18px; }
+  .text-subtitle-2 {
+    font-size: 13px; } }
+
+/* Extra Small Devices, Phones */
+/* Custom, iPhone Retina */
 .jumbotron {
   box-shadow: -20px -20px 0px #a80e16;
   background-color: #fff; }
