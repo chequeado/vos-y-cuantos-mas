@@ -87,7 +87,6 @@
 
                                 </div>
 
-
                                 <div id="stats-container" class="row">
                                     <div class="col-md-6"> <!--col-md-pull-6-->
                                         <canvas id="doughnut" class="chart chart-doughnut"
@@ -106,26 +105,23 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row">
-                                                <div class="col-md-6 text-center resultado-porcentaje">
-                                                    <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value.replace('.0','')}}%</span> de la población.
-                                                </div>
-                                                <div class="col-md-6 text-center resultado-carita">
-                                                    <span ng-show="question.bet">
-                                                        Tu estimado fue de <strong>@{{question.bet}}%</strong>,
-                                                        <strong ng-show="question.diff==0">¡excelente! ¡exacto!.</strong>
-                                                        <strong ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</strong>
-                                                        <strong ng-show="question.diff>10">la realidad es diferente a lo que creías.</strong>
-                                                        <img alt="" ng-show="question.diff<=10" ng-src="images/bien.png" class="img-responsive"/>
-                                                        <img alt="" ng-show="question.diff>10" ng-src="images/sorpresa.png" class="img-responsive"/>
-                                                    </span>
-                                                    <span ng-hide="question.bet">
-                                                        No tenías idea. Hoy aprendiste algo.
-                                                        <img alt="" ng-src="images/bien.png" class="img-responsive"/>
-                                                    </span>
-                                                </div>
-                                                <div class="clearfix"></div>
+                                            <div class="col-md-6 text-center resultado-porcentaje">
+                                                <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value.replace('.0','')}}%</span> de la población.
                                             </div>
-                                            <div class="row">
+                                            <div class="col-md-6 text-center resultado-carita">
+                                                <span ng-show="question.bet">
+                                                    Tu estimado fue de <span class="numero-grande">@{{question.bet}}%</span>
+                                                    <span ng-show="question.diff==0">¡excelente! ¡exacto!.</span>
+                                                    <span ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</span>
+                                                    <span ng-show="question.diff>10">la realidad es diferente a lo que creías.</span>
+                                                </span>
+                                                <span ng-hide="question.bet">
+                                                    No tenías idea. Hoy aprendiste algo.
+                                                    <img alt="" ng-src="images/bien.png" class="img-responsive"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
                                             <h3>¿Te sorprendió la respuesta?</h3>
                                             <div class="col-md-6 col-xs-6">
                                                 <a href="#" class="btn btn-unicef-green-light btn-block share-btn share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
@@ -137,28 +133,29 @@
                                                 Compartila en <i class="fa fa-facebook-official" aria-hidden="true"></i>
                                                 </a>
                                             </div>
-                                            </div>
-                                            <h3>¿Te quedaste con ganas de saber más?</h3>
-                                            <div class="row">
+                                        </div>
+                                        <div class="row">
                                             <div class="col-md-12">
-                                                <button href="#" class="btn btn-unicef-green-light btn-block" data-toggle="collapse" data-target="#fuenteCollapse" aria-expanded="false" aria-controls="fuenteCollapse">Ver la fuente</button>
-                                                <div class="collapse" id="fuenteCollapse">
-                                                    <div ng-show="question.answer_source_link">
-                                                        <h3>Fuente</h3>
-                                                        <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
-                                                    </div>
-                                                    <div ng-show="question.answer_description">
-                                                        <h3>Más información</h3>
-                                                        <p>@{{question.answer_description}}</p>
-                                                    </div>
+                                            <h3>¿Te quedaste con ganas de saber más?</h3>
+                                            <button href="#" class="btn btn-unicef-green-light btn-block" data-toggle="collapse" data-target="#fuenteCollapse" aria-expanded="false" aria-controls="fuenteCollapse">Ver la fuente</button>
+                                            <div class="collapse" id="fuenteCollapse">
+                                                <div ng-show="question.answer_source_link">
+                                                    <h3>Fuente</h3>
+                                                    <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                                                </div>
+                                                <div ng-show="question.answer_description">
+                                                    <h3>Más información</h3>
+                                                    <p>@{{question.answer_description}}</p>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="row">
                                             <div class="col-md-12" ng-show="question.answer_link">
                                                 <a class="btn btn-unicef-green-light btn-block" ng-href="@{{question.answer_link}}" target="_blank">
                                                 Leé la nota de este tema
                                                 </a>
                                             </div>
-                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -183,9 +180,9 @@
 
                         </div> <!-- /question-body -->
 
-                        @include('frontend.themes.'.$theme.'.includes.footer')
                     </div> <!-- /content-container -->
                 </div> <!-- /col -->
+                @include('frontend.themes.'.$theme.'.includes.footer')
             </div> <!-- /row -->
         </div> <!-- /container -->
 

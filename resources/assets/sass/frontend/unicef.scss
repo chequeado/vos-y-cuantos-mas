@@ -191,7 +191,41 @@ body:after{
 }
 
 #stats-container{
-  margin: 30px 0px;
+  margin: 30px 0px 0px 0px;
+  .resultado-porcentaje {
+    .numero-grande{
+      font-size:40px;
+      font-weight: bold;
+      display:block;
+      margin:0;
+      padding:0;
+    }
+  }
+  .resultado-carita{
+    .numero-grande{
+      font-size:40px;
+      font-weight: bold;
+      display:block;
+      margin:0;
+      padding:0;
+    }
+  }
+  .table{
+    td{
+      border-bottom: 1px solid $blue-ultra-light;
+    }
+    thead {
+      td {
+        color: $blue;
+        font-weight: 600;
+      }
+    }
+  }
+  #fuenteCollapse {
+    p {
+      color: $blue;
+    }
+  }
 }
 
 .modal-unicef{
@@ -234,6 +268,9 @@ body:after{
       .modal-body{
         border: none;
         padding: 10px 30px 30px 30px;
+        p {
+          font-size: 20px;
+        }
       }
       .modal-footer{
         border: none;
@@ -364,6 +401,14 @@ body:after{
     .navbar-nav{
       float: right;
       margin-right: 30px;
+    }
+  }
+  #quit-btn{
+    color: $white;
+    background-color: $blue-dark;
+    transition: background-color .5s ease;
+    &:hover{
+      background-color: $blue;
     }
   }
 }

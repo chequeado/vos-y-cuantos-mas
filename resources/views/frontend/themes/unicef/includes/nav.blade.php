@@ -12,7 +12,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       @if(strpos(Request::url(), 'questions')===false)
       <ul class="nav navbar-nav">
-        <li><a data-toggle="modal" data-target="#quitModal" href="javascript:;">Salir y ver mis resultados <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
+        <li><a id="quit-btn" class="btn btn-link" data-toggle="modal" data-target="#quitModal" href="javascript:;">Salir y ver mis resultados <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
       </ul>
       @endif
     </div><!--/.nav-collapse -->

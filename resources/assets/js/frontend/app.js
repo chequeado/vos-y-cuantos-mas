@@ -27,7 +27,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     $scope.init = function(category_id,limit,colors,forceKeepBg){
         //console.log(limit);
         //Chart.defaults.global.colours = colors;
-        console.log(forceKeepBg);
+
         $scope.keep_background = forceKeepBg;
         $scope.category_id = category_id;
         $scope.limit = limit;

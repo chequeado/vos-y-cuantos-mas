@@ -9148,7 +9148,26 @@ body:after {
     color: #fff; }
 
 #stats-container {
-  margin: 30px 0px; }
+  margin: 30px 0px 0px 0px; }
+  #stats-container .resultado-porcentaje .numero-grande {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    margin: 0;
+    padding: 0; }
+  #stats-container .resultado-carita .numero-grande {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    margin: 0;
+    padding: 0; }
+  #stats-container .table td {
+    border-bottom: 1px solid #A5C5E3; }
+  #stats-container .table thead td {
+    color: #00248F;
+    font-weight: 600; }
+  #stats-container #fuenteCollapse p {
+    color: #00248F; }
 
 .modal-unicef .modal-dialog {
   background-image: url(/images/unicef/VYCM_BG_mobile.png);
@@ -9181,6 +9200,8 @@ body:after {
     .modal-unicef .modal-dialog .modal-content .modal-body {
       border: none;
       padding: 10px 30px 30px 30px; }
+      .modal-unicef .modal-dialog .modal-content .modal-body p  {
+        font-size: 20px; }
     .modal-unicef .modal-dialog .modal-content .modal-footer {
       border: none;
       padding: 30px; }
@@ -9281,6 +9302,12 @@ body:after {
   .navbar .navbar-collapse .navbar-nav {
     float: right;
     margin-right: 30px; }
+  .navbar #quit-btn {
+    color: #fff;
+    background-color: #0B1E60;
+    transition: background-color .5s ease; }
+    .navbar #quit-btn:hover {
+      background-color: #00248F; }
 
 footer {
   background-color: #0B1E60;

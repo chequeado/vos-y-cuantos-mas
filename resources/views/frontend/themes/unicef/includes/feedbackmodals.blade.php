@@ -1,5 +1,5 @@
 <div ng-controller="FeedbackCtrl">
-  <div id="sugerenciasModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
+  <div id="sugerenciasModal" class="modal modal-unicef fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -13,13 +13,13 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="textinput">Tu nombre</label>  
+                  <label class="col-md-4 control-label" for="textinput">Tu nombre</label>
                   <div class="col-md-8">
                     <input id="textinput" ng-model="sugerencias.nombre" name="textinput" type="text" class="form-control input-md">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="textinput">Tu correo electrónico</label>  
+                  <label class="col-md-4 control-label" for="textinput">Tu correo electrónico</label>
                   <div class="col-md-8">
                     <input id="textinput" ng-model="sugerencias.email" name="textinput" type="text" class="form-control input-md">
                   </div>
@@ -28,7 +28,7 @@
                 <!-- Textarea -->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="textarea">Sugerencias</label>
-                  <div class="col-md-8">                     
+                  <div class="col-md-8">
                     <textarea ng-model="sugerencias.sugerencia" class="form-control" id="textarea" name="textarea"></textarea>
                   </div>
                 </div>
@@ -47,7 +47,7 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-  <div id="preguntasModal" ng-controller="FeedbackCtrl" class="modal modal-chq fade" tabindex="-1" role="dialog">
+  <div id="preguntasModal" ng-controller="FeedbackCtrl" class="modal modal-unicef fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -61,13 +61,13 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="textinput">Tu nombre</label>  
+                  <label class="col-md-4 control-label" for="textinput">Tu nombre</label>
                   <div class="col-md-8">
                     <input id="textinput" ng-model="preguntas.nombre" name="textinput" type="text" class="form-control input-md">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="textinput">Tu correo electrónico</label>  
+                  <label class="col-md-4 control-label" for="textinput">Tu correo electrónico</label>
                   <div class="col-md-8">
                     <input id="textinput" ng-model="preguntas.email" name="textinput" type="text" class="form-control input-md">
                   </div>
@@ -76,14 +76,14 @@
                 <!-- Textarea -->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="textarea">¿Qué pregunta te gustaría sumar?</label>
-                  <div class="col-md-8">                     
+                  <div class="col-md-8">
                     <textarea ng-model="preguntas.pregunta" class="form-control" id="textarea" name="textarea"></textarea>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="textarea">¿De dónde podemos obtener esa información?</label>
-                  <div class="col-md-8">                     
+                  <div class="col-md-8">
                     <textarea ng-model="preguntas.link" class="form-control" id="textarea" name="textarea"></textarea>
                     <div class="help-block">En lo posible un link al sitio web o documento donde podemos encontrar detalles de la información que te interesa que agreguemos.</div>
                   </div>
@@ -103,7 +103,7 @@
   </div><!-- /.modal -->
 </div>
 
-<div id="disclaimerModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
+<div id="disclaimerModal" class="modal modal-unicef fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
