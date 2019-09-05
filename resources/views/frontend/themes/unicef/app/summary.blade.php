@@ -31,69 +31,91 @@
 
 @section('content')
 
-    <div class="question-container" ng-controller="SummaryCtrl" ng-init='init("{{$cat}}", {!!$votes!!})' ng-cloak>
+  <div id="question-container" class="container" role="main" ng-controller="SummaryCtrl" ng-init='init("{{$cat}}", {!!$votes!!})' ng-cloak>
 
-        <div class="container theme-showcase" role="main">
-          <div class="jumbotron-final">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4"></div>
-                  <div class="col-md-4"><img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive" style="margin:30px 0 0 0"/></div>
-                  <div class="col-md-4"></div>
+      <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 flex-align-end flex-direction-col">
+            <img alt="Vos y cuantos más?" src="images/unicef/iconito_user.svg" class="img-responsive logo-summary"/>
+            <p class="text-right text-title-1">¿VOS Y CUÁNTOS MAS?</p>
+          </div>
+          <div class="col-md-4"></div>
+      </div>
+
+      <div class="row">
+          <div id="central-column" class="col-sm-10 col-sm-offset-1 col-xs-12 flex-direction-col flex-justify-space-between">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center results-number">
+                      <p>¡De <b>@{{total}}</b> preguntas, le acertaste a <b>@{{correctas}}</b>!</p>
+                    </div>
                 </div>
-                <div class="final-final text-center ng-cloak">
-                  <h1>¡De <b>@{{total}}</b> preguntas, le acertaste a <b>@{{correctas}}</b>!</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center regular-text">Resultados finales</p>
                 </div>
-                <div class="clearfix"></div>
-                <div class="text-center"><h2>Resultados finales</h2></div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <p class="bg-info"><img alt="Vos y cuantos más?" src="images/monton.png" class="img-responsive"/></p>
-                            <h3 ng-show="votes.muchos.length>0">respondieron igual en temas de:</h3>
-                            <h3 ng-show="!votes.muchos">sin coincidencias</h3>
-                            <p class="bg-info" ng-cloak ng-repeat="q in votes.muchos">@{{q.question.title}}</p>
-                          </div>
-                          <div class="col-md-4">
-                            <p class="bg-info"><img alt="Vos y cuantos más?" src="images/muchos.png" class="img-responsive"/></p>
-                            <h3 ng-show="votes.algunos.length>0">respondieron igual en temas de:</h3>
-                            <h3 ng-show="!votes.algunos">sin coincidencias</h3>
-                            <p class="bg-info" ng-cloak ng-repeat="q in votes.algunos">@{{q.question.title}}</p>
-                          </div>
-                          <div class="col-md-4">
-                            <p class="bg-info"><img alt="Vos y cuantos más?" src="images/pocos.png" class="img-responsive"/></p>
-                            <h3 ng-show="votes.pocos.length>0">respondieron igual en temas de:</h3>
-                            <h3 ng-show="!votes.pocos">sin coincidencias</h3>
-                            <p class="bg-info" ng-cloak ng-repeat="q in votes.pocos">@{{q.question.title}}</p>
-                          </div>
+            </div>
+
+            <div class="row">
+                <div class="results-container col-md-12">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h3 class="little-title">VOS Y UN MONTÓN MÁS</h3>
+                        <p class="regular-text" ng-show="votes.muchos.length>0">respondieron igual en temas de:</p>
+                        <p class="regular-text" ng-show="!votes.muchos">sin coincidencias</p>
+                        <p class="item btn-unicef-green" ng-cloak ng-repeat="q in votes.muchos">@{{q.question.title}}</p>
+                        <hr/>
+                      </div>
+                      <div class="col-md-4">
+                        <h3 class="little-title">VOS Y MUCHOS MÁS</h3>
+                        <p class="regular-text" ng-show="votes.algunos.length>0">respondieron igual en temas de:</p>
+                        <p class="regular-text" ng-show="!votes.algunos">sin coincidencias</p>
+                        <p class="item btn-unicef-green" ng-cloak ng-repeat="q in votes.algunos">@{{q.question.title}}</p>
+                        <hr/>
+                      </div>
+                      <div class="col-md-4">
+                        <h3 class="little-title">VOS Y UNOS POCOS MÁS</h3>
+                        <p class="regular-text" ng-show="votes.pocos.length>0">respondieron igual en temas de:</p>
+                        <p class="regular-text" ng-show="!votes.pocos">sin coincidencias</p>
+                        <p class="item btn-unicef-green" ng-cloak ng-repeat="q in votes.pocos">@{{q.question.title}}</p>
+                        <hr/>
+                      </div>
+                    </div>
+                    <div ng-if="notas.length>0" class="row">
+                      <div class="col-md-12">
+                        <h3 ng-show="!votes.muchos">Por cómo respondiste te recomendamos las siguientes notas:</h3>
+                        <ul>
+                          <li ng-repeat="n in notas"><a href="@{{n.question.answer_link}}">@{{n.question.answer_title}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row summary-btns-container">
+                        <div class="col-md-4">
+                            <a class="share-btn share-twitter btn btn-unicef-green-light btn-block" share-url="{{Request::fullUrl()}}" share-text="Mis resultados en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">Compartir <i class="fa fa-twitter" aria-hidden="true"></i></a>
                         </div>
-                        <div ng-if="notas.length>0" class="row">
-                          <div class="col-md-12">
-                            <h3 ng-show="!votes.muchos">Por cómo respondiste te recomendamos las siguientes notas:</h3>
-                            <ul>
-                              <li ng-repeat="n in notas"><a href="@{{n.question.answer_link}}">@{{n.question.answer_title}}</a></li>
-                            </ul>
-                          </div>
+                        <div class="col-md-4">
+                            <a id="share-facebook" class="btn btn-unicef-green-light btn-block" data-url="{{Request::fullUrl()}}">Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a class="share-btn share-twitter btn btn-default btn-especial3" share-url="{{Request::fullUrl()}}" share-text="Mis resultados en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">Compartir <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="col-md-4">
-                                <a id="share-facebook" class="btn btn-default btn-especial3" data-url="{{Request::fullUrl()}}">Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="/" class="btn btn-default btn-especial3">Volver al home</a>
-                            </div>
+                        <div class="col-md-4">
+                            <a href="/" class="btn btn-unicef-blue btn-block">Volver al home</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> <!-- /container -->         
 
-</div><!--main-->
+          </div> <!-- Central column -->
+      </div> <!-- row -->
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+          @include('frontend.themes.'.$theme.'.includes.footer')
+        </div>
+      </div>
+  </div>
+
 @endsection
 
 @section('after-scripts-end')

@@ -9070,7 +9070,7 @@ body:after {
   display: block;
   height: 100px;
   width: 100px;
-  margin: 15px 0px;
+  margin-bottom: 15px;
   background-image: url(/images/unicef/boton.svg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -9091,7 +9091,7 @@ body:after {
   border-radius: 0px;
   text-transform: uppercase;
   text-shadow: none;
-  margin: 10px 0;
+  margin-bottom: 15px;
   padding: 10px 10px;
   display: -ms-flexbox;
   display: flex;
@@ -9319,6 +9319,21 @@ footer {
     cursor: pointer; }
     footer a:hover {
       color: #fff; }
+
+#question-container {
+  padding-top: 50px; }
+  #question-container #central-column {
+    background: url(/images/unicef/bg-transparente.png) repeat;
+    padding: 30px 50px; }
+    #question-container #central-column .text-title-1 {
+      font-size: 40px; }
+    #question-container #central-column .logo-summary {
+      width: 100px; }
+    #question-container #central-column .results-container .little-title {
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.1em; }
 
 /* Flex */
 .flex-justify-end {

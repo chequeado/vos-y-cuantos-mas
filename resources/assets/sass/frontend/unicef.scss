@@ -125,7 +125,7 @@ body:after{
   border-radius:0px;
   text-transform:uppercase;
   text-shadow: none;
-  margin: 10px 0;
+  margin-bottom:15px;
   padding: 10px 10px;
   display: flex;
   justify-content: space-between;
@@ -169,7 +169,7 @@ body:after{
   border-radius:0px;
   text-transform:uppercase;
   text-shadow: none;
-  margin: 10px 0;
+  margin-bottom:15px;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -387,14 +387,19 @@ body:after{
 }
 
 .navbar{
+  .container{
+    width: 100%;
+  }
   background-color:$blue-dark;
   border-radius: 0px;
   padding: 20px 15px 5px 15px;
   margin: 0;
   .navbar-brand{
+    font-weight: 800;
     color: $white;
     small{
       color: $white;
+      font-weight: 400;
     }
   }
   .navbar-collapse {
@@ -415,15 +420,74 @@ body:after{
 
 footer{
   background-color:$blue-dark;
-  padding:10px 0;
-  text-align: center;
-  a{
-    margin:5px;
-    color:#fff;
-    cursor: pointer;
-    &:hover{
-      color:#fff;
+  padding: 15px 30px;
+  .container-img{
+    display: flex;
+    align-items: center;
+    img{
+      margin: 0 auto;
     }
+  }
+  a{
+  }
+}
+
+#question-container{
+  padding-top: 25px;
+  .text-title-1{
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  .logo-summary{
+    width: 100px;
+  }
+  #central-column{
+    background: url(/images/unicef/bg-transparente-75.png) repeat;
+    padding: 30px 50px 20px 50px;
+    p.regular-text {
+      color: $blue;
+      font-size: 15px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .summary-btns-container{
+      margin-top: 20px;
+    }
+    .results-container {
+      .little-title{
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.1em;
+        background-color: $green;
+        color:$blue;
+        padding: 15px 10px;
+        margin-top: 10px;
+      }
+      .item{
+        cursor: default;
+        span{
+          text-align: center;
+        }
+        &:hover{
+          background-color: $green;
+          color: $blue;
+        }
+      }
+    }
+    .results-number{
+      min-height: 20px;
+      color:$blue;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      p {
+        text-align: center;
+        margin:0;
+      }
+    }
+  }
+  footer{
+    margin: 0 -15px;
   }
 }
 
@@ -467,6 +531,10 @@ footer{
 @media only screen and (max-width : 768px) {
   body{
     background-image: url(/images/unicef/VYCM_BG_mobile.png);
+    &.body-app{
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
   }
 
   #container-home{
@@ -523,6 +591,30 @@ footer{
           padding: 10px;
         }
       }
+    }
+  }
+
+  footer {
+    .container-img{
+      display: block;
+      img{
+        max-width: 80%;
+      }
+    }
+  }
+
+  .navbar{
+    padding: 10px 15px 5px 15px;
+    .navbar-brand{
+      small{
+        display: block;
+      }
+    }
+  }
+
+  #question-content-container{
+    .question-body{
+      padding: 15px;
     }
   }
 

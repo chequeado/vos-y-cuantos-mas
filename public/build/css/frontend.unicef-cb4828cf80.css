@@ -9295,14 +9295,10 @@ body:after {
   border-radius: 0px;
   padding: 20px 15px 5px 15px;
   margin: 0; }
-  .navbar .container {
-    width: 100%; }
   .navbar .navbar-brand {
-    font-weight: 800;
     color: #fff; }
     .navbar .navbar-brand small {
-      color: #fff;
-      font-weight: 400; }
+      color: #fff; }
   .navbar .navbar-collapse .navbar-nav {
     float: right;
     margin-right: 30px; }
@@ -9315,14 +9311,14 @@ body:after {
 
 footer {
   background-color: #0B1E60;
-  padding: 15px 30px; }
-  footer .container-img {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center; }
-    footer .container-img img {
-      margin: 0 auto; }
+  padding: 10px 0;
+  text-align: center; }
+  footer a {
+    margin: 5px;
+    color: #fff;
+    cursor: pointer; }
+    footer a:hover {
+      color: #fff; }
 
 #question-container {
   padding-top: 25px; }
@@ -9333,7 +9329,7 @@ footer {
     width: 100px; }
   #question-container #central-column {
     background: url(/images/unicef/bg-transparente-75.png) repeat;
-    padding: 30px 50px 20px 50px; }
+    padding: 30px 50px 0px 50px; }
     #question-container #central-column p.regular-text {
       color: #00248F;
       font-size: 15px;
@@ -9351,8 +9347,6 @@ footer {
       margin-top: 10px; }
     #question-container #central-column .results-container .item {
       cursor: default; }
-      #question-container #central-column .results-container .item span {
-        text-align: center; }
       #question-container #central-column .results-container .item:hover {
         background-color: #00C595;
         color: #00248F; }
@@ -9365,8 +9359,8 @@ footer {
       #question-container #central-column .results-number p {
         text-align: center;
         margin: 0; }
-  #question-container footer {
-    margin: 0 -15px; }
+    #question-container #central-column footer {
+      margin: -15px; }
 
 /* Flex */
 .flex-justify-end {
@@ -9399,9 +9393,6 @@ footer {
 @media only screen and (max-width: 768px) {
   body {
     background-image: url(/images/unicef/VYCM_BG_mobile.png); }
-    body.body-app {
-      padding-top: 15px;
-      padding-bottom: 15px; }
   #container-home .logo-home {
     max-width: 100px; }
   #central-container {
@@ -9432,17 +9423,7 @@ footer {
     .modal-unicef .modal-dialog .modal-content .modal-body {
       padding: 5px 10px 10px 10px; }
     .modal-unicef .modal-dialog .modal-content .modal-footer {
-      padding: 10px; }
-  footer .container-img {
-    display: block; }
-    footer .container-img img {
-      max-width: 80%; }
-  .navbar {
-    padding: 10px 15px 5px 15px; }
-    .navbar .navbar-brand small {
-      display: block; }
-  #question-content-container .question-body {
-    padding: 15px; } }
+      padding: 10px; } }
 
 /* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */

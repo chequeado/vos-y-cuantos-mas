@@ -123,12 +123,12 @@
                                         </div>
                                         <div class="row">
                                             <h3>¿Te sorprendió la respuesta?</h3>
-                                            <div class="col-md-6 col-xs-6">
+                                            <div class="col-md-6 col-sm-6">
                                                 <a href="#" class="btn btn-unicef-green-light btn-block share-btn share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
                                                 Compartila en <i class="fa fa-twitter" aria-hidden="true"></i>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 col-xs-6">
+                                            <div class="col-md-6 col-sm-6">
                                                 <a id="share-facebook" data-url="{{url('questions')}}/@{{question.id}}" href="#" class="btn btn-unicef-green-light btn-block">
                                                 Compartila en <i class="fa fa-facebook-official" aria-hidden="true"></i>
                                                 </a>
@@ -159,8 +159,8 @@
                                     </div>
                                 </div>
 
-                                <div class="clearfix"></div>
                                 <div class="row btn-container">
+                                    <hr/>
                                     <button class="btn btn-unicef-blue pull-left" ng-click="changeOption()"><span>Modificar mi respuesta</span></button>
                                     <button ng-click="moveNext()" ng-hide="index+1 == questions.length" class="btn btn-unicef-blue pull-right"><span>Siguiente pregunta</span></button>
                                     <button ng-click="finish()" ng-show="index+1 == questions.length" class="btn btn-unicef-blue pull-right"><span>Finalizar</span></button>
