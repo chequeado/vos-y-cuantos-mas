@@ -159,6 +159,8 @@
                                     </div>
                                 </div>
 
+                                <div class="clearfix"></div>
+
                                 <div class="row btn-container">
                                     <hr/>
                                     <button class="btn btn-unicef-blue pull-left" ng-click="changeOption()"><span>Modificar mi respuesta</span></button>
