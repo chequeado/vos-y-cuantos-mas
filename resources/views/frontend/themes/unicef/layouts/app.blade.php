@@ -19,16 +19,14 @@
         @yield('after-styles-end')
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Capriola" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800&display=swap" rel="stylesheet">
+
     </head>
     <body id="app-layout" class="body-app" ng-cloak>
 
         @include('includes.partials.logout')
         @include('includes.partials.messages')
-        @include('frontend.themes.'.$theme.'.includes.nav')
         @yield('content')
-        @include('frontend.themes.'.$theme.'.includes.footer')
 
         @include('frontend.themes.'.$theme.'.includes.quitmodal')
         @include('frontend.themes.'.$theme.'.includes.feedbackmodals')

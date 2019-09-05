@@ -4780,9 +4780,11 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         return ($window.innerWidth <= 800)?true:false;
     };
 
-    $scope.init = function(category_id,limit,colors){
+    $scope.init = function(category_id,limit,colors,forceKeepBg){
         //console.log(limit);
         //Chart.defaults.global.colours = colors;
+        console.log(forceKeepBg);
+        $scope.keep_background = forceKeepBg;
         $scope.category_id = category_id;
         $scope.limit = limit;
     	$scope.chart.colours = colors;
@@ -4807,7 +4809,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
         $anchorScroll('app-layout');
         $scope.question = $scope.questions[$scope.index];
         $scope.bgImage = 'url(/imagecache/original/' + $scope.question.image_file + ')';
-        if(!$scope.isMobile()){
+        if (!$scope.isMobile() && !$scope.keep_background){
             $('body').css('background-image',$scope.bgImage);
         }
         $scope.question.answer = false;
@@ -4878,7 +4880,7 @@ DesmitificadorApp.controller('MainCtrl', function ($scope,$templateCache, $http,
     };
 
     $scope.finish = function(){
-        if(!$scope.isMobile()){
+        if (!$scope.isMobile() && !$scope.keep_background){
             $('body').css('background-image','none');
         }
         $window.location = '/summary?key='+$('meta[name="_token"]').attr('content')+'&cat='+$scope.category_id;

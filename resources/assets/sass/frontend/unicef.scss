@@ -18,7 +18,12 @@ textarea{
 /* CSS de  UNICEF */
 
 $blue: #00248F;
+$blue-dark: #0B1E60;
+$blue-light: #0168B5;
+$blue-ultra-light: #A5C5E3;
 $green: #00C595;
+$green-light: #ADFFE8;
+$white: #fff;
 
 body{
   background: url(/images/unicef/VYCM_BG_desktop.png) no-repeat center center fixed;
@@ -34,7 +39,8 @@ body{
     padding-top: 0px;
   }
   &.body-app{
-    padding-top: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
@@ -138,6 +144,56 @@ body:after{
   }
 }
 
+.btn-unicef-green-light{
+  color: $blue;
+  text-decoration: none;
+  background-color: $green-light;
+  font-size:17px;
+  border:none;
+  margin-bottom:15px;
+  text-align: center;
+  transition: background-color .5s ease;
+  border-radius: 0px;
+  &:hover{
+    background-color: $green;
+  }
+}
+
+.btn-unicef-blue{
+  position: relative;
+  vertical-align: center;
+  color: $white;
+  background-color: $blue-light;
+  border: 0;
+  cursor: pointer;
+  border-radius:0px;
+  text-transform:uppercase;
+  text-shadow: none;
+  margin: 10px 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color .5s ease;
+  & span {
+    font-size:15px;
+  }
+  &:hover{
+    background-color: $blue;
+    & span {
+      color: $white;
+    }
+  }
+  &:focus{
+    & span {
+      color: $white;
+    }
+  }
+}
+
+#stats-container{
+  margin: 30px 0px;
+}
+
 .modal-unicef{
   .modal-dialog{
     background-image: url(/images/unicef/VYCM_BG_mobile.png);
@@ -186,6 +242,146 @@ body:after{
     }
   }
 }
+
+
+#question-content-container{
+  .question-body{
+    background: url(/images/unicef/bg-transparente-75.png) repeat;
+    padding: 30px;
+    h1{
+      text-align: center;
+      color: $blue-dark;
+      font-family: 'Montserrat', sans-serif;
+      font-size:30px;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    h3{
+      text-align: center;
+      color: $blue-dark;
+      font-family: 'Montserrat', sans-serif;
+      font-size:20px;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    .progress {
+      background-color: $blue-ultra-light;
+      border-radius: 0px;
+      height: 30px;
+      padding: 5px;
+      margin-bottom:10px;
+      .progress-bar-success {
+        background-color: $blue-light;
+        background-image: none;
+        height: 20px;
+      }
+    }
+    .question-counter{
+      font-size:12px;
+      font-weight:200;
+      color:$blue-light;
+      padding:0;
+      margin:0;
+      text-transform:uppercase;
+    }
+    .answer-selection{
+      font-size:12px;
+      font-weight:200;
+      color:$blue;
+      padding:0;
+      text-transform:uppercase;
+      margin: 10px 0px 20px 0px;
+    }
+    .question-text{
+      min-height: 20px;
+      padding: 20px 10%;
+      background-color: $green;
+      color:$blue;
+      margin:20px 0 0 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      p {
+        text-align: center;
+        margin:0;
+      }
+    }
+    .btn-container{
+      padding: 0 15px;
+    }
+    .list-group{
+      margin:20px 0 20px 0;
+      a.list-group-item:focus, a.list-group-item, button.list-group-item:focus, button.list-group-item {
+        color: $blue;
+        text-decoration: none;
+        background-color: $green-light;
+        font-size:17px;
+        border:none;
+        margin-bottom:15px;
+        text-align: center;
+        transition: background-color .5s ease;
+        &:hover{
+          background-color: $green;
+        }
+      }
+    }
+    .slider.slider-horizontal {
+      margin: 20px 0px 10px 0px;
+      .slider-track {
+        height: 10px;
+      }
+      .slider-tick,.slider-handle {
+        margin-top: -15px;
+        height: 40px;
+        width: 40px;
+        background: $blue-light;
+      }
+      .slider-selection {
+        background: $blue-ultra-light;
+      }
+    }
+    .resultado-porcentaje{
+      color: $blue;
+    }
+    .resultado-carita{
+      color: $blue;
+    }
+  }
+}
+
+.navbar{
+  background-color:$blue-dark;
+  border-radius: 0px;
+  padding: 20px 15px 5px 15px;
+  margin: 0;
+  .navbar-brand{
+    color: $white;
+    small{
+      color: $white;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav{
+      float: right;
+      margin-right: 30px;
+    }
+  }
+}
+
+footer{
+  background-color:$blue-dark;
+  padding:10px 0;
+  text-align: center;
+  a{
+    margin:5px;
+    color:#fff;
+    cursor: pointer;
+    &:hover{
+      color:#fff;
+    }
+  }
+}
+
 
 /* Flex */
 
@@ -300,7 +496,7 @@ body:after{
 
 //-- END UNICEF STYLES
 
-
+/*
 
 .jumbotron{
   box-shadow: -20px -20px 0px #a80e16;
@@ -328,65 +524,19 @@ body:after{
   margin-top:20px;
   padding-top:20px;
 }
-.navbar-inverse{
-  background:#e5e5e5;
-    border: none;
-  }
-.navbar-nav{
-  text-align:right;
-  float:right;
-  }
-.navbar-brand{
-  font-family: 'Montserrat', sans-serif;
-  font-size:12px;
-  color:#1a2157;
-  text-transform:uppercase;
-  font-weight:300;
-  text-shadow:0;
-  padding:15px 0 0 5px;
-  }
+
 p.respuesta{
   font-size:12px;
   margin:20px 0;
   }
 @media (min-width: 1200px) {
-  .navbar-brand{
-  font-size:16px;
-  padding:20px 0 0 10px;
-  }
+
   p.respuesta{
   font-size:16px;
   margin:20px 0;
   }
 }
-.navbar-brand span.text-muted{
-  color:#ccc;
-  font-weight:normal;
-  font-size:12px;
-  }
-@media (min-width: 1200px) {
-.navbar-brand span.text-muted{
-  color:#ccc;
-  font-weight:normal;
-  }
-.navbar-brand{
-  font-family: 'Montserrat', sans-serif;
-  font-size:30px;
-  color:#1a2157;
-  text-transform:uppercase;
-  font-weight:300;
-  text-shadow:0;
-  }
-}
-.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
-    color:#1a2157;
-  }
-.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
-    color:#a80e16;
-  }
-.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
-    color:#a80e16;
-}
+
 
 .jumbotron h1{
   font-family: 'Montserrat', sans-serif;
@@ -476,44 +626,10 @@ background-image: none;
   font-size:22px;
   }
 }
-.list-group{
-    border-radius: 0px;
-    -webkit-box-shadow: none;
-    box-shadow:  none;
-  margin:20px 0 5px 0;
-  }
-a.list-group-item:focus, a.list-group-item, button.list-group-item:focus, button.list-group-item {
-    color: #000;
-    text-decoration: none;
-    background-color: #e5e5e5;
-  font-family: 'Capriola', sans-serif;
-  font-size:12px;
-  border:none;
-  margin-bottom:5px;
-}
+
+
 @media (min-width: 1200px) {
-.list-group{
-    border-radius: 0px;
-    -webkit-box-shadow: none;
-    box-shadow:  none;
-  margin:20px 0 40px 0;
-  }
-a.list-group-item:focus, a.list-group-item, button.list-group-item:focus, button.list-group-item {
-    color: #000;
-    text-decoration: none;
-    background-color: #e5e5e5;
-  font-family: 'Capriola', sans-serif;
-  font-size:16px;
-  border:none;
-  margin-bottom:15px;
-}
-}
-a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
-    color: #a50f10;
-    text-decoration: none;
-    background-color: #f5f5f5;
-  border:none;
-}
+
 .btn-especial{
   position: relative;
   vertical-align: center;
@@ -671,22 +787,6 @@ color: #a50f0f;
   padding:10px;
   font-family: 'Capriola', sans-serif;
 }
-footer{
-  background-color:#1a2156;
-  padding:10px 0;
-  }
-footer a{
-  margin:5px;
-  color:#fff;
-  cursor: pointer;
-  }
-footer a:hover{
-  color:#fff;
-  }
-.modal-content {
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-}
 .final-final{
   background-color:#ebebeb;
   margin-right:30px;
@@ -698,9 +798,7 @@ footer a:hover{
 .final-final b{
   text-decoration:underline;
   }
-.navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #000;
-}
+
 
 //Pala CSS
 
@@ -747,6 +845,8 @@ footer a:hover{
     font-size: 12px;
 }
 
+*/
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
@@ -775,3 +875,4 @@ footer a:hover{
 @media only screen and (max-width : 320px) {
 
 }
+

@@ -19,7 +19,7 @@
         @yield('after-styles-end')
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800&display=swap" rel="stylesheet">
 
     </head>
     <body class="body-home body2">
