@@ -17,14 +17,14 @@ class QuestionController extends Controller
         QuestionRepositoryContract $questions
     )
     {
-        $this->questions       = $questions;
+        $this->questions = $questions;
     }
 
     public function view($id, Request $request)
     {
         $theme = \Config::get('site.theme');
 
-        $obj = $this->questions->findPublishedOrThrowException($id, true);
+        $obj = $this->questions->findPublishedOrThrowException($id);
         if($obj){
             $obj->load('options');
             return view('frontend.themes.'.$theme.'.questions.view')
