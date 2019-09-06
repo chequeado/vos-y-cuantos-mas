@@ -1,7 +1,7 @@
 @extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
-    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#19845b", "#a50f0f", "#67a3aa", "#444854", "#1a2156" ], true)' ng-cloak>
+    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#19845b", "#a50f0f", "#67a3aa", "#6622A2", "#1a2156" ], true)' ng-cloak>
 
         <!-- container -->
         <div class="container theme-showcase" role="main">
@@ -116,8 +116,7 @@
                                                     <span ng-show="question.diff>10">la realidad es diferente a lo que creías.</span>
                                                 </span>
                                                 <span ng-hide="question.bet">
-                                                    No tenías idea. Hoy aprendiste algo.
-                                                    <img alt="" ng-src="images/bien.png" class="img-responsive"/>
+                                                    No tenías idea. Hoy aprendiste algo. ;)
                                                 </span>
                                             </div>
                                         </div>

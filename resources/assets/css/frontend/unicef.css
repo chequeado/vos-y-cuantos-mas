@@ -9141,7 +9141,8 @@ body:after {
   .btn-unicef-blue span {
     font-size: 15px; }
   .btn-unicef-blue:hover {
-    background-color: #00248F; }
+    background-color: #00248F;
+    color: #fff; }
     .btn-unicef-blue:hover span {
       color: #fff; }
   .btn-unicef-blue:focus span {
@@ -9366,6 +9367,35 @@ footer {
         text-align: center;
         margin: 0; }
   #question-container footer {
+    margin: 0 -15px; }
+
+#question-detail-container {
+  padding-top: 25px; }
+  #question-detail-container .text-title-1 {
+    font-size: 40px;
+    margin-bottom: 15px; }
+  #question-detail-container .logo-summary {
+    width: 100px; }
+  #question-detail-container #central-column {
+    background: url(/images/unicef/bg-transparente-75.png) repeat;
+    padding: 30px 50px 20px 50px; }
+    #question-detail-container #central-column p.regular-text {
+      color: #00248F;
+      font-size: 15px;
+      text-align: center;
+      text-transform: uppercase; }
+    #question-detail-container #central-column p.p-text {
+      color: #00248F;
+      font-size: 15px; }
+  #question-detail-container .question-title {
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.1em;
+    background-color: #00C595;
+    color: #00248F;
+    padding: 15px 10px;
+    margin-top: 10px; }
+  #question-detail-container footer {
     margin: 0 -15px; }
 
 /* Flex */
