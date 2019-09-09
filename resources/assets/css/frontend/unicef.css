@@ -9111,7 +9111,7 @@ body:after {
 .btn-unicef-green-light {
   color: #00248F;
   text-decoration: none;
-  background-color: #ADFFE8;
+  background-color: #0DFFFF;
   font-size: 17px;
   border: none;
   margin-bottom: 15px;
@@ -9151,11 +9151,13 @@ body:after {
 #stats-container {
   margin: 30px 0px 0px 0px; }
   #stats-container .resultado-porcentaje .numero-grande {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     display: block;
     margin: 0;
     padding: 0; }
+  #stats-container .resultado-carita .img-responsive {
+    margin: 10px auto 15px auto; }
   #stats-container .resultado-carita .numero-grande {
     font-size: 40px;
     font-weight: bold;
@@ -9169,6 +9171,8 @@ body:after {
     font-weight: 600; }
   #stats-container #fuenteCollapse p {
     color: #00248F; }
+  #stats-container .chart-container {
+    margin-top: 15px; }
 
 .modal-unicef .modal-dialog {
   background-image: url(/images/unicef/VYCM_BG_mobile.png);
@@ -9247,7 +9251,7 @@ body:after {
     color: #00248F;
     padding: 0;
     text-transform: uppercase;
-    margin: 10px 0px 20px 0px; }
+    margin: 10px 0px 0px 0px; }
   #question-content-container .question-body .question-text {
     min-height: 20px;
     padding: 20px 10%;
@@ -9267,7 +9271,7 @@ body:after {
     #question-content-container .question-body .list-group a.list-group-item:focus, #question-content-container .question-body .list-group a.list-group-item, #question-content-container .question-body .list-group button.list-group-item:focus, #question-content-container .question-body .list-group button.list-group-item {
       color: #00248F;
       text-decoration: none;
-      background-color: #ADFFE8;
+      background-color: #0DFFFF;
       font-size: 17px;
       border: none;
       margin-bottom: 15px;

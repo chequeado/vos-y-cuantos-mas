@@ -101,7 +101,7 @@
                             <a id="share-facebook" class="btn btn-unicef-green-light btn-block" data-url="{{Request::fullUrl()}}">Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                         </div>
                         <div class="col-md-4">
-                            <a href="/" class="btn btn-unicef-blue btn-block">Volver al home</a>
+                            <a href="/" class="btn btn-unicef-blue btn-block">Jugar otra vez</a>
                         </div>
                     </div>
                 </div>

@@ -75,48 +75,31 @@
 
                             <!-- answer -->
                             <div ng-show="state == 'answer'">
+
                                 <div class="row">
-
                                     <div class="col-md-12">
-                                        <p class="answer-selection" ng-show="!saving">@{{question.answer.text_answer}}
-                                        <span ng-if="votes.total_option>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
-                                        <span ng-if="votes.total_option==1 && votes.total_question>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, eres la primera que contesta de esta manera. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
-                                        </p>
-                                        <p class="answer-selection" ng-show="saving">Calculando "Vos y cuántos más"...</p>
+                                        <p class="answer-selection">@{{question.answer.text_answer}}</p>
                                     </div>
-
                                 </div>
 
                                 <div id="stats-container" class="row">
-                                    <div class="col-md-6"> <!--col-md-pull-6-->
-                                        <canvas id="doughnut" class="chart chart-doughnut"
-                                        chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
-                                        </canvas>
-                                        <div hide show-xs>
-                                            <table class="table">
-                                                <thead>
-                                                    <tr><td>Descripción</td><td class="text-right">Valor</td></tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value.replace('.0','')}}%</td></tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-md-push-6">
                                         <div class="row">
                                             <div class="col-md-6 text-center resultado-porcentaje">
                                                 <strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande">@{{question.answer.value.replace('.0','')}}%</span> de la población.
                                             </div>
                                             <div class="col-md-6 text-center resultado-carita">
                                                 <span ng-show="question.bet">
-                                                    Tu estimado fue de <span class="numero-grande">@{{question.bet}}%</span>
+                                                    Tu estimado fue de <strong>@{{question.bet}}%</strong>
                                                     <span ng-show="question.diff==0">¡excelente! ¡exacto!.</span>
                                                     <span ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</span>
                                                     <span ng-show="question.diff>10">la realidad es diferente a lo que creías.</span>
+                                                    <img alt="" ng-show="question.diff<=10" ng-src="/images/bien.png" class="img-responsive"/>
+                                                    <img alt="" ng-show="question.diff>10" ng-src="/images/sorpresa.png" class="img-responsive"/>
                                                 </span>
                                                 <span ng-hide="question.bet">
-                                                    No tenías idea. Hoy aprendiste algo. ;)
+                                                    No tenías idea. Hoy aprendiste algo.
+                                                    <img alt="" ng-src="/images/bien.png" class="img-responsive"/>
                                                 </span>
                                             </div>
                                         </div>
@@ -135,16 +118,17 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                            <h3>¿Te quedaste con ganas de saber más?</h3>
-                                            <button href="#" class="btn btn-unicef-green-light btn-block" data-toggle="collapse" data-target="#fuenteCollapse" aria-expanded="false" aria-controls="fuenteCollapse">Ver la fuente</button>
-                                            <div class="collapse" id="fuenteCollapse">
-                                                <div ng-show="question.answer_source_link">
-                                                    <h3>Fuente</h3>
-                                                    <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
-                                                </div>
-                                                <div ng-show="question.answer_description">
-                                                    <h3>Más información</h3>
-                                                    <p>@{{question.answer_description}}</p>
+                                                <h3>¿Te quedaste con ganas de saber más?</h3>
+                                                <button href="#" class="btn btn-unicef-green-light btn-block" data-toggle="collapse" data-target="#fuenteCollapse" aria-expanded="false" aria-controls="fuenteCollapse">Ver la fuente</button>
+                                                <div class="collapse" id="fuenteCollapse">
+                                                    <div ng-show="question.answer_source_link">
+                                                        <h3>Fuente</h3>
+                                                        <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                                                    </div>
+                                                    <div ng-show="question.answer_description">
+                                                        <h3>Más información</h3>
+                                                        <p>@{{question.answer_description}}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,6 +139,30 @@
                                                 </a>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-md-pull-6"> <!--col-md-pull-6-->
+                                        <canvas id="doughnut" class="chart chart-doughnut"
+                                        chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
+                                        </canvas>
+                                        <div hide show-xs>
+                                            <table class="table">
+                                                <thead>
+                                                    <tr><td>Descripción</td><td class="text-right">Valor</td></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="(k,o) in question.options" ng-style="{color:chart.colours[k]}"><td>@{{o.text}}</td><td class="text-right">@{{o.value.replace('.0','')}}%</td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @include('frontend.themes.'.$theme.'.includes.answer-mini-stats')
                                     </div>
                                 </div>
 
@@ -168,16 +176,6 @@
                                 </div>
                             </div>
                             <!-- /answer -->
-
-                            <!-- answer -->
-                            <div class="row" ng-show="state == 'thanks'">
-
-                                <div class="col-md-12">
-                                    <h1>Muchas gracias por participar!</h1>
-                                </div>
-                                <a href="/" ng-show="index+1 == questions.length" class="btn btn-default btn-especial-grande boton-abajo-right">Jugar otra vez <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-
-                            </div>
 
                         </div> <!-- /question-body -->
 

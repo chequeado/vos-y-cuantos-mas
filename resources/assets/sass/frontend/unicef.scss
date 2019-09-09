@@ -22,7 +22,7 @@ $blue-dark: #0B1E60;
 $blue-light: #0168B5;
 $blue-ultra-light: #A5C5E3;
 $green: #00C595;
-$green-light: #ADFFE8;
+$green-light: #0DFFFF;
 $white: #fff;
 
 body{
@@ -195,7 +195,7 @@ body:after{
   margin: 30px 0px 0px 0px;
   .resultado-porcentaje {
     .numero-grande{
-      font-size:40px;
+      font-size:50px;
       font-weight: bold;
       display:block;
       margin:0;
@@ -203,6 +203,9 @@ body:after{
     }
   }
   .resultado-carita{
+    .img-responsive {
+        margin: 10px auto 15px auto;
+    }
     .numero-grande{
       font-size:40px;
       font-weight: bold;
@@ -226,6 +229,9 @@ body:after{
     p {
       color: $blue;
     }
+  }
+  .chart-container{
+    margin-top: 15px;
   }
 }
 
@@ -328,7 +334,7 @@ body:after{
       color:$blue;
       padding:0;
       text-transform:uppercase;
-      margin: 10px 0px 20px 0px;
+      margin: 10px 0px 0px 0px;
     }
     .question-text{
       min-height: 20px;
