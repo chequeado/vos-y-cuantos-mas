@@ -42,7 +42,7 @@
                 <img alt="Vos y cuantos más?" src="images/unicef/iconito_user.svg" class="img-responsive logo-home"/>
                 <p class="text-right text-title-1">¿VOS Y CUÁNTOS MÁS?</p>
                 <p class="text-right text-subtitle-1">NUEVA GENERACIÓN</p>
-                <p class="text-right text-subtitle-2">Un juego para saber qué porcentaje de la población de la Argentina es similar a vos.</p>
+                <p class="text-right text-subtitle-2">UN JUEGO PARA SABER CUÁNTOS ADOLESCENTES DE LA ARGENTINA SE PARECEN A VOS</p>
               </div>
 
               <!-- Buttons -->
