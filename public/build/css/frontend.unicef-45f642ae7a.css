@@ -9331,17 +9331,13 @@ footer {
     footer .container-img img {
       margin: 0 auto; }
 
-.container-links {
-  margin-top: 5px;
-  text-align: center; }
-  .container-links a.link {
-    display: inline;
-    cursor: pointer;
-    color: #fff; }
-  .container-links span {
-    display: inline;
-    color: #fff;
-    margin: 0 10px; }
+.container-links a {
+  cursor: pointer;
+  color: #fff; }
+
+.container-links span {
+  color: #fff;
+  margin: 0 10px; }
 
 #question-container {
   padding-top: 25px; }
@@ -9490,12 +9486,7 @@ footer {
     .navbar .navbar-brand small {
       display: block; }
   #question-content-container .question-body {
-    padding: 15px; }
-  .container-links a.link {
-    display: block;
-    margin-top: 10px; }
-  .container-links span {
-    display: none; } }
+    padding: 15px; } }
 
 /* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */

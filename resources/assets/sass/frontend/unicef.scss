@@ -205,6 +205,7 @@ body:after{
   .resultado-carita{
     .img-responsive {
         margin: 10px auto 15px auto;
+        max-width: 90%;
     }
     .numero-grande{
       font-size:40px;
@@ -431,11 +432,24 @@ footer{
   .container-img{
     display: flex;
     align-items: center;
+    padding-top: 15px;
     img{
       margin: 0 auto;
     }
   }
-  a{
+}
+.container-links{
+  margin-top: 5px;
+  text-align: center;
+  a.link{
+    display: inline;
+    cursor: pointer;
+    color: $white;
+  }
+  span{
+    display: inline;
+    color: $white;
+    margin: 0 10px;
   }
 }
 
@@ -659,6 +673,16 @@ footer{
   #question-content-container{
     .question-body{
       padding: 15px;
+    }
+  }
+
+  .container-links{
+    a.link{
+      display: block;
+      margin-top: 10px;
+    }
+    span{
+      display: none;
     }
   }
 

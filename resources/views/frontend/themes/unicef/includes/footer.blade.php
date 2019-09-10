@@ -11,3 +11,15 @@
       </div>
     </div>
 </footer>
+<!--
+<div class="container">
+  <div class="container-links row">
+    <div class="container-links col-md-12">
+      <a class="link" title="Envía una sugerencia" data-toggle="modal" data-target="#sugerenciasModal">Sugerencias</a><span>|</span>
+      <a class="link" title="Envía una petición" data-toggle="modal" data-target="#preguntasModal">¡Quiero más preguntas!</a><span>|</span>
+      <a class="link" title="Más información" data-toggle="modal" data-target="#disclaimerModal">Más sobre "Vos y cuántos más?"</a><span>|</span>
+      <a class="link" target="_blank" href="https://openmoji.org">Usamos Open Emoji</a>
+    </div>
+  </div>
+</div>
+-->

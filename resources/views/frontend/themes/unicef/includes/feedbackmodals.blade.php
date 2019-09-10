@@ -37,8 +37,8 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-especial boton-abajo-left" data-dismiss="modal"><i class="fa fa-caret-left" aria-hidden="true"></i>  Cancelar</button>
-            <button type="submit" ng-show="sugerenciasValid() && !loading && !sent" class="btn btn-especial-grande boton-abajo-right">Enviar sugerencia  <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-unicef-blue boton-abajo-left" data-dismiss="modal">Cancelar</button>
+            <button type="submit" ng-show="sugerenciasValid() && !loading && !sent" class="btn btn-unicef-blue pull-right">Enviar sugerencia</button>
             <label ng-show="loading" class="control-label pull-right">Enviando Mensaje...</label>
             <label ng-show="sent" class="control-label pull-right">Mensaje enviado. Muchas gracias!</label>
           </div>
@@ -92,8 +92,8 @@
               </fieldset>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-especial boton-abajo-left" data-dismiss="modal"><i class="fa fa-caret-left" aria-hidden="true"></i>  Cancelar</button>
-            <button type="submit" ng-show="preguntasValid() && !loading && !sent" class="btn btn-especial-grande boton-abajo-right">Enviar preguntas  <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-unicef-blue boton-abajo-left" data-dismiss="modal">Cancelar</button>
+            <button type="submit" ng-show="preguntasValid() && !loading && !sent" class="btn btn-unicef-blue pull-right">Enviar preguntas</button>
             <label ng-show="loading" class="control-label pull-right">Enviando mensaje...</label>
             <label ng-show="sent" class="control-label pull-right">Mensaje enviado. ¡Muchas gracias!</label>
           </div>
@@ -131,7 +131,7 @@
           <p class="text-center"><a target="_blank" href="https://latin-america.hivos.org/"><img src="/images/hivos.svg" title="hivos" width="100"/></a></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-especial boton-abajo-left" data-dismiss="modal"><i class="fa fa-caret-left" aria-hidden="true"></i>  Cerrar</button>
+          <button type="button" class="btn btn-unicef-blue pull-left" data-dismiss="modal">Cerrar</button>
         </div>
       </form>
     </div><!-- /.modal-content -->
