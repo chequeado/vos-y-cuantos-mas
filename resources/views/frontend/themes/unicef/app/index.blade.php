@@ -61,7 +61,7 @@
 
 
                                     <div class="col-md-12 text-center">
-                                        <button href="#" class="btn btn-link" ng-click="skipBet()">No tengo idea <i class="fa fa-meh-o" aria-hidden="true" ></i></button>
+                                        <button href="#" class="btn btn-link" ng-click="skipBet()"><strong>No tengo idea <i class="fa fa-meh-o" aria-hidden="true" ></i></strong></button>
                                     </div>
 
                                 </div>
@@ -119,7 +119,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <h3>¿Te quedaste con ganas de saber más?</h3>
-                                                <button href="#" class="btn btn-unicef-green-light btn-block" data-toggle="collapse" data-target="#fuenteCollapse" aria-expanded="false" aria-controls="fuenteCollapse">Ver la fuente</button>
+                                                <button href="#" class="btn btn-unicef-green-light btn-block" data-toggle="collapse" data-target="#fuenteCollapse" aria-expanded="false" aria-controls="fuenteCollapse">Mirá la fuente de datos de esta pregunta</button>
                                                 <div class="collapse" id="fuenteCollapse">
                                                     <div ng-show="question.answer_source_link">
                                                         <h3>Fuente</h3>

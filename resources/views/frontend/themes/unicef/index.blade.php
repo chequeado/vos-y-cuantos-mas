@@ -38,7 +38,7 @@
 
             <!-- Title -->
             <div class="row">
-              <div class="col-lg-6 col-lg-offset-6 col-md-8 col-md-offset-4 col-sm-12 flex-align-end flex-direction-col">
+              <div class="col-lg-7 col-lg-offset-5 col-md-8 col-md-offset-4 col-sm-12 flex-align-end flex-direction-col">
                 <img alt="Vos y cuantos más?" src="images/unicef/iconito_user.svg" class="img-responsive logo-home"/>
                 <p class="text-right text-title-1">¿VOS Y CUÁNTOS MÁS?</p>
                 <p class="text-right text-subtitle-1">NUEVA GENERACIÓN</p>
@@ -58,6 +58,7 @@
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title">¿Cuántas preguntas querés contestar?</h4>
+                            <p>Al final vas a ver cómo te fue.</p>
                           </div>
                             <div class="modal-body">
                               <p class="text-center">
@@ -88,6 +89,7 @@
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                           <h4 class="modal-title">¿Cuántas preguntas querés contestar?</h4>
+                          <p>Al final vas a ver cómo te fue.</p>
                         </div>
                           <div class="modal-body">
                             <p class="text-center">
