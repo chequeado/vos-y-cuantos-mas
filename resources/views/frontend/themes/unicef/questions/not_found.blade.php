@@ -2,7 +2,7 @@
 
 @section('meta')
   <!-- Place this data between the <head> tags of your website -->
-  <title>¿Vos y cuántos más? - Pregunta no encontrada</title>
+  <title>¿Vos y cuántos más? Nueva generación - Pregunta no encontrada</title>
 
 @endsection
 

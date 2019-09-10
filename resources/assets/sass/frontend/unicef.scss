@@ -71,6 +71,14 @@ body:after{
     background-image: url(/images/unicef/tira_de_mases.svg);
     background-repeat: repeat-y;
   }
+  .footer-home{
+    img{
+      margin: 0 auto;
+      &.plus{
+        max-width: 20px;
+      }
+    }
+  }
 }
 
 
@@ -572,6 +580,23 @@ footer{
   justify-content: space-between;
 }
 
+.openmoji {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: -6px;
+  &.openmoji-mega{
+    background-image: url(/images/unicef/emoji_mega.svg);
+  }
+  &.openmoji-point{
+    background-image: url(/images/unicef/emoji_point.svg);
+  }
+}
+
+
+
 
 
 
@@ -603,6 +628,11 @@ footer{
 
   #central-container{
     background: none;
+    .footer-home{
+      img{
+        max-width: 80%;
+      }
+    }
   }
   .btn-unicef-circle{
     opacity:1;

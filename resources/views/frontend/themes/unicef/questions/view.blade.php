@@ -2,7 +2,7 @@
 
 @section('meta')
   <!-- Place this data between the <head> tags of your website -->
-  <title>¿Vos y cuántos más? - {{$obj->title}}</title>
+  <title>¿Vos y cuántos más? Nueva generación - {{$obj->title}}</title>
   <meta name="description" content="{{$obj->call_action}}" />
 
   <!-- Schema.org markup for Google+ -->
@@ -25,7 +25,7 @@
   <meta property="og:url" content="{{route('frontend.question.view', ['id' => $obj->id])}}" />
   <meta property="og:image" content="{{URL::to('/').'/images/unicef/logo-share.png'}}" />
   <meta property="og:description" content="{{$obj->call_action}}" />
-  <meta property="og:site_name" content="¿Vos y cuántos más?" />
+  <meta property="og:site_name" content="¿Vos y cuántos más? Nueva generación" />
   <meta property="fb:admins" content="Facebook numberic ID" />
 
 @endsection

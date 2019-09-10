@@ -94,19 +94,23 @@
                                                     <span ng-show="question.diff==0">¡excelente! ¡exacto!.</span>
                                                     <span ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</span>
                                                     <span ng-show="question.diff>10">la realidad es diferente a lo que creías.</span>
-                                                    <img alt="" ng-show="question.diff<=10" ng-src="/images/unicef/bien.svg" class="img-responsive"/>
-                                                    <img alt="" ng-show="question.diff>10" ng-src="/images/unicef/sorpresa.svg" class="img-responsive"/>
+                                                    <span ng-hide="question.id==23"> <!-- harcoded question ID! -->
+                                                        <img alt="" ng-show="question.diff<=10" ng-src="/images/unicef/bien.svg" class="img-responsive"/>
+                                                        <img alt="" ng-show="question.diff>10" ng-src="/images/unicef/sorpresa.svg" class="img-responsive"/>
+                                                    </span>
                                                 </span>
                                                 <span ng-hide="question.bet">
                                                     No tenías idea. Hoy aprendiste algo.
-                                                    <img alt="" ng-src="/images/unicef/bien.svg" class="img-responsive"/>
+                                                    <span ng-hide="question.id==23"> <!-- harcoded question ID! -->
+                                                        <img alt="" ng-src="/images/unicef/bien.svg" class="img-responsive"/>
+                                                    </span>
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <h3>¿Te sorprendió la respuesta?</h3>
                                             <div class="col-md-6 col-sm-6">
-                                                <a href="#" class="btn btn-unicef-green-light btn-block share-btn share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
+                                                <a href="#" class="btn btn-unicef-green-light btn-block share-btn share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más? Nueva generación'" share-hashtags="" share-via="chequeado @UNICEFArgentina">
                                                 Compartila en <i class="fa fa-twitter" aria-hidden="true"></i>
                                                 </a>
                                             </div>

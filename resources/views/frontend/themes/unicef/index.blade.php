@@ -6,26 +6,26 @@
   <meta name="description" content="'¿Vos y cuántos más de Chequeado' es un juego basado en datos oficiales." />
 
   <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="¿Vos y cuántos más?">
+  <meta itemprop="name" content="¿Vos y cuántos más? Nueva generación">
   <meta itemprop="description" content="'¿Vos y cuántos más de Chequeado' es un juego basado en datos oficiales.">
   <meta itemprop="image" content="{{URL::to('/').'/images/unicef/logo-share.png'}}">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@chequeado">
-  <meta name="twitter:title" content="¿Vos y cuántos más?">
+  <meta name="twitter:title" content="¿Vos y cuántos más? Nueva generación">
   <meta name="twitter:description" content="'¿Vos y cuántos más de Chequeado' es un juego basado en datos oficiales.">
   <meta name="twitter:creator" content="@chequeado">
   <!-- Twitter summary card with large image must be at least 280x150px -->
   <meta name="twitter:image:src" content="{{URL::to('/').'/images/unicef/logo-share.png'}}">
 
   <!-- Open Graph data -->
-  <meta property="og:title" content="¿Vos y cuántos más?" />
+  <meta property="og:title" content="¿Vos y cuántos más? Nueva generación" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{Request::fullUrl()}}" />
   <meta property="og:image" content="{{URL::to('/').'/images/unicef/logo-share.png'}}" />
   <meta property="og:description" content="'¿Vos y cuántos más de Chequeado' es un juego basado en datos oficiales." />
-  <meta property="og:site_name" content="¿Vos y cuántos más?" />
+  <meta property="og:site_name" content="¿Vos y cuántos más? Nueva generación" />
 
 
 @endsection
@@ -116,9 +116,15 @@
             </div>
 
             <!-- Footer -->
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2 col-xs-12">
-                <img alt="Chequedo + UNICEF" src="images/unicef/logos_chq_unicef.png" class="img-responsive"/>
+            <div class="row footer-home">
+              <div class="col-md-2 col-md-offset-3 col-sm-4">
+                <a href="https://chequeado.com/" target="_blank"><img alt="Chequedo" src="/images/unicef/logo_CHQ.png" class="img-responsive"/></a>
+              </div>
+              <div class="col-md-1 col-sm-2">
+                <img alt="+" src="/images/unicef/logo_mas.png" class="img-responsive plus"/>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <a href="https://www.unicef.org" target="_blank"><img alt="UNICEF" src="/images/unicef/logo_UNICEF.png" class="img-responsive"/></a>
               </div>
             </div>
 

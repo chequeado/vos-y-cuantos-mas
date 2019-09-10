@@ -9047,6 +9047,10 @@ body:after {
     height: 100vh;
     background-image: url(/images/unicef/tira_de_mases.svg);
     background-repeat: repeat-y; }
+  #central-container .footer-home img {
+    margin: 0 auto; }
+    #central-container .footer-home img.plus {
+      max-width: 20px; }
 
 .text-title-1 {
   text-transform: uppercase;
@@ -9441,6 +9445,18 @@ footer {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
+.openmoji {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: -6px; }
+  .openmoji.openmoji-mega {
+    background-image: url(/images/unicef/emoji_mega.svg); }
+  .openmoji.openmoji-point {
+    background-image: url(/images/unicef/emoji_point.svg); }
+
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
@@ -9454,6 +9470,8 @@ footer {
     max-width: 100px; }
   #central-container {
     background: none; }
+    #central-container .footer-home img {
+      max-width: 80%; }
   .btn-unicef-circle {
     opacity: 1; }
   .text-title-1 {

@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_token" content="{{ csrf_token() }}" />
 
-        <title>¿Vos y cuántos más?</title>
+        <title>¿Vos y cuántos más? Nueva generación</title>
 
         <!-- Meta -->
-        <meta name="description" content="@yield('meta_description', '¿Vos y cuántos más?')">
+        <meta name="description" content="@yield('meta_description', '¿Vos y cuántos más? Nueva generación')">
         <meta name="author" content="@yield('meta_author', 'Chequeado.com')">
         @yield('meta')
 
