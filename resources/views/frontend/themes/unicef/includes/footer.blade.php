@@ -7,7 +7,7 @@
         <img alt="+" src="/images/unicef/logo_mas.png" class="img-responsive"/>
       </div>
       <div class="col-md-6">
-        <a href="https://www.unicef.org" target="_blank"><img alt="UNICEF" src="/images/unicef/logo_UNICEF.png" class="img-responsive"/></a>
+        <a href="https://www.unicef.org.ar" target="_blank"><img alt="UNICEF" src="/images/unicef/logo_UNICEF.png" class="img-responsive"/></a>
       </div>
     </div>
 </footer>
