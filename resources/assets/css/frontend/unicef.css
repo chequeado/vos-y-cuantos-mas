@@ -9113,6 +9113,7 @@ body:after {
     color: #00C595; }
 
 .btn-unicef-green-light {
+  white-space: normal;
   color: #00248F;
   text-decoration: none;
   background-color: #0DFFFF;
@@ -9178,6 +9179,8 @@ body:after {
     color: #00248F; }
   #stats-container .chart-container {
     margin-top: 15px; }
+    #stats-container .chart-container .doughnut-legend-text {
+      white-space: normal; }
 
 .modal-unicef .modal-dialog {
   background-image: url(/images/unicef/VYCM_BG_mobile.png);

@@ -153,6 +153,7 @@ body:after{
 }
 
 .btn-unicef-green-light{
+  white-space: normal;
   color: $blue;
   text-decoration: none;
   background-color: $green-light;
@@ -241,6 +242,9 @@ body:after{
   }
   .chart-container{
     margin-top: 15px;
+    .doughnut-legend-text{
+      white-space: normal;
+    }
   }
 }
 
