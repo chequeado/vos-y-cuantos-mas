@@ -34,7 +34,7 @@
                     <tr>
                         <td>{!! $l->id !!}</td>
                         <td>{!! $l->title !!}</td>
-                        <td>{!! $l->call_action !!}</td>
+                        <td>{!! (intval($l->sensitive)==1)?'<span class="badge bg-orange">SENSIBLE</span>':'' !!}{!! $l->call_action !!}</td>
                         <!--td>{!! $l->answer_type->name !!}</td-->
                         <td>{!! $l->category->name !!}</td>
                         <td>{!! (intval($l->published)==1)?'SI':'NO' !!}</td>

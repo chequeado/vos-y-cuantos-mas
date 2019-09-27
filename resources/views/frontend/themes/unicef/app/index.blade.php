@@ -94,14 +94,14 @@
                                                     <span ng-show="question.diff==0">¡excelente! ¡exacto!.</span>
                                                     <span ng-show="question.diff!=0 && question.diff<=10">no estuviste tan lejos, muy bien.</span>
                                                     <span ng-show="question.diff>10">la realidad es diferente a lo que creías.</span>
-                                                    <span ng-hide="question.id==23"> <!-- harcoded question ID! -->
+                                                    <span ng-hide="question.sensitive==1">
                                                         <img alt="" ng-show="question.diff<=10" ng-src="/images/unicef/bien.svg" class="img-responsive"/>
                                                         <img alt="" ng-show="question.diff>10" ng-src="/images/unicef/sorpresa.svg" class="img-responsive"/>
                                                     </span>
                                                 </span>
                                                 <span ng-hide="question.bet">
                                                     No tenías idea. Hoy aprendiste algo.
-                                                    <span ng-hide="question.id==23"> <!-- harcoded question ID! -->
+                                                    <span ng-hide="question.sensitive==1">
                                                         <img alt="" ng-src="/images/unicef/bien.svg" class="img-responsive"/>
                                                     </span>
                                                 </span>

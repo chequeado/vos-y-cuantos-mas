@@ -57,7 +57,11 @@ class ApiController extends Controller
             $temp = $temp->all();
             $temp = array_slice($temp, 0, $limit, true);
         }
-        $records = $records->merge($temp);
+        $records = $records->merge($temp)->shuffle();
+
+        while(intval($records->first()->sensitive)==1){
+            $records = $records->merge($temp)->shuffle();
+        }
 
     	return response()->json(array('metadata'=>array('limit'=>$limit,'category'=>array('id'=>$cat->id,'name'=>$cat->name)),'records'=>$records));
     }

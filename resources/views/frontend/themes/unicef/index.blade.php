@@ -116,15 +116,23 @@
             </div>
 
             <!-- Footer -->
-            <div class="row footer-home">
-              <div class="col-md-2 col-md-offset-3 col-sm-4">
-                <a href="https://chequeado.com/" target="_blank"><img alt="Chequedo" src="/images/unicef/logo_CHQ.png" class="img-responsive"/></a>
+            <div>
+              <div class="row footer-home">
+                <div class="col-md-2 col-md-offset-3 col-sm-4">
+                  <a href="https://chequeado.com/" target="_blank"><img alt="Chequedo" src="/images/unicef/logo_CHQ.png" class="img-responsive"/></a>
+                </div>
+                <div class="col-md-1 col-sm-2">
+                  <img alt="+" src="/images/unicef/logo_mas.png" class="img-responsive plus"/>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <a href="https://www.unicef.org.ar" target="_blank"><img alt="UNICEF" src="/images/unicef/logo_UNICEF.png" class="img-responsive"/></a>
+                </div>
               </div>
-              <div class="col-md-1 col-sm-2">
-                <img alt="+" src="/images/unicef/logo_mas.png" class="img-responsive plus"/>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <a href="https://www.unicef.org.ar" target="_blank"><img alt="UNICEF" src="/images/unicef/logo_UNICEF.png" class="img-responsive"/></a>
+
+              <div class="container-links row">
+                <div class="container-links col-md-12">
+                  <a class="link" title="Más información" data-toggle="modal" data-target="#disclaimerModal">Más sobre "Vos y cuántos más?"</a>
+                </div>
               </div>
             </div>
 

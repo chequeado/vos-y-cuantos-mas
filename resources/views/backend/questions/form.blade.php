@@ -41,6 +41,25 @@
         </div><!--form control-->
 
         <div class="form-group">
+            <label class="col-lg-2 control-label">¿Sensible? <p class="help-block">Oculta los emojis y nunca puede ser la primera pregunta en la ronda</p></label>
+
+            <div class="col-lg-10">
+                <div class="radio-inline">
+                  <label>
+                    {{ Form::radio('sensitive', '1') }}
+                    SI
+                  </label>
+                </div>
+                <div class="radio-inline">
+                  <label>
+                    {{ Form::radio('sensitive', '0') }}
+                    NO
+                  </label>
+                </div>
+            </div>
+        </div><!--form control-->
+
+        <div class="form-group">
             <label class="col-lg-2 control-label">{{ trans('custom.backend.questions.category_id') }}</label>
             <div class="col-lg-10">
                 {!! Form::select('category_id', $categories, null, array('class'=>'form-control chosen-select')) !!}
