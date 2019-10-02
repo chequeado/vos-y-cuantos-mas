@@ -112,18 +112,17 @@
       </div>
         <div class="modal-body">
           <p><i>¿Vos y cuántos más? Nueva generación</i> es un juego que permite conocer qué porcentaje de la población de la Argentina es similar al usuario, interactuando con preguntas y respuestas basadas en datos públicos.</p>
-          <p>Chequeado sólo guarda datos anónimos del uso del juego "¿Vos y cuántos más?" con fines estadísticos. No almacenamos IP, ubicación, ni otro dato similar.</p>
+          <p>Sólo guardamos datos anónimos del uso del juego "¿Vos y cuántos más?" con fines estadísticos. No almacenamos IP, ubicación, ni otro dato similar.</p>
           <hr/>
           <h4 class="text-center"><strong>Equipo</strong></h4>
           <p class="text-center">UNICEF Argentina</p>
           <p class="text-center">+</p>
+          <p class="text-center">Chequeado</p>
+          <p class="text-center">Dirección ejecutiva: <a href="https://twitter.com/lauzommer" target="_blank">Laura Zommer</a></p>
           <p class="text-center">Dirección de proyecto: <a href="https://twitter.com/fernandezpm" target="_blank">Pablo M. Fernández</a></p>
           <p class="text-center">Desarrollo fullstack: <a href="https://twitter.com/palamago" target="_blank">Pablo H. Paladino</a></p>
           <p class="text-center">Investigación, análisis de datos y redacción: Agustina Noceti y <a href="https://twitter.com/am_riera" target="_blank">Ariel Riera</a></p>
           <p class="text-center">Diseño web y UX: <a href="https://www.behance.net/CarolaBohorVal" target="_blank">Carolina Bohorquez</a></p>
-          <hr/>
-          <h4 class="text-center"><strong>Dirección ejecutiva</strong></h4>
-          <p class="text-center"><a href="https://twitter.com/lauzommer" target="_blank">Laura Zommer</a></p>
           <hr/>
           <h4 class="text-center"><strong>Tecnologías utilizadas</strong></h4>
           <p class="text-center">Laravel PHP - MySQL - Angular JS</p>
