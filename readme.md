@@ -9,7 +9,69 @@ Con el apoyo de [HIVOS](https://latin-america.hivos.org/)
 
 ![Logo Hivos](https://vosycuantosmas.chequeado.com/images/hivos.svg)
 
-Basado en:
+# Development
+
+## Dev environment using Vagrant
+- Follow this instructions to install `VirtualBox` https://www.virtualbox.org/wiki/Downloads
+- Install `Vagrant` https://www.vagrantup.com/downloads.html
+- Install `Composer CLI` https://getcomposer.org/doc/00-intro.md
+- Clone source code `git clone https://github.com/chequeado/vos-y-cuantos-mas.git`
+- Go to `vos-y-cuantos-mas` repo and install dependencies using Composer run `composer install`
+- Copy `.env` file running `cp .env.example .env` 
+- Complete in `.env` file the database params for `Homestead`.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+- Run `php artisan key:generate` to create a custom encrypt key.
+- Create `Homestead config file` running `php vendor/bin/homestead make`
+- Run `vagrant up`
+- Access to VM using `vagrant ssh`
+- Go to `vos-y-cuantos-mas` directory
+- Create and populate the database `php artisan migrate --seed`
+- Create a new entry in your `hosts` file with: `192.168.10.10   chequeado.local`
+- In your browser go to `chequeado.local` you could see the app running.
+- Go to login page: `http://chequeado.local/login`
+- Admin User: `admin@admin.com` Password: `1234`
+- Ready to create test content and do your job developing!
+
+## Every day dev work
+- Go to cloned directory
+- Run `vagrant up` to start the VM
+- Run `vagrant ssh` to log in to the VM
+- Run `vagrant halt` to stop the VM
+
+## Deploy
+- Git pull on your php server
+- Create an empty mysql database
+- Copy `.env.example` as `.env` and complete the data (social + database + language + GA)
+- Run `composer install`
+- Run `composer dump-autoload`
+- Run `php artisan migrate --seed`
+
+## Themes
+- Available `chq` & `unicef`
+- Set in `.env` for chequeado:
+```bash
+THEME=chq
+```
+- Check theme files: https://github.com/chequeado/vos-y-cuantos-mas/tree/master/public/css
+- Check theme views: https://github.com/chequeado/vos-y-cuantos-mas/tree/master/resources/views/frontend/themes
+
+## Admin
+- Go to `<THE URL>/login`
+- User: admin@admin.com Pass: 1234
+- Change password immediately.
+
+## Styles + Javascript builds
+- Run `gulp watch` to watch files and automatic rebuild.
+- Run `gulp` to build on demand.
+
+# Basado en:
 
 ## Laravel 5.* Boilerplate, Currently 5.2.23 [Screenshots](http://imgur.com/a/uEKuq)
 
