@@ -11,7 +11,7 @@ Con el apoyo de [HIVOS](https://latin-america.hivos.org/)
 
 # Development
 
-## Dev environment using Vagrant
+## Dev environment using Vagrant See: https://laravel.com/docs/5.2/homestead 
 - Follow this instructions to install `VirtualBox` https://www.virtualbox.org/wiki/Downloads
 - Install `Vagrant` https://www.vagrantup.com/downloads.html
 - Install `Composer CLI` https://getcomposer.org/doc/00-intro.md
