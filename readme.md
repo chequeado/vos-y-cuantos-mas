@@ -19,6 +19,7 @@ Con el apoyo de [HIVOS](https://latin-america.hivos.org/)
 - Go to `vos-y-cuantos-mas` repo and install dependencies using Composer run `composer install`
 - Copy `.env` file running `cp .env.example .env` 
 - Complete in `.env` file the database params for `Homestead`.
+- Select a THEME between chq or unicef!
 - Make sure that PHP is in version 7.1
 ```
 DB_CONNECTION=mysql
