@@ -70,8 +70,9 @@ THEME=chq
 - Change password immediately.
 
 ## Styles + Javascript builds
-- Run `gulp watch` to watch files and automatic rebuild.
-- Run `gulp` to build on demand.
+- First time: Run `bower install` inside `public` folder.
+- In root run `gulp watch` to watch files and automatic rebuild.
+- In root run `gulp` to build on demand.
 
 # Basado en:
 
