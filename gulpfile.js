@@ -117,6 +117,23 @@ elixir(function(mix) {
       'frontend/unicef.css'
     ], 'public/css/frontend.unicef.css')
 
+    /**
+      * Process frontend SCSS CHQV2 theme stylesheets
+      */
+     .sass([
+      'plugin/sweetalert/sweetalert.scss',
+      'plugin/charts/angular-chart.min.css',
+      'plugin/slider/bootstrap-slider.min.css',
+      'frontend/chqv2.scss',
+    ], 'resources/assets/css/frontend/chqv2.css')
+
+    /**
+      * Combine pre-processed frontend CSS CHQV2 files
+      */
+    .styles([
+      'frontend/chqv2.css'
+    ], 'public/css/frontend.chqv2.css')
+
      /**
       * Combine frontend scripts
       */
@@ -178,6 +195,7 @@ elixir(function(mix) {
      .version([
         "public/css/frontend.unicef.css",
         "public/css/frontend.chq.css",
+        "public/css/frontend.chqv2.css",
         "public/js/frontend.js",
         "public/css/backend.css",
         "public/js/backend.js",
