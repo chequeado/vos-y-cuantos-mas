@@ -16,7 +16,7 @@
                         <div class="col-md-10">
                             <p class="pregunta-counter">Pregunta @{{index+1}} de @{{questions.length}}</p>
                             <div class="progress">
-                                <div data-percentage="0%" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                                <div data-percentage="0%" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"  ng-style="{'width': ((index+1)*100/questions.length) + '%' }" ></div>
                                 </div>
                                 <img src="/images/chqv2/corner.png" class="progress-corner pbr" />
                                 <img src="/images/chqv2//corner.png" class="progress-corner ptr" />
