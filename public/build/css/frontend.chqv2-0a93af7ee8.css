@@ -9001,7 +9001,7 @@ body {
   background-color: none;
   background: url("/images/chqv2/fondo.jpg") no-repeat top center;
   background-size: auto;
-  height: 100vh; }
+  min-height: 100vh; }
 
 .jumbotron-final {
   box-shadow: -20px 0px 0px #a80e16;
@@ -9800,7 +9800,7 @@ footer a:hover{
   background: #fce919; }
 
 .modal-chq .modal-dialog {
-  height: 100vh;
+  min-height: 100vh;
   padding: 10vh 5%;
   background: url(/images/chqv2/fondo2.png) no-repeat top center;
   background-size: cover;
@@ -9822,13 +9822,24 @@ footer a:hover{
     margin-top: 20px; } }
 
 /* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .box1 {
+    background-repeat: no-repeat;
+    background-size: 100% !important;
+    background-position: top center !important; } }
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   footer a {
     display: block;
     width: 100%; }
+  .row {
+    margin-right: 0px !important;
+    margin-left: 0px !important; }
+  .modal-chq .modal-dialog {
+    margin: 0px !important; }
   .body2 .jumbotron-home .start-button {
-    margin: 30vh auto 0 !important; }
+    /*margin: 30vh auto 0!important;*/ }
   .jumbotron-home {
     background-size: cover;
     height: 70vh; }
@@ -9837,13 +9848,21 @@ footer a:hover{
   .question-title {
     background: url("/images/chqv2/titulo-preg.png") no-repeat !important;
     height: 60px !important;
-    background-size: contain !important; }
-  .question-action {
-    background: url(/images/chqv2/pregunta.png) no-repeat !important;
     background-size: contain !important;
-    padding-top: 10px !important; } }
+    padding-top: 10px !important; }
+  .question-action {
+    background: url("/images/chqv2/pregunta.png") no-repeat !important;
+    background-size: cover !important;
+    padding-top: 10px !important;
+    margin-left: -35px;
+    margin-right: -15px; }
+  .question-container {
+    background-size: cover !important; } }
 
 /* Custom, iPhone Retina */
+.chart {
+  width: 100% !important; }
+
 .body2 .jumbotron-home .start-button {
   margin: 44vh auto 0; }
 
@@ -9894,12 +9913,13 @@ footer a:hover{
 .question-container {
   background: url("/images/chqv2/fondo3.png") no-repeat top center;
   background-size: auto;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 10vh; }
 
 .container-pregunta {
   max-width: 550px;
-  margin: auto; }
+  margin: auto;
+  padding-bottom: 50px; }
 
 .question-title {
   background: url("/images/chqv2/titulo-preg.png");
@@ -10025,8 +10045,7 @@ ul.doughnut-legend .doughnut-legend-icon {
   padding: 20px 40px 20px 15px; }
 
 .box1 {
-  background-size: cover;
-  background: url("/images/chqv2/fondo_grafico.png") no-repeat; }
+  background: url("/images/chqv2/fondo_grafico.png") no-repeat top center; }
 
 .box2 {
   background-size: cover;
@@ -10034,7 +10053,7 @@ ul.doughnut-legend .doughnut-legend-icon {
 
 .box3 {
   background-size: cover;
-  background: url("/images/chqv2/fondo_grafico.png") no-repeat;
+  background: url("/images/chqv2/fondo_grafico.png") no-repeat top center;
   background-size: cover;
   margin: 30px 0px;
   padding: 25px 15px 0px; }
@@ -10050,7 +10069,7 @@ ul.doughnut-legend .doughnut-legend-icon {
   font-size: 12px; }
 
 .results-analysis {
-  background: url("/images/chqv2/caja_icono.png") no-repeat; }
+  background: url("/images/chqv2/caja_icono.png") no-repeat top center; }
 
 .progress {
   border-radius: 0px;
