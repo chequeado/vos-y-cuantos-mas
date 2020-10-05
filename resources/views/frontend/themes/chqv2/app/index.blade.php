@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-5 col-md-offset-1 box1"> <!--col-md-pull-6-->
+                        <div class="col-sm-5 col-sm-offset-1 box1"> <!--col-md-pull-6-->
                             <canvas id="doughnut" class="chart chart-doughnut"
                               chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
                             </canvas>
@@ -85,7 +85,7 @@
                                 <p style="text-align:center;margin-bottom:2px;font-size:11px;font-weight:bold;" ng-repeat="(k,o) in question.options" ><span ng-style="{'background-color':chart.colours[k]}" style="height:15px;width:15px;position:absolute;border-radius:10px;"></span><span style="padding-left:20px;">@{{o.text}} (@{{o.value.replace('.0','')}}%)</span></p>
                             </div>
                         </div>
-                        <div class="col-md-5 box2">
+                        <div class="col-sm-5 box2">
                             <div class="row results-analysis">
                                 <p><strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande" style="margin:-10px;">@{{question.answer.value.replace('.0','')}}%</span> de la población.</p>
                                 <img alt="" ng-show="question.diff<=10" ng-src="images/chqv2/wink.png" class="img-icon"/>

@@ -44,22 +44,22 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="row box3">
                   <div class="col-md-4">
-                    <p class="final-sub">Vos y un montón más</p>
+                    <p class="question-option">Vos y un montón más</p>
                     <h3 ng-show="votes.muchos.length>0">respondieron igual en temas de:</h3>
                     <h3 ng-show="!votes.muchos">sin coincidencias</h3>
-                    <p class="question-option" ng-cloak ng-repeat="q in votes.muchos">@{{q.question.title}}</p>
+                    <p class="" ng-cloak ng-repeat="q in votes.muchos">@{{q.question.title}}</p>
                   </div>
                   <div class="col-md-4">
-                    <p class="final-sub">Vos y muchos más</p>
+                    <p class="question-option">Vos y muchos más</p>
                     <h3 ng-show="votes.algunos.length>0">respondieron igual en temas de:</h3>
                     <h3 ng-show="!votes.algunos">sin coincidencias</h3>
-                    <p class="question-option" ng-cloak ng-repeat="q in votes.algunos">@{{q.question.title}}</p>
+                    <p class="" ng-cloak ng-repeat="q in votes.algunos">@{{q.question.title}}</p>
                   </div>
                   <div class="col-md-4">
-                    <p class="final-sub">Vos y pocos más</p>
+                    <p class="question-option">Vos y pocos más</p>
                     <h3 ng-show="votes.pocos.length>0">respondieron igual en temas de:</h3>
                     <h3 ng-show="!votes.pocos">sin coincidencias</h3>
-                    <p class="question-option" ng-cloak ng-repeat="q in votes.pocos">@{{q.question.title}}</p>
+                    <p class="" ng-cloak ng-repeat="q in votes.pocos">@{{q.question.title}}</p>
                   </div>
                 </div>
                 <div ng-if="notas.length>0" class="row">
