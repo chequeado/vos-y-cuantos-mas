@@ -24,7 +24,54 @@
 
     </head>
     <body class="body-home body2">
-
+    <div class="credit"> 
+            <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
+                <img src="/images/chqv2/nuevos/pregunta2.gif"  width="40px" />
+            </a>
+        </div>
+        <div id="chooseModalCredit" class="modal modal-chq-credit fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title-credit">Los participantes de este proyecto fueron: </h4>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <ul>
+                                                <li>
+                                                    Carolina Bohorquez | <b>Diseño</b>
+                                                </li>
+                                                <li>
+                                                    Pilar Castro | <b>Desarrolladora</b>
+                                                </li>
+                                                <li>
+                                                    Pablo M. Fernández | <b>Coordinación Gral.</b>
+                                                </li>
+                                                <li>
+                                                    Luciana Godoy | <b>UX y Diseño Gral.</b>
+                                                </li>
+                                                <li>
+                                                    Esteban Oliva | <b>SEO</b>
+                                                </li>
+                                                <li>
+                                                    Pablo H. Paladino | <b>Líder técnico</b>
+                                                </li>
+                                                <li>
+                                                    Joaquín Saralegui | <b>Desarrollador</b>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal-dialog -->
         @include('includes.partials.logout')
         @include('includes.partials.messages')
         @yield('content')

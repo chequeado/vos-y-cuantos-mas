@@ -35,11 +35,10 @@
     <div class="theme-showcase" role="main">
       <div class="jumbotron-home">
         <div class="row text-center">
-          <div class="col-12">
-            <!--<img alt="Vos y cuantos más?" src="images/logo_grande.png" class="img-responsive logo-home"/>-->
-            <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModal">
-              <img src="images/chqv2/btn.jpg"/>
-            </a>
+          <div class="col-12" style="display: flex; flex-direction: column; align-items: center;justify-content: center;">
+              <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModal">
+                <img src="images/chqv2/nuevos/fondo.gif" class="img-responsive" />
+              </a>
          </div>
         </div>
         <div class="clearfix"></div>

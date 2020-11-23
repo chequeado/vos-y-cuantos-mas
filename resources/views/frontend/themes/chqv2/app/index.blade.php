@@ -1,10 +1,61 @@
 @extends('frontend.themes.'.$theme.'.layouts.app')
 
 @section('content')
-    <div class="question-container" ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak>
+    <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak ng-class="state == 'answer' ? 'fondo6' : 'question-container'" >
+   <!--  <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak class="question-container" > -->
+        <div class="credit"> 
+            <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
+                <img src="/images/chqv2/nuevos/pregunta2.gif" width="40px"/>
+            </a>
+        </div>
+        <div id="chooseModalCredit" class="modal modal-chq-credit fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title-credit">Los participantes de este proyecto fueron: </h4>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <ul>
+                                                <li>
+                                                    Carolina Bohorquez | <b>Diseño</b>
+                                                </li>
+                                                <li>
+                                                    Pilar Castro | <b>Desarrolladora</b>
+                                                </li>
+                                                <li>
+                                                    Pablo M. Fernández | <b>Coordinación Gral.</b>
+                                                </li>
+                                                <li>
+                                                    Luciana Godoy | <b>UX y Diseño Gral.</b>
+                                                </li>
+                                                <li>
+                                                    Esteban Oliva | <b>SEO</b>
+                                                </li>
+                                                <li>
+                                                    Pablo H. Paladino | <b>Líder técnico</b>
+                                                </li>
+                                                <li>
+                                                    Joaquín Saralegui | <b>Desarrollador</b>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal-dialog -->
+
 
         <!-- container -->
         <div class="container-pregunta theme-showcase" role="main">
+       
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
@@ -38,7 +89,7 @@
                       </div>
                     </div>
                     <div class="clearfix"></div>
-                    <button class="skip-question" ng-click="skip()" >Saltar esta pregunta <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                    <button class="skip-question" ng-click="skip()" >Saltar esta pregunta <img src="images/chqv2/nuevos/btn_der.gif"/></button>
                 </div>
                 <!-- /options -->
 
@@ -50,17 +101,18 @@
                             <p class="respuesta">Tu respuesta: @{{question.answer.text}}</p>
                         </div>
 
-                        <div class="col-md-8 col-md-offset-2 slider-box text-center">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="slider-box">
                             <h4 class="slider-title">¿Qué porcentaje de la población crees que es como vos?</h4>
                             <slider ng-model="question.bet" min="0" step="1" max="100" tooltip="'hide'" on-stop-slide="chooseBet($event,value)"></slider>
                             <span class="numero-grande">@{{question.bet}}%</span>
                             <a href="#" class="no-idea-option" ng-click="skipBet()">No tengo idea <i class="fa fa-meh-o" aria-hidden="true" ></i></a>
-
+                            </div>
                         </div>
 
                     </div>
                     <div class="clearfix"></div>
-                    <button class="skip-question" ng-click="changeOption()" ><i class="fa fa-caret-left" aria-hidden="true"></i> Modificar mi respuesta</button>
+                    <button class="skip-question" ng-click="changeOption()" ><img src="images/chqv2/nuevos/btn_izq.gif"/> Modificar mi respuesta</button>
                 </div>
                 <!-- /slider -->
 
@@ -77,61 +129,65 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-5 col-sm-offset-1 box1"> <!--col-md-pull-6-->
-                            <canvas id="doughnut" class="chart chart-doughnut"
-                              chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
-                            </canvas>
-                            <div hide show-xs>
-                                <p style="text-align:center;margin-bottom:2px;font-size:11px;font-weight:bold;" ng-repeat="(k,o) in question.options" ><span ng-style="{'background-color':chart.colours[k]}" style="height:15px;width:15px;position:absolute;border-radius:10px;"></span><span style="padding-left:20px;">@{{o.text}} (@{{o.value.replace('.0','')}}%)</span></p>
+                        <div class="col-sm-6 "> <!--col-md-pull-6-->
+                            <div class="box1">
+                                <canvas id="doughnut" class="chart chart-doughnut"
+                                chart-data="chart.data" chart-labels="chart.labels" chart-legend="true" chart-colours="chart.colours">
+                                </canvas>
+                                <div hide show-xs>
+                                    <p style="text-align:center;margin-bottom:2px;font-size:11px;font-weight:bold;" ng-repeat="(k,o) in question.options" ><span ng-style="{'background-color':chart.colours[k]}" style="height:15px;width:15px;position:absolute;border-radius:10px;"></span><span style="padding-left:20px;">@{{o.text}} (@{{o.value.replace('.0','')}}%)</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-5 box2">
-                            <div class="row results-analysis">
-                                <p><strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande" style="margin:-10px;">@{{question.answer.value.replace('.0','')}}%</span> de la población.</p>
-                                <img alt="" ng-show="question.diff<=10" ng-src="images/chqv2/wink.png" class="img-icon"/>
-                                <img alt="" ng-show="question.diff>10" ng-src="images/chqv2/surprised.png" class="img-icon"/>
-                                <p ng-show="question.bet">
-                                        Tu estimado fue de <strong>@{{question.bet}}%</strong>.
-                                    <strong ng-show="question.diff==0">¡Excelente! Eso es exacto.</strong>
-                                    <strong ng-show="question.diff!=0 && question.diff<=10"> No estuviste tan lejos, muy bien.</strong>
-                                    <strong ng-show="question.diff>10"> La realidad es diferente a lo que creías.</strong>
-                                </p>
-                                    <span ng-hide="question.bet">
-                                    <img alt="" ng-src="images/wink.png" class="img-icon"/>
-                                    <p>No tenías idea. Hoy aprendiste algo.</p>
-                                </span>
-                                <div class="clearfix"></div>
-                            </div>        
+                        <div class="col-sm-6 box2">
+                            <div class="box2">
+                                <div class="row results-analysis">
+                                    <p><strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande" style="margin:-10px;">@{{question.answer.value.replace('.0','')}}%</span> de la población.</p>
+                                    <!-- <img alt="" ng-show="question.diff<=10" ng-src="images/chqv2/wink.png" class="img-icon"/>
+                                    <img alt="" ng-show="question.diff>10" ng-src="images/chqv2/surprised.png" class="img-icon"/> -->
+                                    <p ng-show="question.bet">
+                                            Tu estimado fue de <strong>@{{question.bet}}%</strong>.
+                                        <strong ng-show="question.diff==0">¡Excelente! Eso es exacto.</strong>
+                                        <strong ng-show="question.diff!=0 && question.diff<=10"> No estuviste tan lejos, muy bien.</strong>
+                                        <strong ng-show="question.diff>10"> La realidad es diferente a lo que creías.</strong>
+                                    </p>
+                                        <span ng-hide="question.bet">
+                                        <img alt="" ng-src="images/chqv2/wink.gif" class="img-icon"/>
+                                        <p>No tenías idea. Hoy aprendiste algo.</p>
+                                    </span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
                         <div class="row">
                             <div class="row share">
-                                <p>¿Te sorprendió la respuesta?</p>
+                                <p class="surprise">¿Te sorprendió la respuesta?</p>
                                 <a href="#" class="share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
-                                    Compartir <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    Compartir <img alt="" ng-src="images/chqv2/nuevos/tw.gif" />
                                 </a>
                                 <a id="share-facebook" data-url="{{url('questions')}}/@{{question.id}}" href="#" class="share-facebook">
-                                    Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                    Compartir <img alt="" ng-src="images/chqv2/nuevos/fb.gif" />
                                 </a> 
                                 <p>¿Te quedaste con ganas de saber más?</p>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a target="_blank" href="@{{question.answer_source_link}}" class="see-sources">Ver fuente</a>
+                            <div class="row ">
+                                <div class="col-md-12 see-sources">
+                                    <a target="_blank" href="@{{question.answer_source_link}}">Ver fuente</a>
                                 </div>
-                                <div class="col-md-12" ng-show="question.answer_link">
-                                    <a class="see-sources" ng-href="@{{question.answer_link}}" target="_blank">
+                                <div class="col-md-12 see-sources-2" ng-show="question.answer_link">
+                                    <a ng-href="@{{question.answer_link}}" target="_blank">
                                     Nota sobre el tema
                                     </a>
                                 </div>
                             </div>
-                        </div>                    
+                        </div>
                     </div>
                 </div>
 
                 <div class="clearfix"></div>
                     <div class="row btn-container">
-                        <button class="skip-question2" ng-click="changeOption()" ><i class="fa fa-caret-left" aria-hidden="true"></i> Modificar mi respuesta</button>
-                        <button ng-click="moveNext()" ng-hide="index+1 == questions.length" class="skip-question2">Siguiente pregunta <i class="fa fa-caret-right" aria-hidden="true"></i></button>
-                        <button ng-click="finish()" ng-show="index+1 == questions.length" class="skip-question2">Finalizar <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                        <button class="skip-question2" ng-click="changeOption()" > <img src="images/chqv2/nuevos/btn_izq.gif"/>Modificar mi respuesta</button>
+                        <button ng-click="moveNext()" ng-hide="index+1 == questions.length" class="skip-question2">Siguiente pregunta  <img src="images/chqv2/nuevos/btn_der.gif"/></button>
+                        <button ng-click="finish()" ng-show="index+1 == questions.length" class="skip-question2">Finalizar  <img src="images/chqv2/nuevos/btn_der.gif"/></button>
                     </div>
                 </div>
                 <!-- /answer -->
@@ -142,7 +198,7 @@
                     <div class="col-md-12">
                         <h1>Muchas gracias por participar!</h1>
                     </div>
-                    <a href="/" ng-show="index+1 == questions.length" class="btn btn-default btn-especial-grande boton-abajo-right">Jugar otra vez <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a href="/" ng-show="index+1 == questions.length" class="btn btn-default btn-especial-grande boton-abajo-right">Jugar otra vez  <img src="images/chqv2/nuevos/btn_der.gif"/></a>
 
                 </div>
 

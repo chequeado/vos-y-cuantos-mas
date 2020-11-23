@@ -8985,22 +8985,31 @@ textarea {
 
 /* CSS de  Mariana */
 body {
-  background: #5590fe no-repeat center center fixed !important;
+  background: url("/images/chqv2/nuevos/mar.gif") #3e4eff no-repeat center center fixed !important;
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
-  box-shadow: none; }
+  box-shadow: none;
+  overflow-x: hidden; }
   body.body-home {
     padding-top: 0px; }
+
+.credit {
+  position: absolute;
+  top: 0px;
+  right: 10px; }
 
 .jumbotron {
   box-shadow: -20px -20px 0px #a80e16;
   background-color: #fff; }
 
 .jumbotron-home {
-  box-shadow: none;
-  background-color: none;
-  background: url("/images/chqv2/fondo.jpg") no-repeat top center;
-  background-size: auto;
+  /* box-shadow:none;
+  background-color: none; 
+  background: url('/images/chqv2/nuevos/UNIDO_MAIN_3.gif') no-repeat top center;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto; */
   min-height: 100vh; }
 
 .jumbotron-final {
@@ -9312,10 +9321,10 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .numero-grande {
   font-size: 40px;
-  color: #fce919;
+  color: #286697;
   display: block;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 5px;
   padding: 0; }
 
 .jumbotron .col-md-6 {
@@ -9330,7 +9339,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 @media (min-width: 1200px) {
   .numero-grande {
     font-size: 60px;
-    color: #fce919;
+    color: #286697;
     display: block;
     font-weight: bold; }
   .jumbotron .col-md-6 {
@@ -9385,6 +9394,11 @@ footer a:hover {
 .modal-content {
   /*-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.5);*/ }
+
+.modal-body {
+  background: url("/images/chqv2/nuevos/conteiner.gif") no-repeat top center;
+  background-size: cover;
+  padding: 1px 30px; }
 
 .final-final {
   background-color: #ebebeb;
@@ -9794,15 +9808,15 @@ footer a:hover{
 .slider.slider-horizontal .slider-tick,
 .slider.slider-horizontal .slider-handle {
   margin-top: -8px;
-  background: #fce919; }
+  background: #286697; }
 
 .slider-selection {
-  background: #fce919; }
+  background: #286697; }
 
 .modal-chq .modal-dialog {
   min-height: 100vh;
   padding: 10vh 5%;
-  background: url(/images/chqv2/fondo2.png) no-repeat top center;
+  background: url("/images/chqv2/nuevos/fondo5.gif") no-repeat top center;
   background-size: cover;
   margin-bottom: 0; }
 
@@ -9826,7 +9840,8 @@ footer a:hover{
   .box1 {
     background-repeat: no-repeat;
     background-size: 100% !important;
-    background-position: top center !important; } }
+    background-position: top center !important;
+    margin-bottom: 10px; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
@@ -9838,6 +9853,11 @@ footer a:hover{
     margin-left: 0px !important; }
   .modal-chq .modal-dialog {
     margin: 0px !important; }
+  .body2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
   .body2 .jumbotron-home .start-button {
     /*margin: 30vh auto 0!important;*/ }
   .jumbotron-home {
@@ -9846,12 +9866,12 @@ footer a:hover{
   .theme-showcase {
     margin-bottom: 10vh; }
   .question-title {
-    background: url("/images/chqv2/titulo-preg.png") no-repeat !important;
+    background: url("/images/chqv2/titulo-preg.gif") no-repeat !important;
     height: 60px !important;
     background-size: contain !important;
-    padding-top: 10px !important; }
+    padding-top: 34px !important; }
   .question-action {
-    background: url("/images/chqv2/pregunta.png") no-repeat !important;
+    background: url("/images/chqv2/nuevos/titulo-preg.gif") no-repeat !important;
     background-size: cover !important;
     padding-top: 10px !important;
     margin-left: -35px;
@@ -9864,24 +9884,25 @@ footer a:hover{
   width: 100% !important; }
 
 .body2 .jumbotron-home .start-button {
-  margin: 44vh auto 0; }
+  /* margin: 76vh auto 0; */ }
 
 .modal-title {
-  background: url(/images/chqv2/pregunta.png);
+  background: url("/images/chqv2/nuevos/titulo-preg.gif");
   height: 90px;
   background-size: cover;
   text-align: center;
   padding-top: 20px;
-  color: #715349;
+  color: #333333;
   font-weight: bold;
-  margin-top: -10px;
+  margin-top: 50px;
   padding-left: 30px;
   padding-right: 30px;
-  margin-left: -50px;
-  margin-right: -50px; }
+  /*   margin-left: -50px;
+  margin-right: -50px; */
+  margin-bottom: 35px; }
 
 .modal-button {
-  color: black;
+  color: #333333;
   font-size: 16px;
   background-color: #fee562;
   font-weight: bold;
@@ -9894,14 +9915,14 @@ footer a:hover{
   display: block; }
 
 .modal-button a {
-  color: black; }
+  color: #333333; }
 
-.modal-button:hover, .modal-button:focus {
-  background-color: #fee562;
-  cursor: pointer; }
+.modal-body a:hover {
+  color: #333333;
+  text-decoration: none; }
 
-.modal-button a:hover, .modal-button a:focus {
-  color: black;
+.modal-body a:focus {
+  color: #333333;
   text-decoration: none; }
 
 .modal-chq p {
@@ -9911,22 +9932,62 @@ footer a:hover{
   padding-bottom: 7px; }
 
 .question-container {
-  background: url("/images/chqv2/fondo3.png") no-repeat top center;
+  background: url("/images/chqv2/nuevos/fondo5.gif") no-repeat top center;
   background-size: auto;
   min-height: 100vh;
-  padding-top: 10vh; }
+  padding-top: 10vh;
+  position: relative; }
+
+.fondo6 {
+  background: url("/images/chqv2/nuevos/UNIDO_5.gif") no-repeat top center;
+  background-size: auto;
+  min-height: 100vh;
+  padding-top: 10vh;
+  position: relative; }
+
+.final-summary .question-action {
+  background: url("/images/chqv2/nuevos/titulo-preg.gif");
+  height: 80px;
+  background-size: cover;
+  text-align: center;
+  padding-top: 20px;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif; }
+
+.final-summary .question-action span {
+  font-size: 16px;
+  color: #333333;
+  font-family: 'Montserrat', sans-serif; }
+
+.final-summary .recomendation h3 {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif; }
+
+.final-summary .recomendation ul {
+  list-style: none; }
+
+.final-summary .recomendation ul li a {
+  color: white;
+  font-weight: bold; }
 
 .container-pregunta {
-  max-width: 550px;
+  max-width: 522px;
   margin: auto;
   padding-bottom: 50px; }
 
 .question-title {
-  background: url("/images/chqv2/titulo-preg.png");
   height: 80px;
   background-size: cover;
   text-align: center;
-  padding-top: 35px;
+  padding-top: 51px;
   color: white;
   font-weight: bold;
   margin-top: -45px;
@@ -9941,21 +10002,22 @@ footer a:hover{
   margin-bottom: 0; }
 
 .question-action {
-  background: url("/images/chqv2/pregunta.png");
+  background: url("/images/chqv2/nuevos/titulo-preg.gif");
   height: 80px;
   background-size: cover;
   text-align: center;
   padding-top: 20px;
-  color: #715349;
+  color: #333333;
   font-weight: bold;
   margin-top: 10px;
   padding-left: 30px;
-  padding-right: 30px; }
+  padding-right: 30px;
+  line-height: 24px; }
 
 .question-option {
-  color: #785a50 !important;
+  color: #333333 !important;
   background-color: #fee562 !important;
-  font-weight: bold;
+  font-weight: normal;
   margin: 10px auto;
   border-radius: 9px 7px 8px 7px !important;
   padding: 10px;
@@ -9964,7 +10026,7 @@ footer a:hover{
   font-size: 13px !important; }
 
 .no-idea-option {
-  color: #785a50 !important;
+  color: #333333 !important;
   background-color: #fee562 !important;
   font-weight: bold;
   margin-top: 30px;
@@ -9978,9 +10040,9 @@ footer a:hover{
   background-color: #ff9a0d; }
 
 .options-group {
-  background: url("/images/chqv2/caja_icono.png") no-repeat;
+  background: url("/images/chqv2/nuevos/caja.gif") no-repeat;
   background-size: cover;
-  padding: 15px 50px;
+  padding: 15px 45px;
   margin: 0; }
 
 .question-option:hover {
@@ -9988,39 +10050,52 @@ footer a:hover{
   cursor: pointer; }
 
 .slider-box {
-  background: url("/images/chqv2/caja_icono.png") no-repeat;
+  background: url("/images/chqv2/nuevos/caja.gif") no-repeat;
   background-size: cover;
   padding: 25px 50px; }
 
 .skip-question {
-  background: url("/images/chqv2/btn_continuar.png");
-  height: 40px;
-  background-size: cover;
-  text-align: center;
-  color: #785a50;
+  color: #333333;
+  height: 35px;
+  font-size: 16px;
+  background-color: #fee562;
   font-weight: bold;
-  padding: 0 10px;
+  margin: auto;
+  text-transform: uppercase;
+  border-radius: 13px 12px 15px 14px;
+  padding: 10px;
+  box-shadow: inset 4px 5px 1px rgba(255, 255, 255, 0.7), inset -4px -5px 1px rgba(0, 0, 0, 0.1), 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  padding: 0 20px;
   border: none;
   display: block;
   margin: 0 auto;
   margin-top: 30px;
-  text-transform: uppercase; }
+  cursor: pointer; }
+
+.skip-question img {
+  padding-bottom: 2px;
+  padding-right: 6px; }
 
 .skip-question2 {
-  background: url("/images/chqv2/btn_continuar.png");
-  height: 40px;
-  background-size: cover;
-  text-align: center;
-  color: #785a50;
+  color: #333333;
+  font-size: 16px;
+  background-color: #fee562;
   font-weight: bold;
-  padding: 0 10px;
-  border: none;
-  display: inline-block;
-  margin: 0 auto;
-  text-transform: uppercase; }
+  margin: auto;
+  text-transform: uppercase;
+  border-radius: 13px 12px 15px 14px;
+  padding: 10px;
+  box-shadow: inset 4px 5px 1px rgba(255, 255, 255, 0.7), inset -4px -5px 1px rgba(0, 0, 0, 0.1), 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  cursor: pointer; }
+
+.skip-question2 img {
+  padding-bottom: 2px;
+  padding-right: 6px; }
 
 .results-analysis {
-  color: white;
+  color: black;
   text-align: center;
   font-size: 11px;
   padding: 20px; }
@@ -10042,10 +10117,10 @@ ul.doughnut-legend .doughnut-legend-icon {
 
 .box1, .box2 {
   background-size: cover;
-  padding: 20px 40px 20px 15px; }
+  padding: 30px 20px 5px 20px; }
 
 .box1 {
-  background: url("/images/chqv2/fondo_grafico.png") no-repeat top center; }
+  background: url("/images/chqv2/nuevos/fondo_grafico.gif") no-repeat top center; }
 
 .box2 {
   background-size: cover;
@@ -10053,23 +10128,27 @@ ul.doughnut-legend .doughnut-legend-icon {
 
 .box3 {
   background-size: cover;
-  background: url("/images/chqv2/fondo_grafico.png") no-repeat top center;
+  background: url("/images/chqv2/nuevos/fondo_grafico.gif") no-repeat top center;
   background-size: cover;
   margin: 30px 0px;
-  padding: 25px 15px 0px; }
+  padding: 25px 15px 0px;
+  text-align: center; }
 
 .share {
-  padding: 0 40px 0 15px;
   color: white;
   font-weight: bold;
   text-align: center; }
 
+.share .surprise {
+  margin-top: 4px;
+  margin-bottom: 10px; }
+
 .share p {
-  margin: 5px 0 5px;
+  margin: 15px 0 5px;
   font-size: 12px; }
 
 .results-analysis {
-  background: url("/images/chqv2/caja_icono.png") no-repeat top center; }
+  background: url("/images/chqv2/nuevos/caja.gif") no-repeat top center; }
 
 .progress {
   border-radius: 0px;
@@ -10091,7 +10170,7 @@ ul.doughnut-legend .doughnut-legend-icon {
 
 .ptr {
   right: 14px;
-  top: 0; }
+  top: 21px; }
 
 .pbl {
   left: 14px;
@@ -10099,36 +10178,111 @@ ul.doughnut-legend .doughnut-legend-icon {
 
 .ptl {
   left: 14px;
-  top: 0; }
+  top: 21px; }
 
 .progress-bar-success {
-  background-color: #533ef5 !important; }
+  background-color: #286697 !important; }
 
 .img-icon {
   width: 60px; }
 
 .share-facebook, .share-twitter, .back-home {
-  background: url(/images/chqv2/share.png);
+  background: url("/images/chqv2/nuevos/share.gif");
   height: 40px;
   background-size: cover;
   text-align: center;
   color: white;
   font-weight: bold;
   border: none;
-  padding: 5px;
+  padding: 10px 15px;
   margin-right: 5px;
   text-transform: uppercase;
-  font-size: 10px; }
+  font-size: 12px;
+  cursor: pointer; }
 
-.see-sources {
-  background: url("/images/chqv2/btn_fuentes.png");
+.share-twitter img {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  vertical-align: sub; }
+
+.share-facebook img {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  vertical-align: sub; }
+
+.share a:active {
+  height: 40px;
   background-size: cover;
   text-align: center;
   color: white;
   font-weight: bold;
-  padding: 5px;
-  display: block;
-  border: none; }
+  border: none;
+  padding: 10px 15px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none; }
+
+.share a:hover {
+  height: 40px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none; }
+
+.share a:focus {
+  height: 40px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none; }
+
+.see-sources {
+  background: url("/images/chqv2/nuevos/btn_fuentes.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 10px; }
+
+.see-sources a {
+  color: white; }
+
+.see-sources-2 {
+  background: url("/images/chqv2/nuevos/btn-largo.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 10px; }
+
+.see-sources-2 a {
+  color: white; }
 
 .final-sub {
   color: white;
