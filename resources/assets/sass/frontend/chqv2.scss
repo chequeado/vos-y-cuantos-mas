@@ -87,7 +87,7 @@ p.respuesta{
   font-size:13px;
   margin: -5px -5px 10px;
   font-weight: bold;
-  color:white;
+  color:#333333;
   }
 @media (min-width: 1200px) {
   .navbar-brand{
@@ -98,7 +98,7 @@ p.respuesta{
   font-size:13px;
   margin: -5px -5px 10px;
   font-weight: bold;
-  color:white;
+  color:#333333;
   }
 }
 .navbar-brand span.text-muted{
@@ -1112,7 +1112,7 @@ footer a:hover{
 }
 
 .question-title{    
- // background: url('/images/chqv2/titulo-preg.png');
+ text-shadow: 2px 2px #333333;
  height: 80px;
  background-size: cover;
  text-align: center;
@@ -1297,7 +1297,7 @@ ul.doughnut-legend .doughnut-legend-icon{
 
 .share {
   //padding: 0 40px 0 15px;
-  color:white;
+  color:#333333;
   font-weight: bold;
   text-align: center;
 } 
