@@ -24,7 +24,7 @@
 
     </head>
     <body class="body-home body2">
-    <div class="credit"> 
+<!--     <div class="credit"> 
             <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
                 <img src="/images/chqv2/nuevos/pregunta2.gif"  width="40px" />
             </a>
@@ -69,9 +69,13 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+        </div> -->
+        
+
+
+
         @include('includes.partials.logout')
         @include('includes.partials.messages')
         @yield('content')

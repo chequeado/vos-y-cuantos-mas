@@ -3,7 +3,7 @@
 @section('content')
     <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak ng-class="state == 'answer' ? 'fondo6' : 'question-container'" >
    <!--  <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak class="question-container" > -->
-        <div class="credit"> 
+      <!--   <div class="credit">
             <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
                 <img src="/images/chqv2/nuevos/pregunta2.gif" width="40px"/>
             </a>
@@ -48,9 +48,9 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+        </div>  -->
 
 
         <!-- container -->
