@@ -126,7 +126,7 @@
                         Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i>
                     </a> 
                     <a href="/" class="back-home">
-                      Volver al home
+                      Volver al inico
                     </a> 
                 </div>
             </div>
