@@ -143,16 +143,16 @@
                             <div class="box2">
                                 <div class="row results-analysis">
                                     <p><strong>@{{question.answer.text}}</strong> al igual que el <span class="numero-grande" style="margin:-10px;">@{{question.answer.value.replace('.0','')}}%</span> de la población.</p>
-                                    <!-- <img alt="" ng-show="question.diff<=10" ng-src="images/chqv2/wink.png" class="img-icon"/>
-                                    <img alt="" ng-show="question.diff>10" ng-src="images/chqv2/surprised.png" class="img-icon"/> -->
-                                    <p ng-show="question.bet">
+                                    <img alt="" ng-show="question.diff<=10" ng-src="images/chqv2/wink.png" class="img-icon"/>
+                                    <img alt="" ng-show="question.diff>10" ng-src="images/chqv2/surprised.png" class="img-icon"/>
+                                        <p ng-show="question.bet">
                                             Tu estimado fue de <strong>@{{question.bet}}%</strong>.
                                         <strong ng-show="question.diff==0">¡Excelente! Eso es exacto.</strong>
                                         <strong ng-show="question.diff!=0 && question.diff<=10"> No estuviste tan lejos, muy bien.</strong>
                                         <strong ng-show="question.diff>10"> La realidad es diferente a lo que creías.</strong>
                                     </p>
                                         <span ng-hide="question.bet">
-                                        <img alt="" ng-src="images/chqv2/wink.gif" class="img-icon"/>
+                                         <img alt="" ng-src="images/chqv2/wink.gif" class="img-icon"/>
                                         <p>No tenías idea. Hoy aprendiste algo.</p>
                                     </span>
                                     <div class="clearfix"></div>
@@ -171,12 +171,33 @@
                             </div>
                             <div class="row ">
                                 <div class="col-md-12 see-sources">
-                                    <a target="_blank" href="@{{question.answer_source_link}}">Ver fuente</a>
+                                <!-- <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
+                                    <img src="/images/chqv2/nuevos/pregunta2.gif" width="40px"/>
+                                </a> -->
+                                    <a target="_blank" href="javascript:;" data-toggle="modal" data-target="#chooseModalSrc">Ver fuente</a>
                                 </div>
-                                <div class="col-md-12 see-sources-2" ng-show="question.answer_link">
-                                    <a ng-href="@{{question.answer_link}}" target="_blank">
-                                    Nota sobre el tema
-                                    </a>
+
+
+
+                                <div id="chooseModalSrc" class="modal modal-chq-credit fade" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <div ng-show="question.answer_source_link">
+                                                <h3>Fuente</h3>
+                                                    <p><a target="_blank" href="@{{question.answer_source_link}}">@{{question.answer_source}}</a></p>
+                                            </div>
+                                            <div ng-show="question.answer_description">
+                                                <h3>Más información</h3>
+                                                <p>@{{question.answer_description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 see-sources-2" ng-show="question.answer_link">
+                                        <a ng-href="@{{question.answer_link}}" target="_blank">
+                                        Nota sobre el tema
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
