@@ -224,9 +224,9 @@
                 </div>
 
               </div> <!-- /jumbotron -->
-              <a id="img-credit" ng-show="!isMobile() && (question.image_credit_source || question.image_credit_link)" ng-href="@{{question.image_credit_link}}">
+              <!-- <a id="img-credit" ng-show="!isMobile() && (question.image_credit_source || question.image_credit_link)" ng-href="@{{question.image_credit_link}}">
                 <i class="fa fa-picture-o" aria-hidden="true"></i> Créditos @{{question.image_credit_source}}
-              </a>
+              </a> -->
         </div> <!-- /col -->
         </div> <!-- /row -->
         </div> <!-- /container -->

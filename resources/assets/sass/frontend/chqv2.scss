@@ -958,7 +958,7 @@ footer a:hover{
   }
 
   .question-title {
-    background: url('/images/chqv2/titulo-preg.gif') no-repeat!important;
+    background: url('/images/chqv2/cartel2.png') no-repeat!important;
     height: 60px!important;
     background-size: contain!important;
     padding-top: 34px!important;
@@ -1137,7 +1137,7 @@ footer a:hover{
 
 .question-action{        
   background: url('/images/chqv2/nuevos/titulo-preg.gif');
-  height: 80px;
+  height: 125px;
   background-size: 100% 100%;
   text-align: center;
   padding-top: 8px;
@@ -1289,11 +1289,10 @@ ul.doughnut-legend .doughnut-legend-icon{
 }
 
 .box3{
-  background-size: 100% 100%;
-  background: url('/images/chqv2/nuevos/fondo_grafico.gif') no-repeat top center; 
-  margin:30px 0px;
-  padding: 25px 15px 0px;
-  text-align: center;
+  background: url('/images/chqv2/nuevos/fondo_grafico.gif') no-repeat top center;
+    background-size: 100% 100%;
+    padding: 30px;
+    margin: 30px;
 }
 
 .share {
@@ -1395,46 +1394,46 @@ ul.doughnut-legend .doughnut-legend-icon{
 
 .share a:active {
   height: 40px;
-  background-size: cover;
+  background-repeat: no-repeat;
+ // background-size: cover;
   text-align: center; 
   color: white;
   font-weight: bold;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 7px 10px 7px;
   margin-right: 5px;
   text-transform: uppercase;
   font-size: 12px;
   cursor: pointer;
-  text-decoration: none;
 }
 .share a:hover {
   height: 40px;
-  background-size: cover;
+  background-repeat: no-repeat;
+ // background-size: cover;
   text-align: center; 
   color: white;
   font-weight: bold;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 7px 10px 7px;
   margin-right: 5px;
   text-transform: uppercase;
   font-size: 12px;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .share a:focus {
   height: 40px;
-  background-size: cover;
+  background-repeat: no-repeat;
+ // background-size: cover;
   text-align: center; 
   color: white;
   font-weight: bold;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 7px 10px 7px;
   margin-right: 5px;
   text-transform: uppercase;
   font-size: 12px;
   cursor: pointer;
-  text-decoration: none;
 }
 
 
