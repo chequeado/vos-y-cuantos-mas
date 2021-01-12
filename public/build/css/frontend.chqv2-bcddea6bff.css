@@ -9044,7 +9044,9 @@ p.respuesta {
   font-size: 13px;
   margin: -5px -5px 10px;
   font-weight: bold;
-  color: #333333; }
+  background: #ebebcf;
+  padding: 8px;
+  border-radius: 5px; }
 
 @media (min-width: 1200px) {
   .navbar-brand {
@@ -9946,7 +9948,7 @@ footer a:hover{
 
 .final-summary .question-action {
   background: url("/images/chqv2/nuevos/titulo-preg.gif");
-  height: 80px;
+  height: 125px;
   background-size: cover;
   text-align: center;
   padding-top: 20px;
@@ -10135,9 +10137,17 @@ ul.doughnut-legend .doughnut-legend-icon {
   margin: 30px; }
 
 .share {
-  color: #333333;
+  color: white;
   font-weight: bold;
   text-align: center; }
+
+.share div {
+  display: inline; }
+
+@media (max-width: 375px) {
+  .share div {
+    display: block;
+    margin: 20px; } }
 
 .share .surprise {
   margin-top: 4px;
@@ -10190,6 +10200,7 @@ ul.doughnut-legend .doughnut-legend-icon {
 .share-facebook, .share-twitter, .back-home {
   background: url("/images/chqv2/nuevos/share.gif");
   height: 40px;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   text-align: center;
   color: white;

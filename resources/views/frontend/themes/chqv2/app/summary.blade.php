@@ -119,15 +119,21 @@
                   </div>
                 </div>
                 <div class="row share">
-                    <a href="#" class="share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
+                    <div>
+                        <a href="#" class="share-twitter" share-url="{{url('questions')}}/@{{question.id}}" share-text="Mirá los datos sobre @{{question.title}} en '¿Vos y cuántos más?'" share-hashtags="" share-via="chequeado">
                         Compartir <i class="fa fa-twitter" aria-hidden="true"></i>
                     </a>
+                    </div>
+                    <div>
                     <a id="share-facebook" data-url="{{url('questions')}}/@{{question.id}}" href="#" class="share-facebook">
                         Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                    </a> 
+                    </a>
+                    </div>
+                    <div>
                     <a href="/" class="back-home">
                       Volver al inico
-                    </a> 
+                    </a>
+                    </div>
                 </div>
             </div>
         </div>
