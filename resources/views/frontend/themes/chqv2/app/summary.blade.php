@@ -131,7 +131,7 @@
                     </div>
                     <div>
                     <a href="/" class="back-home">
-                      Volver al inico
+                      Inico
                     </a>
                     </div>
                 </div>
