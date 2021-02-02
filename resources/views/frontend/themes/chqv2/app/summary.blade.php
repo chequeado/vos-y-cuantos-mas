@@ -87,6 +87,7 @@
             <h1 class="question-title">¡De <b>@{{total}}</b> preguntas, le acertaste a <b>@{{correctas}}</b>!</h1>
           </div>  -->
         </div>  
+        
         <h2 class="question-action">Resultados finales <br />  <span class="question-title">¡De <b>@{{total}}</b> preguntas, le acertaste a <b>@{{correctas}}</b>!</span></h2>
         <div class="row">          
             <div class="col-md-10 col-md-offset-1">
