@@ -95,12 +95,12 @@
                         </div>
                         <div class="modal-body">
                           <p class="text-center">
-                            <a href="/app?cat={{$cat->id}}?limit=10" class=" modal-button">
+                            <a href="/app?cat={{$cat->id}}&limit=10" class=" modal-button">
                               Contestar 10 preguntas <img src="images/chqv2/diamante.png"/>
                             </a>
                           </p>
                           <p class="text-center">
-                            <a href="/app?cat={{$cat->id}}?limit=20" class=" modal-button">
+                            <a href="/app?cat={{$cat->id}}&limit=20" class=" modal-button">
                               Contestar 20 preguntas <img src="images/chqv2/diamante.png"/>
                             </a>
                           </p>
