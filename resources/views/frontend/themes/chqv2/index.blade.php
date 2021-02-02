@@ -82,34 +82,37 @@
                     </div><!-- /.modal-dialog -->
                   @endforeach
                 @else
-                  <!--<a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal">
-                      Comenzar <i class="fa fa-caret-right" aria-hidden="true"></i>
-                  </a>-->
-                  <div id="chooseModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                      <div class="header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
-                      </div>
-                      <div class="modal-body">
-                        <p class="text-center">
-                          <a href="/app?limit=10" class=" modal-button">
-                            Contestar 10 preguntas <img src="images/chqv2/diamante.png"/>
-                          </a>
-                        </p>
-                        <p class="text-center">
-                          <a href="/app?limit=20" class=" modal-button">
-                            Contestar 20 preguntas <img src="images/chqv2/diamante.png"/>
-                          </a>
-                        </p>
-                        <p class="text-center">
-                          <a href="/app" class=" modal-button">
-                            Contestar todas las preguntas  <img src="images/chqv2/diamante.png"/>
-                          </a>
-                        </p>
-                      </div><!-- /.modal-content -->
+                  @foreach($cats as $cat)
+                  
+                    <!--<a href="javascript:;" class="btn btn-default btn-especial2" data-toggle="modal" data-target="#chooseModal">
+                        Comenzar <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>-->
+                    <div id="chooseModal" class="modal modal-chq fade" tabindex="-1" role="dialog">
+                      <div class="modal-dialog" role="document">
+                        <div class="header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p class="text-center">
+                            <a href="/app?cat={{$cat->id}}?limit=10" class=" modal-button">
+                              Contestar 10 preguntas <img src="images/chqv2/diamante.png"/>
+                            </a>
+                          </p>
+                          <p class="text-center">
+                            <a href="/app?cat={{$cat->id}}?limit=20" class=" modal-button">
+                              Contestar 20 preguntas <img src="images/chqv2/diamante.png"/>
+                            </a>
+                          </p>
+                          <p class="text-center">
+                            <a href="/app?cat={{$cat->id}}" class=" modal-button">
+                              Contestar todas las preguntas  <img src="images/chqv2/diamante.png"/>
+                            </a>
+                          </p>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
                     </div><!-- /.modal-dialog -->
-                  </div><!-- /.modal-dialog -->
+                  @endforeach
                 @endif
               </div>
           </div>
