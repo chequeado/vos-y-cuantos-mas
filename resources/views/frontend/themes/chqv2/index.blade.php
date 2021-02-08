@@ -109,7 +109,7 @@
                         </p>
                       </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
-                  </div><!-- /.modal-dialog -->
+                  @endforeach
                 @endif
               </div>
           </div>
@@ -117,7 +117,6 @@
           <div class="col-md-1"></div>
         </div>
       </div>
-        
     </div> <!-- /container -->
 
 @endsection
