@@ -24,7 +24,7 @@
 
     </head>
     <body class="body-home body2">
-<!--     <div class="credit"> 
+        <div class="credit"> 
             <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
                 <img src="/images/chqv2/nuevos/pregunta2.gif"  width="40px" />
             </a>
@@ -42,25 +42,28 @@
                                         <div class="col-lg-12">
                                             <ul>
                                                 <li>
-                                                    Carolina Bohorquez | <b>Diseño</b>
+                                                    Laura Zommer | <b>Dirección ejecutiva</b>
                                                 </li>
                                                 <li>
-                                                    Pilar Castro | <b>Desarrolladora</b>
+                                                    Pablo M. Fernández| <b>Dirección de proyecto</b>
                                                 </li>
                                                 <li>
-                                                    Pablo M. Fernández | <b>Coordinación Gral.</b>
+                                                    Ariel Tiferes | <b>Coordinacion de producto</b>
                                                 </li>
                                                 <li>
-                                                    Luciana Godoy | <b>UX y Diseño Gral.</b>
+                                                    Pablo H. Paladino y Joaquin Saralegui | <b>Desarrollo fullstack</b>
                                                 </li>
                                                 <li>
-                                                    Esteban Oliva | <b>SEO</b>
+                                                    Ariel Riera | <b>Investigación, análisis de datos y redacción</b>
                                                 </li>
                                                 <li>
-                                                    Pablo H. Paladino | <b>Líder técnico</b>
+                                                    Pilar Castro | <b>Desarrollo Front End</b>
                                                 </li>
                                                 <li>
-                                                    Joaquín Saralegui | <b>Desarrollador</b>
+                                                    Gaston Marquez | <b>Ilustraciones 8 bit</b>
+                                                </li>
+                                                <li>
+                                                 Laravel PHP - MySQL - Angular JS | <b>Tecnologías utilizadas</b>
                                                 </li>
                                             </ul>
                                         </div>
@@ -71,7 +74,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         
 
 

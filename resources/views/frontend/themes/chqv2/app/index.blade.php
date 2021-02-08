@@ -2,46 +2,50 @@
 
 @section('content')
     <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak ng-class="state == 'answer' ? 'fondo6' : 'question-container'" >
-   <!--  <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak class="question-container" > -->
-      <!--   <div class="credit">
-            <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
-                <img src="/images/chqv2/nuevos/pregunta2.gif" width="40px"/>
-            </a>
-        </div>
-        <div id="chooseModalCredit" class="modal modal-chq-credit fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title-credit">Los participantes de este proyecto fueron: </h4>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    Carolina Bohorquez | <b>Diseño</b>
-                                                </li>
-                                                <li>
-                                                    Pilar Castro | <b>Desarrolladora</b>
-                                                </li>
-                                                <li>
-                                                    Pablo M. Fernández | <b>Coordinación Gral.</b>
-                                                </li>
-                                                <li>
-                                                    Luciana Godoy | <b>UX y Diseño Gral.</b>
-                                                </li>
-                                                <li>
-                                                    Esteban Oliva | <b>SEO</b>
-                                                </li>
-                                                <li>
-                                                    Pablo H. Paladino | <b>Líder técnico</b>
-                                                </li>
-                                                <li>
-                                                    Joaquín Saralegui | <b>Desarrollador</b>
-                                                </li>
-                                            </ul>
+        <div  ng-controller="MainCtrl" ng-init='init("{{$cat}}","{{$limit}}", [ "#e4401e", "#9614a5", "#fce919", "#417dec", "#367b25" ])' ng-cloak class="question-container" > -->
+            <div class="credit"> 
+                <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
+                    <img src="/images/chqv2/nuevos/pregunta2.gif"  width="40px" />
+                </a>
+            </div>
+            <div id="chooseModalCredit" class="modal modal-chq-credit fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title-credit">Los participantes de este proyecto fueron: </h4>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li>
+                                                        Laura Zommer | <b>Dirección ejecutiva</b>
+                                                    </li>
+                                                    <li>
+                                                        Pablo M. Fernández| <b>Dirección de proyecto</b>
+                                                    </li>
+                                                    <li>
+                                                        Ariel Tiferes | <b>Coordinacion de producto</b>
+                                                    </li>
+                                                    <li>
+                                                        Pablo H. Paladino y Joaquin Saralegui | <b>Desarrollo fullstack</b>
+                                                    </li>
+                                                    <li>
+                                                        Ariel Riera | <b>Investigación, análisis de datos y redacción</b>
+                                                    </li>
+                                                    <li>
+                                                        Pilar Castro | <b>Desarrollo Front End</b>
+                                                    </li>
+                                                    <li>
+                                                        Gaston Marquez | <b>Ilustraciones 8 bit</b>
+                                                    </li>
+                                                    <li>
+                                                    Laravel PHP - MySQL - Angular JS | <b>Tecnologías utilizadas</b>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +54,6 @@
                     </div>
                 </div>
             </div>
-        </div>  -->
 
 
         <!-- container -->

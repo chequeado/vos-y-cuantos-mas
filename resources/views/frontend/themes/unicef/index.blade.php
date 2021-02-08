@@ -88,7 +88,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">¿Cuántas preguntas querés contestar?</h4>
+                          <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
                           <p>Al final vas a ver cómo te fue.</p>
                         </div>
                           <div class="modal-body">

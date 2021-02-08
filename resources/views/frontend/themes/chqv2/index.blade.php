@@ -58,7 +58,7 @@
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
+                            <h4 class="modal-title">¿Cuántas preguntas querés contestar?</h4>
                           </div>
                             <div class="modal-body">
                               <p class="text-center">
@@ -89,7 +89,7 @@
                     <div class="modal-dialog" role="document">
                       <div class="header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">¿Cuántas preguntas quieres contestar?</h4>
+                        <h4 class="modal-title">¿Cuántas preguntas querés contestar?</h4>
                       </div>
                       <div class="modal-body">
                         <p class="text-center">
