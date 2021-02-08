@@ -32,7 +32,7 @@
 @section('content')
 
     <div class="question-container" ng-controller="SummaryCtrl" ng-init='init("{{$cat}}", {!!$votes!!})' ng-cloak>
-        <div class="credit"> 
+     <div class="credit">
             <a href="javascript:;" class="start-button btn" data-toggle="modal" data-target="#chooseModalCredit">
                 <img src="/images/chqv2/nuevos/pregunta2.gif"  width="40px" />
             </a>
@@ -50,28 +50,25 @@
                                         <div class="col-lg-12">
                                             <ul>
                                                 <li>
-                                                    Laura Zommer | <b>Dirección ejecutiva</b>
+                                                    Carolina Bohorquez | <b>Diseño</b>
                                                 </li>
                                                 <li>
-                                                    Pablo M. Fernández| <b>Dirección de proyecto</b>
+                                                    Pilar Castro | <b>Desarrolladora</b>
                                                 </li>
                                                 <li>
-                                                    Ariel Tiferes | <b>Coordinacion de producto</b>
+                                                    Pablo M. Fernández | <b>Coordinación Gral.</b>
                                                 </li>
                                                 <li>
-                                                    Pablo H. Paladino y Joaquin Saralegui | <b>Desarrollo fullstack</b>
+                                                    Luciana Godoy | <b>UX y Diseño Gral.</b>
                                                 </li>
                                                 <li>
-                                                    Ariel Riera | <b>Investigación, análisis de datos y redacción</b>
+                                                    Esteban Oliva | <b>SEO</b>
                                                 </li>
                                                 <li>
-                                                    Pilar Castro | <b>Desarrollo Front End</b>
+                                                    Pablo H. Paladino | <b>Líder técnico</b>
                                                 </li>
                                                 <li>
-                                                    Gaston Marquez | <b>Ilustraciones 8 bit</b>
-                                                </li>
-                                                <li>
-                                                 Laravel PHP - MySQL - Angular JS | <b>Tecnologías utilizadas</b>
+                                                    Joaquín Saralegui | <b>Desarrollador</b>
                                                 </li>
                                             </ul>
                                         </div>
