@@ -8998,6 +8998,9 @@ body {
   top: 0px;
   right: 10px; }
 
+.list-credits ul li a:hover {
+  text-decoration: none !important; }
+
 .jumbotron {
   box-shadow: -20px -20px 0px #a80e16;
   background-color: #fff; }

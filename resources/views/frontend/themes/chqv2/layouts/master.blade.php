@@ -34,27 +34,27 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title-credit">Los participantes de este proyecto fueron: </h4>
+                        <h4 class="modal-title-credit" style="text-align: center">Créditos: </h4>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 list-credits">
                                             <ul style="list-style: none;">
                                                 <li style="margin: 5px 0">
-                                                    <b>Dirección ejecutiva:</b> Laura Zommer
+                                                    <b>Dirección ejecutiva: </b> <a href="https://twitter.com/lauzommer"> Laura Zommer </a>
                                                 </li>
                                                 <li style="margin: 5px 0">
-                                                    <b>Dirección de proyecto:</b> Pablo M. Fernández
+                                                    <b>Dirección de proyecto: </b> <a href="https://twitter.com/fernandezpm"> Pablo M. Fernández</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
-                                                    <b>Coordinacion de producto:</b> Ariel Tiferes
+                                                    <b>Coordinacion de producto: </b> <a href="https://twitter.com/palamago"> Ariel Tiferes</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
-                                                    <b>Desarrollo:</b> Pilar Castro, Pablo H. Paladino y Joaquin Saralegui
+                                                    <b>Desarrollo:</b> Pilar Castro, <a href="https://twitter.com/Gauyo"> Pablo H. Paladino</a> y <a href="https://twitter.com/joacosaralegui"> Joaquin Saralegui</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
-                                                    <b>Investigación, análisis de datos y redacción:</b> Ariel Riera
+                                                    <b>Investigación, análisis de datos y redacción: </b ><a href="https://twitter.com/am_riera"> Ariel Riera</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
                                                     <b>Ilustraciones 8 bit: </b> Gastón Márquez (Gazulo)
