@@ -27,10 +27,10 @@
                                                         <b>Dirección de proyecto: </b> <a href="https://twitter.com/fernandezpm"> Pablo M. Fernández</a>
                                                     </li>
                                                     <li style="margin: 5px 0">
-                                                        <b>Coordinacion de producto: </b> <a href="https://twitter.com/palamago"> Ariel Tiferes</a>
+                                                        <b>Coordinacion de producto: </b> <a href="https://twitter.com/Gauyo"> Ariel Tiferes</a>
                                                     </li>
                                                     <li style="margin: 5px 0">
-                                                        <b>Desarrollo:</b> Pilar Castro, <a href="https://twitter.com/Gauyo"> Pablo H. Paladino</a> y <a href="https://twitter.com/joacosaralegui"> Joaquin Saralegui</a>
+                                                        <b>Desarrollo:</b> Pilar Castro, <a href="https://twitter.com/palamago"> Pablo H. Paladino</a> y <a href="https://twitter.com/joacosaralegui"> Joaquin Saralegui</a>
                                                     </li>
                                                     <li style="margin: 5px 0">
                                                         <b>Investigación, análisis de datos y redacción: </b ><a href="https://twitter.com/am_riera"> Ariel Riera</a>
