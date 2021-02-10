@@ -48,27 +48,30 @@
                                 <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    Carolina Bohorquez | <b>Diseño</b>
+                                            <ul style="list-style: none;">
+                                                <li style="margin: 5px 0">
+                                                    <b>Dirección ejecutiva:</b> Laura Zommer
                                                 </li>
-                                                <li>
-                                                    Pilar Castro | <b>Desarrolladora</b>
+                                                <li style="margin: 5px 0">
+                                                    <b>Dirección de proyecto:</b> Pablo M. Fernández
                                                 </li>
-                                                <li>
-                                                    Pablo M. Fernández | <b>Coordinación Gral.</b>
+                                                <li style="margin: 5px 0">
+                                                    <b>Coordinacion de producto:</b> Ariel Tiferes
                                                 </li>
-                                                <li>
-                                                    Luciana Godoy | <b>UX y Diseño Gral.</b>
+                                                <li style="margin: 5px 0">
+                                                    <b>Desarrollo:</b> Pilar Castro, Pablo H. Paladino y Joaquin Saralegui
                                                 </li>
-                                                <li>
-                                                    Esteban Oliva | <b>SEO</b>
+                                                <li style="margin: 5px 0">
+                                                    <b>Investigación, análisis de datos y redacción:</b> Ariel Riera
                                                 </li>
-                                                <li>
-                                                    Pablo H. Paladino | <b>Líder técnico</b>
+                                                <li style="margin: 5px 0">
+                                                    <b>Ilustraciones 8 bit: </b> Gastón Márquez (Gazulo)
                                                 </li>
-                                                <li>
-                                                    Joaquín Saralegui | <b>Desarrollador</b>
+                                                <li style="margin: 5px 0">
+                                                    <b>Tecnologías utilizadas: </b> Laravel PHP - MySQL - Angular JS
+                                                </li>
+                                                <li style="margin: 5px 0">
+                                                    <b>Con el apoyo de Tinker Foundation.</b>
                                                 </li>
                                             </ul>
                                         </div>

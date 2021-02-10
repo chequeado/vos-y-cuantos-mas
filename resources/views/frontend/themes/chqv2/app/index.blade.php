@@ -19,30 +19,30 @@
                                     <div class="col-lg-12">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <ul>
-                                                    <li>
-                                                        Laura Zommer | <b>Dirección ejecutiva</b>
+                                                <ul style="list-style: none;">
+                                                    <li style="margin: 5px 0">
+                                                        <b>Dirección ejecutiva:</b> Laura Zommer
                                                     </li>
-                                                    <li>
-                                                        Pablo M. Fernández| <b>Dirección de proyecto</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Dirección de proyecto:</b> Pablo M. Fernández
                                                     </li>
-                                                    <li>
-                                                        Ariel Tiferes | <b>Coordinacion de producto</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Coordinacion de producto:</b> Ariel Tiferes
                                                     </li>
-                                                    <li>
-                                                        Pablo H. Paladino y Joaquin Saralegui | <b>Desarrollo fullstack</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Desarrollo:</b> Pilar Castro, Pablo H. Paladino y Joaquin Saralegui
                                                     </li>
-                                                    <li>
-                                                        Ariel Riera | <b>Investigación, análisis de datos y redacción</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Investigación, análisis de datos y redacción:</b> Ariel Riera
                                                     </li>
-                                                    <li>
-                                                        Pilar Castro | <b>Desarrollo Front End</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Ilustraciones 8 bit: </b> Gastón Márquez (Gazulo)
                                                     </li>
-                                                    <li>
-                                                        Gaston Marquez | <b>Ilustraciones 8 bit</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Tecnologías utilizadas: </b> Laravel PHP - MySQL - Angular JS
                                                     </li>
-                                                    <li>
-                                                    Laravel PHP - MySQL - Angular JS | <b>Tecnologías utilizadas</b>
+                                                    <li style="margin: 5px 0">
+                                                        <b>Con el apoyo de Tinker Foundation.</b>
                                                     </li>
                                                 </ul>
                                             </div>
