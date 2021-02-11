@@ -3,28 +3,28 @@
 @section('meta')
   <!-- Place this data between the <head> tags of your website -->
   <title>¿Vos y cuántos más? - {{$obj->title}}</title>
-  <meta name="description" content="{{$obj->call_action}}" />
+  <meta name="description" content="'¿Vos y cuando más? de Chequeado' es un juego basado en datos." />
 
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="{{$obj->title}}">
-  <meta itemprop="description" content="{{$obj->call_action}}">
-  <meta itemprop="image" content="{{URL::to('/').'/imagecache/large/'.$obj->image_file}}">
+  <meta itemprop="description" content="'¿Vos y cuando más? de Chequeado' es un juego basado en datos.">
+  <meta itemprop="image" content="{{URL::to('/').'/logo_share_2.png'}}">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@chequeado">
   <meta name="twitter:title" content="{{$obj->title}}">
-  <meta name="twitter:description" content="{{$obj->call_action}}">
+  <meta name="twitter:description" content="'¿Vos y cuando más? de Chequeado' es un juego basado en datos.">
   <meta name="twitter:creator" content="@chequeado">
   <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content="{{URL::to('/').'/imagecache/large/'.$obj->image_file}}">
+  <meta name="twitter:image:src" content="{{URL::to('/').'/logo_share_2.png'}}">
 
   <!-- Open Graph data -->
   <meta property="og:title" content="{{$obj->title}}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{route('frontend.question.view', ['id' => $obj->id])}}" />
-  <meta property="og:image" content="{{URL::to('/').'/imagecache/large/'.$obj->image_file}}" />
-  <meta property="og:description" content="{{$obj->call_action}}" />
+  <meta property="og:image" content="{{URL::to('/').'/logo_share_2.png'}}" />
+  <meta property="og:description" content="'¿Vos y cuando más? de Chequeado' es un juego basado en datos." />
   <meta property="og:site_name" content="¿Vos y cuántos más?" />
   <meta property="fb:admins" content="Facebook numberic ID" /> 
 

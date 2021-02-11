@@ -8,7 +8,7 @@
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="¿Vos y cuántos más?">
   <meta itemprop="description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados.">
-  <meta itemprop="image" content="{{URL::to('/').'/images/logo-share.png'}}">
+  <meta itemprop="image" content="{{URL::to('/').'/logo_share_2.png'}}">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
@@ -17,13 +17,13 @@
   <meta name="twitter:description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados.">
   <meta name="twitter:creator" content="@chequeado">
   <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content="{{URL::to('/').'/images/logo-share.png'}}">
+  <meta name="twitter:image:src" content="{{URL::to('/').'/logo_share_2.png'}}">
 
   <!-- Open Graph data -->
   <meta property="og:title" content="¿Vos y cuántos más?" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{Request::fullUrl()}}" />
-  <meta property="og:image" content="{{URL::to('/').'/images/logo-share.png'}}" />
+  <meta property="og:image" content="{{URL::to('/').'/logo_share_2.png'}}" />
   <meta property="og:description" content="Participé en '¿Vos y cuántos más de Chequeado' y estos son mis resultados." />
   <meta property="og:site_name" content="¿Vos y cuántos más?" />
 
@@ -65,7 +65,7 @@
                                                     <b>Investigación, análisis de datos y redacción: </b ><a href="https://twitter.com/am_riera"> Ariel Riera</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
-                                                    <b>Ilustraciones 8 bit: </b> Gastón Márquez (Gazulo)
+                                                    <b>Ilustraciones 8 bit: </b> <a href="https://twitter.com/GazuloM"> Gastón Márquez (Gazulo)</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
                                                     <b>Tecnologías utilizadas: </b> Laravel PHP - MySQL - Angular JS

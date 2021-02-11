@@ -57,7 +57,7 @@
                                                     <b>Investigación, análisis de datos y redacción: </b ><a href="https://twitter.com/am_riera"> Ariel Riera</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
-                                                    <b>Ilustraciones 8 bit: </b> Gastón Márquez (Gazulo)
+                                                    <b>Ilustraciones 8 bit: </b> <a href="https://twitter.com/GazuloM"> Gastón Márquez (Gazulo)</a>
                                                 </li>
                                                 <li style="margin: 5px 0">
                                                     <b>Tecnologías utilizadas: </b> Laravel PHP - MySQL - Angular JS

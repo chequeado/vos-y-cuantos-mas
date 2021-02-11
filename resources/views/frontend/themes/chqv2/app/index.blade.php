@@ -36,7 +36,7 @@
                                                         <b>Investigación, análisis de datos y redacción: </b ><a href="https://twitter.com/am_riera"> Ariel Riera</a>
                                                     </li>
                                                     <li style="margin: 5px 0">
-                                                        <b>Ilustraciones 8 bit: </b> Gastón Márquez (Gazulo)
+                                                        <b>Ilustraciones 8 bit: </b> <a href="https://twitter.com/GazuloM"> Gastón Márquez (Gazulo)</a>
                                                     </li>
                                                     <li style="margin: 5px 0">
                                                         <b>Tecnologías utilizadas: </b> Laravel PHP - MySQL - Angular JS
@@ -123,10 +123,10 @@
                     <div class="row">
 
                         <div class="col-md-10 col-md-offset-1">
-                            <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}}
+                            <!-- <p class="respuesta" ng-show="!saving">@{{question.answer.text_answer}}
                             <span ng-if="votes.total_option>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, <strong>@{{votes.total_option}}</strong> contestaron como vos. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
                             <span ng-if="votes.total_option==1 && votes.total_question>1">De las <strong>@{{votes.total_question}} personas</strong> que contestaron esta pregunta, eres la primera que contesta de esta manera. Esto representa el <strong>@{{((votes.total_option*100)/votes.total_question).toFixed(1)}}%</strong>.</span>
-                            </p>
+                            </p> -->
                             <p class="respuesta" ng-show="saving">Calculando "Vos y cuántos más"...</p>
                         </div>
                     </div>
