@@ -84,7 +84,7 @@
                                 <a id="share-facebook" class="btn btn-default btn-especial3" data-url="{{Request::fullUrl()}}">Compartir <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                             </div>
                             <div class="col-md-4">
-                                <a href="/" class="btn btn-default btn-especial3">Volver al home</a>
+                                <a href="/" class="btn btn-default btn-especial3">Inicio</a>
                             </div>
                         </div>
                     </div>

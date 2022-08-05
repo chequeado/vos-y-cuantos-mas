@@ -119,7 +119,7 @@
                                     </span>
                                     <span ng-hide="question.bet">
                                         No tenías idea. Hoy aprendiste algo.
-                                        <img alt="" ng-src="images/bien.png" class="img-responsive"/>
+                                        <img alt="" ng-src="images/wink.png" class="img-responsive"/>
                                     </span>
                                 </div>
                                 <div class="clearfix"></div>
